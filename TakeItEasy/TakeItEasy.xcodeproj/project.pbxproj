@@ -1,0 +1,743 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		43E61F0F9B67CAAC8A89F610 /* Pods_TakeItEasyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081BF315E0EFA2266BF754DD /* Pods_TakeItEasyTests.framework */; };
+		4948495A20010D7C00502C4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948495920010D7C00502C4E /* AppDelegate.swift */; };
+		4948495C20010D7C00502C4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948495B20010D7C00502C4E /* ViewController.swift */; };
+		4948495F20010D7C00502C4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4948495D20010D7C00502C4E /* Main.storyboard */; };
+		4948496220010D7C00502C4E /* TakeItEasy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4948496020010D7C00502C4E /* TakeItEasy.xcdatamodeld */; };
+		4948496420010D7C00502C4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4948496320010D7C00502C4E /* Assets.xcassets */; };
+		4948496720010D7C00502C4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4948496520010D7C00502C4E /* LaunchScreen.storyboard */; };
+		4948497220010D7C00502C4E /* TakeItEasyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948497120010D7C00502C4E /* TakeItEasyTests.swift */; };
+		4948497D20010D7C00502C4E /* TakeItEasyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948497C20010D7C00502C4E /* TakeItEasyUITests.swift */; };
+		FB63235D5F86D09AD875C281 /* Pods_TakeItEasy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD58A297409666B0C401DFF1 /* Pods_TakeItEasy.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4948496E20010D7C00502C4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4948494E20010D7C00502C4E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4948495520010D7C00502C4E;
+			remoteInfo = TakeItEasy;
+		};
+		4948497920010D7C00502C4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4948494E20010D7C00502C4E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4948495520010D7C00502C4E;
+			remoteInfo = TakeItEasy;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		081BF315E0EFA2266BF754DD /* Pods_TakeItEasyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakeItEasyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4948495620010D7C00502C4E /* TakeItEasy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakeItEasy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4948495920010D7C00502C4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4948495B20010D7C00502C4E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4948495E20010D7C00502C4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4948496120010D7C00502C4E /* TakeItEasy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TakeItEasy.xcdatamodel; sourceTree = "<group>"; };
+		4948496320010D7C00502C4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4948496620010D7C00502C4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4948496820010D7C00502C4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4948496D20010D7C00502C4E /* TakeItEasyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TakeItEasyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4948497120010D7C00502C4E /* TakeItEasyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeItEasyTests.swift; sourceTree = "<group>"; };
+		4948497320010D7C00502C4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4948497820010D7C00502C4E /* TakeItEasyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TakeItEasyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4948497C20010D7C00502C4E /* TakeItEasyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeItEasyUITests.swift; sourceTree = "<group>"; };
+		4948497E20010D7C00502C4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		602C2F5611BB17E164885FD3 /* Pods-TakeItEasy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeItEasy.release.xcconfig"; path = "Pods/Target Support Files/Pods-TakeItEasy/Pods-TakeItEasy.release.xcconfig"; sourceTree = "<group>"; };
+		6F8D8C318A67036644A5B683 /* Pods-TakeItEasy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeItEasy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TakeItEasy/Pods-TakeItEasy.debug.xcconfig"; sourceTree = "<group>"; };
+		BA30ECD4CF65E413D713B9C0 /* Pods-TakeItEasyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeItEasyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TakeItEasyTests/Pods-TakeItEasyTests.release.xcconfig"; sourceTree = "<group>"; };
+		BB30FE248D54AEFB1FC6F800 /* Pods-TakeItEasyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeItEasyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TakeItEasyTests/Pods-TakeItEasyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FD58A297409666B0C401DFF1 /* Pods_TakeItEasy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakeItEasy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4948495320010D7C00502C4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB63235D5F86D09AD875C281 /* Pods_TakeItEasy.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4948496A20010D7C00502C4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43E61F0F9B67CAAC8A89F610 /* Pods_TakeItEasyTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4948497520010D7C00502C4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1865ACAF34405408065B24BF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6F8D8C318A67036644A5B683 /* Pods-TakeItEasy.debug.xcconfig */,
+				602C2F5611BB17E164885FD3 /* Pods-TakeItEasy.release.xcconfig */,
+				BB30FE248D54AEFB1FC6F800 /* Pods-TakeItEasyTests.debug.xcconfig */,
+				BA30ECD4CF65E413D713B9C0 /* Pods-TakeItEasyTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4948494D20010D7C00502C4E = {
+			isa = PBXGroup;
+			children = (
+				4948495820010D7C00502C4E /* TakeItEasy */,
+				4948497020010D7C00502C4E /* TakeItEasyTests */,
+				4948497B20010D7C00502C4E /* TakeItEasyUITests */,
+				4948495720010D7C00502C4E /* Products */,
+				1865ACAF34405408065B24BF /* Pods */,
+				73A805534E25C03BB286F4EB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4948495720010D7C00502C4E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4948495620010D7C00502C4E /* TakeItEasy.app */,
+				4948496D20010D7C00502C4E /* TakeItEasyTests.xctest */,
+				4948497820010D7C00502C4E /* TakeItEasyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4948495820010D7C00502C4E /* TakeItEasy */ = {
+			isa = PBXGroup;
+			children = (
+				4948495920010D7C00502C4E /* AppDelegate.swift */,
+				4948495B20010D7C00502C4E /* ViewController.swift */,
+				4948495D20010D7C00502C4E /* Main.storyboard */,
+				4948496320010D7C00502C4E /* Assets.xcassets */,
+				4948496520010D7C00502C4E /* LaunchScreen.storyboard */,
+				4948496820010D7C00502C4E /* Info.plist */,
+				4948496020010D7C00502C4E /* TakeItEasy.xcdatamodeld */,
+			);
+			path = TakeItEasy;
+			sourceTree = "<group>";
+		};
+		4948497020010D7C00502C4E /* TakeItEasyTests */ = {
+			isa = PBXGroup;
+			children = (
+				4948497120010D7C00502C4E /* TakeItEasyTests.swift */,
+				4948497320010D7C00502C4E /* Info.plist */,
+			);
+			path = TakeItEasyTests;
+			sourceTree = "<group>";
+		};
+		4948497B20010D7C00502C4E /* TakeItEasyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4948497C20010D7C00502C4E /* TakeItEasyUITests.swift */,
+				4948497E20010D7C00502C4E /* Info.plist */,
+			);
+			path = TakeItEasyUITests;
+			sourceTree = "<group>";
+		};
+		73A805534E25C03BB286F4EB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FD58A297409666B0C401DFF1 /* Pods_TakeItEasy.framework */,
+				081BF315E0EFA2266BF754DD /* Pods_TakeItEasyTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4948495520010D7C00502C4E /* TakeItEasy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4948498120010D7C00502C4E /* Build configuration list for PBXNativeTarget "TakeItEasy" */;
+			buildPhases = (
+				A17B08E54EB46469BA37712E /* [CP] Check Pods Manifest.lock */,
+				4948495220010D7C00502C4E /* Sources */,
+				4948495320010D7C00502C4E /* Frameworks */,
+				4948495420010D7C00502C4E /* Resources */,
+				D71986275ED3577C6F925D5D /* [CP] Embed Pods Frameworks */,
+				3FC2243B411F3B8005A296E8 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TakeItEasy;
+			productName = TakeItEasy;
+			productReference = 4948495620010D7C00502C4E /* TakeItEasy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4948496C20010D7C00502C4E /* TakeItEasyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4948498420010D7C00502C4E /* Build configuration list for PBXNativeTarget "TakeItEasyTests" */;
+			buildPhases = (
+				0335E405BD96D2D6F933BF13 /* [CP] Check Pods Manifest.lock */,
+				4948496920010D7C00502C4E /* Sources */,
+				4948496A20010D7C00502C4E /* Frameworks */,
+				4948496B20010D7C00502C4E /* Resources */,
+				98785A73C909154D06FEB942 /* [CP] Embed Pods Frameworks */,
+				44D16CD07F79F75C5BA72581 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4948496F20010D7C00502C4E /* PBXTargetDependency */,
+			);
+			name = TakeItEasyTests;
+			productName = TakeItEasyTests;
+			productReference = 4948496D20010D7C00502C4E /* TakeItEasyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4948497720010D7C00502C4E /* TakeItEasyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4948498720010D7C00502C4E /* Build configuration list for PBXNativeTarget "TakeItEasyUITests" */;
+			buildPhases = (
+				4948497420010D7C00502C4E /* Sources */,
+				4948497520010D7C00502C4E /* Frameworks */,
+				4948497620010D7C00502C4E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4948497A20010D7C00502C4E /* PBXTargetDependency */,
+			);
+			name = TakeItEasyUITests;
+			productName = TakeItEasyUITests;
+			productReference = 4948497820010D7C00502C4E /* TakeItEasyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4948494E20010D7C00502C4E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Jean Raphael Bordet";
+				TargetAttributes = {
+					4948495520010D7C00502C4E = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					4948496C20010D7C00502C4E = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4948495520010D7C00502C4E;
+					};
+					4948497720010D7C00502C4E = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 4948495520010D7C00502C4E;
+					};
+				};
+			};
+			buildConfigurationList = 4948495120010D7C00502C4E /* Build configuration list for PBXProject "TakeItEasy" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4948494D20010D7C00502C4E;
+			productRefGroup = 4948495720010D7C00502C4E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4948495520010D7C00502C4E /* TakeItEasy */,
+				4948496C20010D7C00502C4E /* TakeItEasyTests */,
+				4948497720010D7C00502C4E /* TakeItEasyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4948495420010D7C00502C4E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4948496720010D7C00502C4E /* LaunchScreen.storyboard in Resources */,
+				4948496420010D7C00502C4E /* Assets.xcassets in Resources */,
+				4948495F20010D7C00502C4E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4948496B20010D7C00502C4E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4948497620010D7C00502C4E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0335E405BD96D2D6F933BF13 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TakeItEasyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3FC2243B411F3B8005A296E8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TakeItEasy/Pods-TakeItEasy-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		44D16CD07F79F75C5BA72581 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TakeItEasyTests/Pods-TakeItEasyTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98785A73C909154D06FEB942 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TakeItEasyTests/Pods-TakeItEasyTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCoreData/RxCoreData.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCoreData.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TakeItEasyTests/Pods-TakeItEasyTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A17B08E54EB46469BA37712E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TakeItEasy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D71986275ED3577C6F925D5D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TakeItEasy/Pods-TakeItEasy-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCoreData/RxCoreData.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCoreData.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TakeItEasy/Pods-TakeItEasy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4948495220010D7C00502C4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4948496220010D7C00502C4E /* TakeItEasy.xcdatamodeld in Sources */,
+				4948495C20010D7C00502C4E /* ViewController.swift in Sources */,
+				4948495A20010D7C00502C4E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4948496920010D7C00502C4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4948497220010D7C00502C4E /* TakeItEasyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4948497420010D7C00502C4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4948497D20010D7C00502C4E /* TakeItEasyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4948496F20010D7C00502C4E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4948495520010D7C00502C4E /* TakeItEasy */;
+			targetProxy = 4948496E20010D7C00502C4E /* PBXContainerItemProxy */;
+		};
+		4948497A20010D7C00502C4E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4948495520010D7C00502C4E /* TakeItEasy */;
+			targetProxy = 4948497920010D7C00502C4E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4948495D20010D7C00502C4E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4948495E20010D7C00502C4E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4948496520010D7C00502C4E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4948496620010D7C00502C4E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4948497F20010D7C00502C4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4948498020010D7C00502C4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4948498220010D7C00502C4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F8D8C318A67036644A5B683 /* Pods-TakeItEasy.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XP6P798NUV;
+				INFOPLIST_FILE = TakeItEasy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ovolab.TakeItEasy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4948498320010D7C00502C4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 602C2F5611BB17E164885FD3 /* Pods-TakeItEasy.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XP6P798NUV;
+				INFOPLIST_FILE = TakeItEasy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ovolab.TakeItEasy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4948498520010D7C00502C4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB30FE248D54AEFB1FC6F800 /* Pods-TakeItEasyTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XP6P798NUV;
+				INFOPLIST_FILE = TakeItEasyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ovolab.TakeItEasyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TakeItEasy.app/TakeItEasy";
+			};
+			name = Debug;
+		};
+		4948498620010D7C00502C4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA30ECD4CF65E413D713B9C0 /* Pods-TakeItEasyTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XP6P798NUV;
+				INFOPLIST_FILE = TakeItEasyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ovolab.TakeItEasyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TakeItEasy.app/TakeItEasy";
+			};
+			name = Release;
+		};
+		4948498820010D7C00502C4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XP6P798NUV;
+				INFOPLIST_FILE = TakeItEasyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ovolab.TakeItEasyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TakeItEasy;
+			};
+			name = Debug;
+		};
+		4948498920010D7C00502C4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XP6P798NUV;
+				INFOPLIST_FILE = TakeItEasyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ovolab.TakeItEasyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TakeItEasy;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4948495120010D7C00502C4E /* Build configuration list for PBXProject "TakeItEasy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4948497F20010D7C00502C4E /* Debug */,
+				4948498020010D7C00502C4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4948498120010D7C00502C4E /* Build configuration list for PBXNativeTarget "TakeItEasy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4948498220010D7C00502C4E /* Debug */,
+				4948498320010D7C00502C4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4948498420010D7C00502C4E /* Build configuration list for PBXNativeTarget "TakeItEasyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4948498520010D7C00502C4E /* Debug */,
+				4948498620010D7C00502C4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4948498720010D7C00502C4E /* Build configuration list for PBXNativeTarget "TakeItEasyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4948498820010D7C00502C4E /* Debug */,
+				4948498920010D7C00502C4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4948496020010D7C00502C4E /* TakeItEasy.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4948496120010D7C00502C4E /* TakeItEasy.xcdatamodel */,
+			);
+			currentVersion = 4948496120010D7C00502C4E /* TakeItEasy.xcdatamodel */;
+			path = TakeItEasy.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4948494E20010D7C00502C4E /* Project object */;
+}
