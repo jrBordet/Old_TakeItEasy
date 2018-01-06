@@ -1,0 +1,355 @@
+TakeItEasy/Pods/Manifest.lock
+TakeItEasy/Pods/Differentiator/LICENSE.md
+TakeItEasy/Pods/Differentiator/README.md
+TakeItEasy/Pods/Differentiator/Sources/Differentiator/AnimatableSectionModel.swift
+TakeItEasy/Pods/Differentiator/Sources/Differentiator/AnimatableSectionModelType+ItemPath.swift
+TakeItEasy/Pods/Differentiator/Sources/Differentiator/AnimatableSectionModelType.swift
+TakeItEasy/Pods/Differentiator/Sources/Differentiator/Changeset.swift
+TakeItEasy/Pods/Differentiator/Sources/Differentiator/Diff.swift
+TakeItEasy/Pods/Differentiator/Sources/Differentiator/IdentifiableType.swift
+TakeItEasy/Pods/Differentiator/Sources/Differentiator/IdentifiableValue.swift
+TakeItEasy/Pods/Differentiator/Sources/Differentiator/ItemPath.swift
+TakeItEasy/Pods/Differentiator/Sources/Differentiator/Optional+Extensions.swift
+TakeItEasy/Pods/Differentiator/Sources/Differentiator/SectionModel.swift
+TakeItEasy/Pods/Differentiator/Sources/Differentiator/SectionModelType.swift
+TakeItEasy/Pods/Differentiator/Sources/Differentiator/Utilities.swift
+TakeItEasy/Pods/Pods.xcodeproj/project.pbxproj
+TakeItEasy/Pods/RxCocoa/LICENSE.md
+TakeItEasy/Pods/RxCocoa/README.md
+TakeItEasy/Pods/RxCocoa/Platform/DispatchQueue+Extensions.swift
+TakeItEasy/Pods/RxCocoa/Platform/Platform.Darwin.swift
+TakeItEasy/Pods/RxCocoa/Platform/Platform.Linux.swift
+TakeItEasy/Pods/RxCocoa/Platform/RecursiveLock.swift
+TakeItEasy/Pods/RxCocoa/Platform/DataStructures/Bag.swift
+TakeItEasy/Pods/RxCocoa/Platform/DataStructures/InfiniteSequence.swift
+TakeItEasy/Pods/RxCocoa/Platform/DataStructures/PriorityQueue.swift
+TakeItEasy/Pods/RxCocoa/Platform/DataStructures/Queue.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Deprecated.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/RxCocoa.h
+TakeItEasy/Pods/RxCocoa/RxCocoa/RxCocoa.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Common/Binder.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Common/ControlTarget.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Common/DelegateProxy.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Common/DelegateProxyType.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Common/NSLayoutConstraint+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Common/Observable+Bind.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Common/RxCocoaObjCRuntimeError+Extensions.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Common/RxTarget.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Common/SectionedViewDataSourceType.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Common/TextInput.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Foundation/KVORepresentable+CoreGraphics.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Foundation/KVORepresentable+Swift.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Foundation/KVORepresentable.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Foundation/Logging.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Foundation/NotificationCenter+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Foundation/NSObject+Rx+KVORepresentable.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Foundation/NSObject+Rx+RawRepresentable.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Foundation/NSObject+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Foundation/URLSession+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/NSTextStorage+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/UIActivityIndicatorView+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/UIAlertAction+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/UIApplication+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/UIBarButtonItem+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/UIButton+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/UICollectionView+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/UIControl+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/UIDatePicker+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/UIGestureRecognizer+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/UIImageView+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/UILabel+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/UINavigationController+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/UINavigationItem+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/UIPageControl+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/UIPickerView+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/UIProgressView+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/UIRefreshControl+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/UIScrollView+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/UISearchBar+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/UISearchController+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/UISegmentedControl+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/UISlider+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/UIStepper+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/UISwitch+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/UITabBar+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/UITabBarController+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/UITabBarItem+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/UITableView+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/UITextField+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/UITextView+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/UIView+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/UIViewController+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/UIWebView+Rx.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/DataSources/RxCollectionViewReactiveArrayDataSource.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/DataSources/RxPickerViewAdapter.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/DataSources/RxTableViewReactiveArrayDataSource.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/Events/ItemEvents.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/Protocols/RxCollectionViewDataSourceType.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/Protocols/RxPickerViewDataSourceType.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/Protocols/RxTableViewDataSourceType.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/Proxies/RxCollectionViewDataSourceProxy.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/Proxies/RxCollectionViewDelegateProxy.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/Proxies/RxNavigationControllerDelegateProxy.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/Proxies/RxPickerViewDataSourceProxy.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/Proxies/RxPickerViewDelegateProxy.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/Proxies/RxScrollViewDelegateProxy.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/Proxies/RxSearchBarDelegateProxy.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/Proxies/RxSearchControllerDelegateProxy.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/Proxies/RxTabBarControllerDelegateProxy.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/Proxies/RxTabBarDelegateProxy.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/Proxies/RxTableViewDataSourceProxy.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/Proxies/RxTableViewDelegateProxy.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/Proxies/RxTextStorageDelegateProxy.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/Proxies/RxTextViewDelegateProxy.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/Proxies/RxWebViewDelegateProxy.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Runtime/_RX.m
+TakeItEasy/Pods/RxCocoa/RxCocoa/Runtime/_RXDelegateProxy.m
+TakeItEasy/Pods/RxCocoa/RxCocoa/Runtime/_RXKVOObserver.m
+TakeItEasy/Pods/RxCocoa/RxCocoa/Runtime/_RXObjCRuntime.m
+TakeItEasy/Pods/RxCocoa/RxCocoa/Runtime/include/_RX.h
+TakeItEasy/Pods/RxCocoa/RxCocoa/Runtime/include/_RXDelegateProxy.h
+TakeItEasy/Pods/RxCocoa/RxCocoa/Runtime/include/_RXKVOObserver.h
+TakeItEasy/Pods/RxCocoa/RxCocoa/Runtime/include/_RXObjCRuntime.h
+TakeItEasy/Pods/RxCocoa/RxCocoa/Runtime/include/RxCocoaRuntime.h
+TakeItEasy/Pods/RxCocoa/RxCocoa/Traits/BehaviorRelay.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Traits/ControlEvent.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Traits/ControlProperty.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Traits/PublishRelay.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Traits/Driver/BehaviorRelay+Driver.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Traits/Driver/ControlEvent+Driver.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Traits/Driver/ControlProperty+Driver.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Traits/Driver/Driver+Subscription.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Traits/Driver/Driver.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Traits/Driver/ObservableConvertibleType+Driver.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Traits/SharedSequence/SchedulerType+SharedSequence.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Traits/SharedSequence/SharedSequence+Operators+arity.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Traits/SharedSequence/SharedSequence+Operators.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Traits/SharedSequence/SharedSequence.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Traits/Signal/ObservableConvertibleType+Signal.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Traits/Signal/PublishRelay+Signal.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Traits/Signal/Signal+Subscription.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Traits/Signal/Signal.swift
+TakeItEasy/Pods/RxCoreData/LICENSE.md
+TakeItEasy/Pods/RxCoreData/README.md
+TakeItEasy/Pods/RxCoreData/Sources/FetchedResultsControllerControllerEntityObserver.swift
+TakeItEasy/Pods/RxCoreData/Sources/FetchedResultsControllerSectionObserver.swift
+TakeItEasy/Pods/RxCoreData/Sources/NSManagedObjectContext+Rx.swift
+TakeItEasy/Pods/RxCoreData/Sources/Persistable.swift
+TakeItEasy/Pods/RxDataSources/LICENSE.md
+TakeItEasy/Pods/RxDataSources/README.md
+TakeItEasy/Pods/RxDataSources/Sources/RxDataSources/AnimationConfiguration.swift
+TakeItEasy/Pods/RxDataSources/Sources/RxDataSources/Array+Extensions.swift
+TakeItEasy/Pods/RxDataSources/Sources/RxDataSources/CollectionViewSectionedDataSource.swift
+TakeItEasy/Pods/RxDataSources/Sources/RxDataSources/DataSources.swift
+TakeItEasy/Pods/RxDataSources/Sources/RxDataSources/Deprecated.swift
+TakeItEasy/Pods/RxDataSources/Sources/RxDataSources/FloatingPointType+IdentifiableType.swift
+TakeItEasy/Pods/RxDataSources/Sources/RxDataSources/IntegerType+IdentifiableType.swift
+TakeItEasy/Pods/RxDataSources/Sources/RxDataSources/RxCollectionViewSectionedAnimatedDataSource.swift
+TakeItEasy/Pods/RxDataSources/Sources/RxDataSources/RxCollectionViewSectionedReloadDataSource.swift
+TakeItEasy/Pods/RxDataSources/Sources/RxDataSources/RxPickerViewAdapter.swift
+TakeItEasy/Pods/RxDataSources/Sources/RxDataSources/RxTableViewSectionedAnimatedDataSource.swift
+TakeItEasy/Pods/RxDataSources/Sources/RxDataSources/RxTableViewSectionedReloadDataSource.swift
+TakeItEasy/Pods/RxDataSources/Sources/RxDataSources/String+IdentifiableType.swift
+TakeItEasy/Pods/RxDataSources/Sources/RxDataSources/TableViewSectionedDataSource.swift
+TakeItEasy/Pods/RxDataSources/Sources/RxDataSources/UI+SectionedViewType.swift
+TakeItEasy/Pods/RxDataSources/Sources/RxDataSources/ViewTransition.swift
+TakeItEasy/Pods/RxSwift/LICENSE.md
+TakeItEasy/Pods/RxSwift/README.md
+TakeItEasy/Pods/RxSwift/Platform/DispatchQueue+Extensions.swift
+TakeItEasy/Pods/RxSwift/Platform/Platform.Darwin.swift
+TakeItEasy/Pods/RxSwift/Platform/Platform.Linux.swift
+TakeItEasy/Pods/RxSwift/Platform/RecursiveLock.swift
+TakeItEasy/Pods/RxSwift/Platform/DataStructures/Bag.swift
+TakeItEasy/Pods/RxSwift/Platform/DataStructures/InfiniteSequence.swift
+TakeItEasy/Pods/RxSwift/Platform/DataStructures/PriorityQueue.swift
+TakeItEasy/Pods/RxSwift/Platform/DataStructures/Queue.swift
+TakeItEasy/Pods/RxSwift/RxSwift/AnyObserver.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Cancelable.swift
+TakeItEasy/Pods/RxSwift/RxSwift/ConnectableObservableType.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Deprecated.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Disposable.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Errors.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Event.swift
+TakeItEasy/Pods/RxSwift/RxSwift/GroupedObservable.swift
+TakeItEasy/Pods/RxSwift/RxSwift/ImmediateSchedulerType.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observable.swift
+TakeItEasy/Pods/RxSwift/RxSwift/ObservableConvertibleType.swift
+TakeItEasy/Pods/RxSwift/RxSwift/ObservableType+Extensions.swift
+TakeItEasy/Pods/RxSwift/RxSwift/ObservableType.swift
+TakeItEasy/Pods/RxSwift/RxSwift/ObserverType.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Reactive.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Rx.swift
+TakeItEasy/Pods/RxSwift/RxSwift/RxMutableBox.swift
+TakeItEasy/Pods/RxSwift/RxSwift/SchedulerType.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Concurrency/AsyncLock.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Concurrency/Lock.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Concurrency/LockOwnerType.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Concurrency/SynchronizedDisposeType.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Concurrency/SynchronizedOnType.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Concurrency/SynchronizedUnsubscribeType.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Disposables/AnonymousDisposable.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Disposables/BinaryDisposable.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Disposables/BooleanDisposable.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Disposables/CompositeDisposable.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Disposables/Disposables.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Disposables/DisposeBag.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Disposables/DisposeBase.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Disposables/NopDisposable.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Disposables/RefCountDisposable.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Disposables/ScheduledDisposable.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Disposables/SerialDisposable.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Disposables/SingleAssignmentDisposable.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Disposables/SubscriptionDisposable.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Extensions/Bag+Rx.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Extensions/String+Rx.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/AddRef.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Amb.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/AsMaybe.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/AsSingle.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Buffer.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Catch.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/CombineLatest+arity.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/CombineLatest+Collection.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/CombineLatest.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Concat.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Create.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Debounce.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Debug.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/DefaultIfEmpty.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Deferred.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Delay.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/DelaySubscription.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Dematerialize.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/DistinctUntilChanged.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Do.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/ElementAt.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Empty.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Enumerated.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Error.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Filter.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/First.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Generate.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/GroupBy.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Just.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Map.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Materialize.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Merge.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Multicast.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Never.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/ObserveOn.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Optional.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Producer.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Range.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Reduce.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Repeat.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/RetryWhen.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Sample.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Scan.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Sequence.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/ShareReplayScope.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/SingleAsync.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Sink.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Skip.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/SkipUntil.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/SkipWhile.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/StartWith.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/SubscribeOn.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Switch.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/SwitchIfEmpty.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Take.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/TakeLast.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/TakeUntil.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/TakeWhile.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Throttle.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Timeout.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Timer.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/ToArray.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Using.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Window.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/WithLatestFrom.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Zip+arity.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Zip+Collection.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observables/Zip.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observers/AnonymousObserver.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observers/ObserverBase.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Observers/TailRecursiveSink.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Schedulers/ConcurrentDispatchQueueScheduler.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Schedulers/ConcurrentMainScheduler.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Schedulers/CurrentThreadScheduler.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Schedulers/HistoricalScheduler.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Schedulers/HistoricalSchedulerTimeConverter.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Schedulers/MainScheduler.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Schedulers/OperationQueueScheduler.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Schedulers/RecursiveScheduler.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Schedulers/SchedulerServices+Emulation.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Schedulers/SerialDispatchQueueScheduler.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Schedulers/VirtualTimeConverterType.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Schedulers/VirtualTimeScheduler.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Schedulers/Internal/DispatchQueueConfiguration.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Schedulers/Internal/InvocableScheduledItem.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Schedulers/Internal/InvocableType.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Schedulers/Internal/ScheduledItem.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Schedulers/Internal/ScheduledItemType.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Subjects/AsyncSubject.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Subjects/BehaviorSubject.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Subjects/PublishSubject.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Subjects/ReplaySubject.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Subjects/SubjectType.swift
+TakeItEasy/Pods/RxSwift/RxSwift/SwiftSupport/SwiftSupport.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Traits/Completable+AndThen.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Traits/Completable.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Traits/Maybe.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Traits/ObservableType+PrimitiveSequence.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Traits/PrimitiveSequence+Zip+arity.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Traits/PrimitiveSequence.swift
+TakeItEasy/Pods/RxSwift/RxSwift/Traits/Single.swift
+TakeItEasy/Pods/Target Support Files/Differentiator/Differentiator-dummy.m
+TakeItEasy/Pods/Target Support Files/Differentiator/Differentiator-prefix.pch
+TakeItEasy/Pods/Target Support Files/Differentiator/Differentiator-umbrella.h
+TakeItEasy/Pods/Target Support Files/Differentiator/Differentiator.modulemap
+TakeItEasy/Pods/Target Support Files/Differentiator/Differentiator.xcconfig
+TakeItEasy/Pods/Target Support Files/Differentiator/Info.plist
+TakeItEasy/Pods/Target Support Files/Pods-TakeItEasy/Info.plist
+TakeItEasy/Pods/Target Support Files/Pods-TakeItEasy/Pods-TakeItEasy-acknowledgements.markdown
+TakeItEasy/Pods/Target Support Files/Pods-TakeItEasy/Pods-TakeItEasy-acknowledgements.plist
+TakeItEasy/Pods/Target Support Files/Pods-TakeItEasy/Pods-TakeItEasy-dummy.m
+TakeItEasy/Pods/Target Support Files/Pods-TakeItEasy/Pods-TakeItEasy-frameworks.sh
+TakeItEasy/Pods/Target Support Files/Pods-TakeItEasy/Pods-TakeItEasy-resources.sh
+TakeItEasy/Pods/Target Support Files/Pods-TakeItEasy/Pods-TakeItEasy-umbrella.h
+TakeItEasy/Pods/Target Support Files/Pods-TakeItEasy/Pods-TakeItEasy.debug.xcconfig
+TakeItEasy/Pods/Target Support Files/Pods-TakeItEasy/Pods-TakeItEasy.modulemap
+TakeItEasy/Pods/Target Support Files/Pods-TakeItEasy/Pods-TakeItEasy.release.xcconfig
+TakeItEasy/Pods/Target Support Files/Pods-TakeItEasyTests/Info.plist
+TakeItEasy/Pods/Target Support Files/Pods-TakeItEasyTests/Pods-TakeItEasyTests-acknowledgements.markdown
+TakeItEasy/Pods/Target Support Files/Pods-TakeItEasyTests/Pods-TakeItEasyTests-acknowledgements.plist
+TakeItEasy/Pods/Target Support Files/Pods-TakeItEasyTests/Pods-TakeItEasyTests-dummy.m
+TakeItEasy/Pods/Target Support Files/Pods-TakeItEasyTests/Pods-TakeItEasyTests-frameworks.sh
+TakeItEasy/Pods/Target Support Files/Pods-TakeItEasyTests/Pods-TakeItEasyTests-resources.sh
+TakeItEasy/Pods/Target Support Files/Pods-TakeItEasyTests/Pods-TakeItEasyTests-umbrella.h
+TakeItEasy/Pods/Target Support Files/Pods-TakeItEasyTests/Pods-TakeItEasyTests.debug.xcconfig
+TakeItEasy/Pods/Target Support Files/Pods-TakeItEasyTests/Pods-TakeItEasyTests.modulemap
+TakeItEasy/Pods/Target Support Files/Pods-TakeItEasyTests/Pods-TakeItEasyTests.release.xcconfig
+TakeItEasy/Pods/Target Support Files/RxCocoa/Info.plist
+TakeItEasy/Pods/Target Support Files/RxCocoa/RxCocoa-dummy.m
+TakeItEasy/Pods/Target Support Files/RxCocoa/RxCocoa-prefix.pch
+TakeItEasy/Pods/Target Support Files/RxCocoa/RxCocoa-umbrella.h
+TakeItEasy/Pods/Target Support Files/RxCocoa/RxCocoa.modulemap
+TakeItEasy/Pods/Target Support Files/RxCocoa/RxCocoa.xcconfig
+TakeItEasy/Pods/Target Support Files/RxCoreData/Info.plist
+TakeItEasy/Pods/Target Support Files/RxCoreData/RxCoreData-dummy.m
+TakeItEasy/Pods/Target Support Files/RxCoreData/RxCoreData-prefix.pch
+TakeItEasy/Pods/Target Support Files/RxCoreData/RxCoreData-umbrella.h
+TakeItEasy/Pods/Target Support Files/RxCoreData/RxCoreData.modulemap
+TakeItEasy/Pods/Target Support Files/RxCoreData/RxCoreData.xcconfig
+TakeItEasy/Pods/Target Support Files/RxDataSources/Info.plist
+TakeItEasy/Pods/Target Support Files/RxDataSources/RxDataSources-dummy.m
+TakeItEasy/Pods/Target Support Files/RxDataSources/RxDataSources-prefix.pch
+TakeItEasy/Pods/Target Support Files/RxDataSources/RxDataSources-umbrella.h
+TakeItEasy/Pods/Target Support Files/RxDataSources/RxDataSources.modulemap
+TakeItEasy/Pods/Target Support Files/RxDataSources/RxDataSources.xcconfig
+TakeItEasy/Pods/Target Support Files/RxSwift/Info.plist
+TakeItEasy/Pods/Target Support Files/RxSwift/RxSwift-dummy.m
+TakeItEasy/Pods/Target Support Files/RxSwift/RxSwift-prefix.pch
+TakeItEasy/Pods/Target Support Files/RxSwift/RxSwift-umbrella.h
+TakeItEasy/Pods/Target Support Files/RxSwift/RxSwift.modulemap
+TakeItEasy/Pods/Target Support Files/RxSwift/RxSwift.xcconfig
