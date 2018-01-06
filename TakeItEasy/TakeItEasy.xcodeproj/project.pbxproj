@@ -9,13 +9,23 @@
 /* Begin PBXBuildFile section */
 		43E61F0F9B67CAAC8A89F610 /* Pods_TakeItEasyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081BF315E0EFA2266BF754DD /* Pods_TakeItEasyTests.framework */; };
 		4948495A20010D7C00502C4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948495920010D7C00502C4E /* AppDelegate.swift */; };
-		4948495C20010D7C00502C4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948495B20010D7C00502C4E /* ViewController.swift */; };
-		4948495F20010D7C00502C4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4948495D20010D7C00502C4E /* Main.storyboard */; };
 		4948496220010D7C00502C4E /* TakeItEasy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4948496020010D7C00502C4E /* TakeItEasy.xcdatamodeld */; };
 		4948496420010D7C00502C4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4948496320010D7C00502C4E /* Assets.xcassets */; };
 		4948496720010D7C00502C4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4948496520010D7C00502C4E /* LaunchScreen.storyboard */; };
 		4948497220010D7C00502C4E /* TakeItEasyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948497120010D7C00502C4E /* TakeItEasyTests.swift */; };
 		4948497D20010D7C00502C4E /* TakeItEasyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948497C20010D7C00502C4E /* TakeItEasyUITests.swift */; };
+		4948499F2001161A00502C4E /* Station+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948498C2001161A00502C4E /* Station+Extensions.swift */; };
+		494849A02001161A00502C4E /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948498D2001161A00502C4E /* Station.swift */; };
+		494849A12001161A00502C4E /* Travel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948498E2001161A00502C4E /* Travel.swift */; };
+		494849A22001161A00502C4E /* RouterStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494849902001161A00502C4E /* RouterStation.swift */; };
+		494849A32001161A00502C4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 494849922001161A00502C4E /* Main.storyboard */; };
+		494849A42001161A00502C4E /* ListSpotlightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494849952001161A00502C4E /* ListSpotlightViewController.swift */; };
+		494849A52001161A00502C4E /* ListTrainsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494849972001161A00502C4E /* ListTrainsViewController.swift */; };
+		494849A62001161A00502C4E /* TrainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494849982001161A00502C4E /* TrainCell.swift */; };
+		494849A72001161A00502C4E /* ListUserStationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948499A2001161A00502C4E /* ListUserStationViewController.swift */; };
+		494849A82001161A00502C4E /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948499C2001161A00502C4E /* String+Extensions.swift */; };
+		494849A92001161A00502C4E /* TravelTrainAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948499E2001161A00502C4E /* TravelTrainAPI.swift */; };
+		494849AB2001180A00502C4E /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494849AA2001180A00502C4E /* RootRouter.swift */; };
 		FB63235D5F86D09AD875C281 /* Pods_TakeItEasy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD58A297409666B0C401DFF1 /* Pods_TakeItEasy.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,8 +50,6 @@
 		081BF315E0EFA2266BF754DD /* Pods_TakeItEasyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakeItEasyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4948495620010D7C00502C4E /* TakeItEasy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakeItEasy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4948495920010D7C00502C4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4948495B20010D7C00502C4E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4948495E20010D7C00502C4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4948496120010D7C00502C4E /* TakeItEasy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TakeItEasy.xcdatamodel; sourceTree = "<group>"; };
 		4948496320010D7C00502C4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4948496620010D7C00502C4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,6 +60,18 @@
 		4948497820010D7C00502C4E /* TakeItEasyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TakeItEasyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4948497C20010D7C00502C4E /* TakeItEasyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeItEasyUITests.swift; sourceTree = "<group>"; };
 		4948497E20010D7C00502C4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4948498C2001161A00502C4E /* Station+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Station+Extensions.swift"; sourceTree = "<group>"; };
+		4948498D2001161A00502C4E /* Station.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
+		4948498E2001161A00502C4E /* Travel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Travel.swift; sourceTree = "<group>"; };
+		494849902001161A00502C4E /* RouterStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterStation.swift; sourceTree = "<group>"; };
+		494849932001161A00502C4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		494849952001161A00502C4E /* ListSpotlightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListSpotlightViewController.swift; sourceTree = "<group>"; };
+		494849972001161A00502C4E /* ListTrainsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTrainsViewController.swift; sourceTree = "<group>"; };
+		494849982001161A00502C4E /* TrainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainCell.swift; sourceTree = "<group>"; };
+		4948499A2001161A00502C4E /* ListUserStationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListUserStationViewController.swift; sourceTree = "<group>"; };
+		4948499C2001161A00502C4E /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		4948499E2001161A00502C4E /* TravelTrainAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelTrainAPI.swift; sourceTree = "<group>"; };
+		494849AA2001180A00502C4E /* RootRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
 		602C2F5611BB17E164885FD3 /* Pods-TakeItEasy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeItEasy.release.xcconfig"; path = "Pods/Target Support Files/Pods-TakeItEasy/Pods-TakeItEasy.release.xcconfig"; sourceTree = "<group>"; };
 		6F8D8C318A67036644A5B683 /* Pods-TakeItEasy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeItEasy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TakeItEasy/Pods-TakeItEasy.debug.xcconfig"; sourceTree = "<group>"; };
 		BA30ECD4CF65E413D713B9C0 /* Pods-TakeItEasyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeItEasyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TakeItEasyTests/Pods-TakeItEasyTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -122,9 +142,11 @@
 		4948495820010D7C00502C4E /* TakeItEasy */ = {
 			isa = PBXGroup;
 			children = (
+				4948499D2001161A00502C4E /* Networking */,
+				4948498A2001161A00502C4E /* StationsModule */,
+				4948499B2001161A00502C4E /* Utilities */,
 				4948495920010D7C00502C4E /* AppDelegate.swift */,
-				4948495B20010D7C00502C4E /* ViewController.swift */,
-				4948495D20010D7C00502C4E /* Main.storyboard */,
+				494849AA2001180A00502C4E /* RootRouter.swift */,
 				4948496320010D7C00502C4E /* Assets.xcassets */,
 				4948496520010D7C00502C4E /* LaunchScreen.storyboard */,
 				4948496820010D7C00502C4E /* Info.plist */,
@@ -149,6 +171,86 @@
 				4948497E20010D7C00502C4E /* Info.plist */,
 			);
 			path = TakeItEasyUITests;
+			sourceTree = "<group>";
+		};
+		4948498A2001161A00502C4E /* StationsModule */ = {
+			isa = PBXGroup;
+			children = (
+				4948498B2001161A00502C4E /* Models */,
+				4948498F2001161A00502C4E /* Router */,
+				494849912001161A00502C4E /* ViewControllers */,
+			);
+			path = StationsModule;
+			sourceTree = "<group>";
+		};
+		4948498B2001161A00502C4E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4948498C2001161A00502C4E /* Station+Extensions.swift */,
+				4948498D2001161A00502C4E /* Station.swift */,
+				4948498E2001161A00502C4E /* Travel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4948498F2001161A00502C4E /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				494849902001161A00502C4E /* RouterStation.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		494849912001161A00502C4E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				494849922001161A00502C4E /* Main.storyboard */,
+				494849942001161A00502C4E /* List Spootlight */,
+				494849962001161A00502C4E /* List Trains */,
+				494849992001161A00502C4E /* List User Station */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		494849942001161A00502C4E /* List Spootlight */ = {
+			isa = PBXGroup;
+			children = (
+				494849952001161A00502C4E /* ListSpotlightViewController.swift */,
+			);
+			path = "List Spootlight";
+			sourceTree = "<group>";
+		};
+		494849962001161A00502C4E /* List Trains */ = {
+			isa = PBXGroup;
+			children = (
+				494849972001161A00502C4E /* ListTrainsViewController.swift */,
+				494849982001161A00502C4E /* TrainCell.swift */,
+			);
+			path = "List Trains";
+			sourceTree = "<group>";
+		};
+		494849992001161A00502C4E /* List User Station */ = {
+			isa = PBXGroup;
+			children = (
+				4948499A2001161A00502C4E /* ListUserStationViewController.swift */,
+			);
+			path = "List User Station";
+			sourceTree = "<group>";
+		};
+		4948499B2001161A00502C4E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4948499C2001161A00502C4E /* String+Extensions.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		4948499D2001161A00502C4E /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				4948499E2001161A00502C4E /* TravelTrainAPI.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		73A805534E25C03BB286F4EB /* Frameworks */ = {
@@ -275,7 +377,7 @@
 			files = (
 				4948496720010D7C00502C4E /* LaunchScreen.storyboard in Resources */,
 				4948496420010D7C00502C4E /* Assets.xcassets in Resources */,
-				4948495F20010D7C00502C4E /* Main.storyboard in Resources */,
+				494849A32001161A00502C4E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,9 +523,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				494849A92001161A00502C4E /* TravelTrainAPI.swift in Sources */,
+				494849A22001161A00502C4E /* RouterStation.swift in Sources */,
+				4948499F2001161A00502C4E /* Station+Extensions.swift in Sources */,
+				494849A02001161A00502C4E /* Station.swift in Sources */,
+				494849AB2001180A00502C4E /* RootRouter.swift in Sources */,
 				4948496220010D7C00502C4E /* TakeItEasy.xcdatamodeld in Sources */,
-				4948495C20010D7C00502C4E /* ViewController.swift in Sources */,
+				494849A82001161A00502C4E /* String+Extensions.swift in Sources */,
+				494849A12001161A00502C4E /* Travel.swift in Sources */,
+				494849A72001161A00502C4E /* ListUserStationViewController.swift in Sources */,
 				4948495A20010D7C00502C4E /* AppDelegate.swift in Sources */,
+				494849A42001161A00502C4E /* ListSpotlightViewController.swift in Sources */,
+				494849A62001161A00502C4E /* TrainCell.swift in Sources */,
+				494849A52001161A00502C4E /* ListTrainsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,20 +571,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4948495D20010D7C00502C4E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4948495E20010D7C00502C4E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4948496520010D7C00502C4E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4948496620010D7C00502C4E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		494849922001161A00502C4E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				494849932001161A00502C4E /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
