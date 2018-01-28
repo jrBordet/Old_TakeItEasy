@@ -113,10 +113,10 @@ struct TravelTrainAPI: TravelTrainAPIProtocol {
                         let state = delay[0] as? String {
                         
                         return Travel(number,
-                                        category: category,
-                                         time: hour,
-                                         direction: direction,
-                                         state: state)
+                                      category: category,
+                                      time: hour,
+                                      direction: direction,
+                                      state: state)
                     }
                     
                     return nil
@@ -134,7 +134,7 @@ struct TravelTrainAPI: TravelTrainAPIProtocol {
     /// - Returns: a collection of Arrivals
     static func trainArrivals(of code: String) -> Observable<[Travel?]> {
         let urlEncoded =  "\(Address.arrivals.string)\(code)/\(String(describing: createFormattedDate()))"
-       
+        
         return URLSession
             .shared
             .rx
@@ -144,19 +144,19 @@ struct TravelTrainAPI: TravelTrainAPIProtocol {
                 guard let solutions = result as? [Any] else { return [] }
                 
                 return solutions.map({ value -> Travel? in
-                    if let hourDeparture = value as? [String: AnyObject],
-                        let number = hourDeparture["numeroTreno"] as? Int,
-                        let category = hourDeparture["categoria"] as? String,
-                        let hour = hourDeparture["compOrarioArrivo"] as? String,
-                        let direction = hourDeparture["origine"] as? String,
-                        let delay = hourDeparture["compRitardo"] as? [AnyObject],
+                    if let dictionary = value as? [String: AnyObject],
+                        let number = dictionary["numeroTreno"] as? Int,
+                        let category = dictionary["categoria"] as? String,
+                        let hour = dictionary["compOrarioArrivo"] as? String,
+                        let direction = dictionary["origine"] as? String,
+                        let delay = dictionary["compRitardo"] as? [AnyObject],
                         let state = delay[0] as? String {
                         
                         return Travel(number,
-                                        category: category,
-                                        time: hour,
-                                        direction: direction,
-                                        state: state)
+                                      category: category,
+                                      time: hour,
+                                      direction: direction,
+                                      state: state)
                     }
                     
                     return nil
@@ -173,35 +173,45 @@ struct TravelTrainAPI: TravelTrainAPIProtocol {
     ///   - codeTrain: the station code. Example 6660
     /// - Returns: a collection of TravelDetail
     static func trainSections(of codeDeparture: String, _ codeTrain: String) -> Observable<[TravelDetail?]> {
-            let urlEncoded = "\(Address.sections.string)\(codeDeparture)/\(codeTrain)"
-    
-            return URLSession
-                .shared
-                .rx
-                .json(request: URLRequest(url: URL(string: urlEncoded)!))
-                .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
-                .map({ result -> [TravelDetail?] in
-                    guard result is [Any] else { return [nil] }
-                    
+        let urlEncoded = "\(Address.sections.string)\(codeDeparture)/\(codeTrain)"
+        
+        return URLSession
+            .shared
+            .rx
+            .json(request: URLRequest(url: URL(string: urlEncoded)!))
+            .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .map({ result -> [TravelDetail?] in
+                guard let solutions = result as? [Any] else {
                     return [nil]
+                }
+                
+                return solutions.map({ value -> TravelDetail? in
+                    if let dictionary = value as? [String: AnyObject],
+                        let current = dictionary["stazioneCorrente"] as? Bool,
+                        let station = dictionary["stazione"] as? String,
+                        let fermata = dictionary["fermata"] as? [String: AnyObject] {
+                        
+                        let departure = fermata["partenza_teorica"] as? Int ?? 0
+                        let arrival = fermata["arrivo_teorico"] as? Int ?? 0
+
+                        let delay = fermata["delay"] as? Int ?? 0
+                        
+                        return TravelDetail(0,
+                                            current: current,
+                                            departure: departure,
+                                            arrival: arrival,
+                                            station: station,
+                                            delay: delay)
+                    }
                     
-//                    return solutions.map({ value -> TravelDetail? in
-//                        if let hourDeparture = value as? [String: AnyObject],
-//                            let number = hourDeparture["numeroTreno"] as? Int,
-//                            let hour = hourDeparture["compOrarioArrivo"] as? String,
-//                            let direction = hourDeparture["origine"] as? String,
-//                            let delay = hourDeparture["compRitardo"] as? [AnyObject],
-//                            let state = delay[0] as? String {
-//
-//                            return TravelDetail.init(number, category: "", current: false, departure: "", arrival: "", direction: "", state: "")
-//                       }    
-                    //})
+                    return nil
                 })
+            })
     }
     
     // MARK: -Privates
     
-    /// Create an ecnoded date of now with format EEE MMM dd yyyy HH:mm:ss GMT+0100
+    /// Create an ecnoded date from now with format EEE MMM dd yyyy HH:mm:ss GMT+0100
     ///
     /// - Returns: a String representing the current date.
     static func createFormattedDate() -> String {

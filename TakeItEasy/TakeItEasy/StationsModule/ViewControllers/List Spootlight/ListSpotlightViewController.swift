@@ -80,11 +80,12 @@ class ListSpotlightViewController: UIViewController {
             })
             .disposed(by: bag)
         
-        // MARK: - UITableViewDelegate
+        // MARK: - Selected
         
         tableView
             .rx
-            .modelSelected(Station.self).subscribe(onNext: { [weak self] station in
+            .modelSelected(Station.self)
+            .subscribe(onNext: { [weak self] station in
                 if let mc = self?.managedObjectContext {
                     do {
                         try mc.rx.update(station)
@@ -96,7 +97,8 @@ class ListSpotlightViewController: UIViewController {
                 if let coordinator = self?.coordinatorDelegate {                    
                     coordinator.showMyStations()
                 }
-            }).disposed(by: bag)
+            })
+            .disposed(by: bag)
         
         tableView
             .rx

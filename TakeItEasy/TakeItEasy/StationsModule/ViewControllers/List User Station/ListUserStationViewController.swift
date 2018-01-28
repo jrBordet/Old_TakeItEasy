@@ -83,6 +83,7 @@ class ListUserStationViewController: UIViewController {
         animatedDataSource.canEditRowAtIndexPath = { _,_  in
             return true
         }
+        
         animatedDataSource.canMoveRowAtIndexPath = { _,_  in
             return true
         }

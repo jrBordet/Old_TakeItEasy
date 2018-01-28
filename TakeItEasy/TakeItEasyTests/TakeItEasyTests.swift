@@ -7,30 +7,92 @@
 //
 
 import XCTest
+import RxSwift
+import RxCocoa
+
 @testable import TakeItEasy
 
 class TakeItEasyTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    let bag = DisposeBag()
+    
+    func test_when_fetch_milano_stations() {
+        let asyncExpect = expectation(description: "fullfill test")
+        
+        TravelTrainAPI
+            .trainStations(of: "milano centrale")
+            .subscribe(onNext:{ stations in
+                XCTAssertEqual(stations[0].id, "S01700")
+                XCTAssertEqual(stations[0].name, "MILANO CENTRALE")
+            }, onError: nil,
+               onCompleted: {
+                asyncExpect.fulfill()
+            })
+            .disposed(by: bag)
+        
+        waitForExpectations(timeout: 30, handler: nil)
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    func test_when_fetch_train_departures() {
+        let asyncExpect = expectation(description: "fullfill test")
+        
+        TravelTrainAPI
+            .trainDepartures(of: "S01700")
+            .subscribe(onNext: { departures in
+                XCTAssertNotNil(departures)
+                XCTAssertNotNil(departures[0])
+            }, onError: { error in
+                XCTAssertNil(error)
+            }, onCompleted: {
+                asyncExpect.fulfill()
+            })
+            .disposed(by: bag)
+        
+        waitForExpectations(timeout: 30, handler: nil)
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func test_when_fetch_train_arrivals() {
+        let asyncExpect = expectation(description: "fullfill test")
+        
+        TravelTrainAPI
+            .trainArrivals(of: "S01700")
+            .subscribe(onNext: { arrivals in
+                XCTAssertNotNil(arrivals)
+                XCTAssertNotNil(arrivals[0])
+            }, onError: { error in
+                XCTAssertNil(error)
+            }, onCompleted: {
+                asyncExpect.fulfill()
+            })
+            .disposed(by: bag)
+        
+        waitForExpectations(timeout: 30, handler: nil)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_when_fetch_train_sections() {
+        let asyncExpect = expectation(description: "fullfill test")
+        
+        TravelTrainAPI
+            .trainSections(of: "S06000", "666")
+            .subscribe(onNext: { sections in
+                XCTAssertNotNil(sections[0])
+                                
+                sections.forEach({ travelDetail in
+                    if let detail = travelDetail {
+                        debugPrint(detail)
+                        
+                        debugPrint(detail.departureHour)
+                    }
+                })
+                
+            }, onError: { error in
+                XCTAssertNil(error)
+            }, onCompleted: {
+                asyncExpect.fulfill()
+            })
+            .disposed(by: bag)
+        
+        waitForExpectations(timeout: 30, handler: nil)
     }
     
 }

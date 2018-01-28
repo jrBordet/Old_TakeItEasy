@@ -86,7 +86,7 @@ class RouterStation {
         let listSpotlightViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ListSpotlightViewController") as! ListSpotlightViewController
         
         listSpotlightViewController.coordinatorDelegate = self as ListSpotlightCoordinator
-        listSpotlightViewController.managedObjectContext = self.managedObjectContext
+        listSpotlightViewController.managedObjectContext = managedObjectContext
         
         return listSpotlightViewController
     }
@@ -95,8 +95,23 @@ class RouterStation {
         let listTrainsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TrainsViewController") as! ListTrainsViewController
         
         listTrainsViewController.station = station
+        listTrainsViewController.coordinatorDelegate = self
         
         return listTrainsViewController
+    }
+    
+    private func createListSectionViewController() -> UIViewController {
+        let listSectionViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SectionViewController") as! ListSectionViewController
+        
+        return listSectionViewController
+    }
+}
+
+// MARK: - ListTrainsCoordinator
+
+extension RouterStation: ListTrainsCoordinator {
+    func showTravelDetail(of travel: Travel) {
+        navigation.pushViewController(createListSectionViewController(), animated: true)
     }
 }
 

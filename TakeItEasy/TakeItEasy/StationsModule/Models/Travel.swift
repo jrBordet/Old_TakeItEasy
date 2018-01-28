@@ -10,21 +10,38 @@ import Foundation
 
 struct TravelDetail {
     let number: Int
-    let category: String
     let current: Bool
-    let departure: String
-    let arrival: String
-    let direction: String
-    let state: String
+    let departure: Int
+    let arrival: Int
+    let station: String
+    let delay: Int
+    
+    var departureDate: Date {
+        get {
+            return Date(timeIntervalSince1970: TimeInterval(departure / 1000))
+        }
+    }
+    
+    var departureHour: String {
+        get {
+            let dateFormatter = DateFormatter()
+            
+            dateFormatter.dateStyle = .none
+            dateFormatter.timeStyle = .short
+            
+            dateFormatter.locale = Locale(identifier: "it_IT")
+            
+            return dateFormatter.string(from: departureDate)
+        }
+    }
 
-    init(_ number: Int, category: String, current: Bool, departure: String, arrival: String, direction: String, state: String) {
+    init(_ number: Int, current: Bool, departure: Int, arrival: Int, station: String, delay: Int) {
         self.number = number
-        self.category = category
         self.current = current
         self.departure = departure
         self.arrival = arrival
-        self.direction = direction
-        self.state = state
+        self.station = station
+        self.delay = delay
     }
 }
 

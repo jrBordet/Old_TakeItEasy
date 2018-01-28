@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		43E61F0F9B67CAAC8A89F610 /* Pods_TakeItEasyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081BF315E0EFA2266BF754DD /* Pods_TakeItEasyTests.framework */; };
+		493AB0CC2011D00500F47A24 /* SectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493AB0CB2011D00500F47A24 /* SectionCell.swift */; };
+		493AB0D02011D16300F47A24 /* ListSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493AB0CF2011D16300F47A24 /* ListSectionViewController.swift */; };
 		4948495A20010D7C00502C4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948495920010D7C00502C4E /* AppDelegate.swift */; };
 		4948496220010D7C00502C4E /* TakeItEasy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4948496020010D7C00502C4E /* TakeItEasy.xcdatamodeld */; };
 		4948496420010D7C00502C4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4948496320010D7C00502C4E /* Assets.xcassets */; };
@@ -48,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		081BF315E0EFA2266BF754DD /* Pods_TakeItEasyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakeItEasyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		493AB0CB2011D00500F47A24 /* SectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionCell.swift; sourceTree = "<group>"; };
+		493AB0CF2011D16300F47A24 /* ListSectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListSectionViewController.swift; sourceTree = "<group>"; };
 		4948495620010D7C00502C4E /* TakeItEasy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakeItEasy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4948495920010D7C00502C4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4948496120010D7C00502C4E /* TakeItEasy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TakeItEasy.xcdatamodel; sourceTree = "<group>"; };
@@ -206,8 +210,9 @@
 			children = (
 				494849922001161A00502C4E /* Main.storyboard */,
 				494849942001161A00502C4E /* List Spootlight */,
-				494849962001161A00502C4E /* List Trains */,
 				494849992001161A00502C4E /* List User Station */,
+				494849962001161A00502C4E /* List Trains */,
+				49BBA3A6200F2E3000320097 /* List Section */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -251,6 +256,15 @@
 				4948499E2001161A00502C4E /* TravelTrainAPI.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		49BBA3A6200F2E3000320097 /* List Section */ = {
+			isa = PBXGroup;
+			children = (
+				493AB0CF2011D16300F47A24 /* ListSectionViewController.swift */,
+				493AB0CB2011D00500F47A24 /* SectionCell.swift */,
+			);
+			path = "List Section";
 			sourceTree = "<group>";
 		};
 		73A805534E25C03BB286F4EB /* Frameworks */ = {
@@ -525,11 +539,13 @@
 			files = (
 				494849A92001161A00502C4E /* TravelTrainAPI.swift in Sources */,
 				494849A22001161A00502C4E /* RouterStation.swift in Sources */,
+				493AB0CC2011D00500F47A24 /* SectionCell.swift in Sources */,
 				4948499F2001161A00502C4E /* Station+Extensions.swift in Sources */,
 				494849A02001161A00502C4E /* Station.swift in Sources */,
 				494849AB2001180A00502C4E /* RootRouter.swift in Sources */,
 				4948496220010D7C00502C4E /* TakeItEasy.xcdatamodeld in Sources */,
 				494849A82001161A00502C4E /* String+Extensions.swift in Sources */,
+				493AB0D02011D16300F47A24 /* ListSectionViewController.swift in Sources */,
 				494849A12001161A00502C4E /* Travel.swift in Sources */,
 				494849A72001161A00502C4E /* ListUserStationViewController.swift in Sources */,
 				4948495A20010D7C00502C4E /* AppDelegate.swift in Sources */,

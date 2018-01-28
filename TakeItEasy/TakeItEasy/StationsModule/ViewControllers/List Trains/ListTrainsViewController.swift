@@ -10,6 +10,10 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+protocol ListTrainsCoordinator {
+    func showTravelDetail(of travel: Travel)
+}
+
 class ListTrainsViewController: UIViewController {
     @IBOutlet weak var departuresTableView: UITableView!
     @IBOutlet weak var directionControl: UISegmentedControl!
@@ -23,6 +27,8 @@ class ListTrainsViewController: UIViewController {
     var refreshControl: UIRefreshControl!
     
     private let bag = DisposeBag()
+    
+    final var coordinatorDelegate: ListTrainsCoordinator?
     
     // MARK: - Life cycle
     
@@ -60,31 +66,45 @@ class ListTrainsViewController: UIViewController {
     
     // MARK: - Privates
     
+    private func bindUI() {
+        trainsObservable
+            .bind(to:
+                departuresTableView
+                    .rx
+                    .items(cellIdentifier: "DepartureCell", cellType: TrainCell.self)) { index, model, cell in
+                        cell.backgroundColor = UIColor.black
+                        cell.destinationLabel?.textColor = UIColor.white
+                        cell.stateLabel?.textColor = UIColor.white
+                        
+                        if let train = model {
+                            cell.destinationLabel?.text = train.direction.capitalizingFirstLetter()
+                            cell.stateLabel?.text = train.state
+                            
+                            cell.numberLabel?.text = String(describing: train.number)
+                            cell.hourLabel?.text = train.time
+                        }
+            }
+            .disposed(by: bag)
+        
+        // MARK: - Selected
+
+        departuresTableView
+            .rx
+            .modelSelected(Travel.self)
+            .subscribe(onNext: { [weak self] travel in
+                if let coordinator = self?.coordinatorDelegate {
+                    coordinator.showTravelDetail(of: travel)
+                }
+            })
+            .disposed(by: bag)
+    }
+    
     @objc func refresh(sender:AnyObject) {
         performUpdate(of: directionControl.selectedSegmentIndex) {
             DispatchQueue.main.async(execute: {
                 self.refreshControl.endRefreshing()
             })
         }
-    }
-    
-    private func bindUI() {
-        trainsObservable
-            .bind(to: departuresTableView.rx
-                .items(cellIdentifier: "DepartureCell", cellType: TrainCell.self)) { index, model, cell in
-                    cell.backgroundColor = UIColor.black
-                    cell.destinationLabel?.textColor = UIColor.white
-                    cell.stateLabel?.textColor = UIColor.white
-
-                    if let train = model {
-                        cell.destinationLabel?.text = train.direction.capitalizingFirstLetter()
-                        cell.stateLabel?.text = train.state
-                        
-                        cell.numberLabel?.text = String(describing: train.number)
-                        cell.hourLabel?.text = train.time
-                    }
-            }
-            .disposed(by: bag)
     }
     
     private func performUpdate(of index: Int, completion: (() -> ())?) {
