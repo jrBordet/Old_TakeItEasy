@@ -28,7 +28,7 @@ protocol TravelTrainAPIProtocol {
     
     static func trainArrivals(of code: String) -> Observable<[Travel?]>
     
-    static func trainSections(of codeDeparture: String, _ codeTrain: String) -> Observable<[TravelDetail?]>
+    static func trainSections(of codeDeparture: String, _ codeTrain: String) -> Observable<[Section?]>
 }
 
 struct TravelTrainAPI: TravelTrainAPIProtocol {
@@ -172,7 +172,7 @@ struct TravelTrainAPI: TravelTrainAPIProtocol {
     ///   - codeDeparture: the station code. Example S06000
     ///   - codeTrain: the station code. Example 6660
     /// - Returns: a collection of TravelDetail
-    static func trainSections(of codeDeparture: String, _ codeTrain: String) -> Observable<[TravelDetail?]> {
+    static func trainSections(of codeDeparture: String, _ codeTrain: String) -> Observable<[Section?]> {
         let urlEncoded = "\(Address.sections.string)\(codeDeparture)/\(codeTrain)"
         
         return URLSession
@@ -180,12 +180,12 @@ struct TravelTrainAPI: TravelTrainAPIProtocol {
             .rx
             .json(request: URLRequest(url: URL(string: urlEncoded)!))
             .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
-            .map({ result -> [TravelDetail?] in
+            .map({ result -> [Section?] in
                 guard let solutions = result as? [Any] else {
                     return [nil]
                 }
                 
-                return solutions.map({ value -> TravelDetail? in
+                return solutions.map({ value -> Section? in
                     if let dictionary = value as? [String: AnyObject],
                         let current = dictionary["stazioneCorrente"] as? Bool,
                         let station = dictionary["stazione"] as? String,
@@ -196,7 +196,7 @@ struct TravelTrainAPI: TravelTrainAPIProtocol {
 
                         let delay = fermata["delay"] as? Int ?? 0
                         
-                        return TravelDetail(0,
+                        return Section(0,
                                             current: current,
                                             departure: departure,
                                             arrival: arrival,

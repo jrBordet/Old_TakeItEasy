@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		43E61F0F9B67CAAC8A89F610 /* Pods_TakeItEasyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081BF315E0EFA2266BF754DD /* Pods_TakeItEasyTests.framework */; };
+		491FA08E201DECEC00C609D2 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491FA08D201DECEC00C609D2 /* Section.swift */; };
 		493AB0CC2011D00500F47A24 /* SectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493AB0CB2011D00500F47A24 /* SectionCell.swift */; };
 		493AB0D02011D16300F47A24 /* ListSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493AB0CF2011D16300F47A24 /* ListSectionViewController.swift */; };
 		4948495A20010D7C00502C4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948495920010D7C00502C4E /* AppDelegate.swift */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		081BF315E0EFA2266BF754DD /* Pods_TakeItEasyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakeItEasyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		491FA08D201DECEC00C609D2 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		493AB0CB2011D00500F47A24 /* SectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionCell.swift; sourceTree = "<group>"; };
 		493AB0CF2011D16300F47A24 /* ListSectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListSectionViewController.swift; sourceTree = "<group>"; };
 		4948495620010D7C00502C4E /* TakeItEasy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakeItEasy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,6 +195,7 @@
 				4948498C2001161A00502C4E /* Station+Extensions.swift */,
 				4948498D2001161A00502C4E /* Station.swift */,
 				4948498E2001161A00502C4E /* Travel.swift */,
+				491FA08D201DECEC00C609D2 /* Section.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 				494849A72001161A00502C4E /* ListUserStationViewController.swift in Sources */,
 				4948495A20010D7C00502C4E /* AppDelegate.swift in Sources */,
 				494849A42001161A00502C4E /* ListSpotlightViewController.swift in Sources */,
+				491FA08E201DECEC00C609D2 /* Section.swift in Sources */,
 				494849A62001161A00502C4E /* TrainCell.swift in Sources */,
 				494849A52001161A00502C4E /* ListTrainsViewController.swift in Sources */,
 			);

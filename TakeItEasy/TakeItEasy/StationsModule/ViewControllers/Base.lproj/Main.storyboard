@@ -251,31 +251,49 @@
             <point key="canvasLocation" x="229.59999999999999" y="-21.428571428571431"/>
         </scene>
         <!--List Section View Controller-->
-        <scene sceneID="SUr-Uq-bm3">
+        <scene sceneID="VI8-UL-ZAg">
             <objects>
-                <tableViewController storyboardIdentifier="SectionViewController" id="vBM-F1-hbn" customClass="ListSectionViewController" customModule="TakeItEasy" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tnl-nW-AsC">
+                <viewController storyboardIdentifier="SectionViewController" id="fPJ-8D-g5m" customClass="ListSectionViewController" customModule="TakeItEasy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mbC-bN-Eco">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="trp-nx-BMU">
+                                <rect key="frame" x="177" y="396" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oVD-Up-Ujf">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SectionCell" id="Eqe-mq-37R" customClass="SectionCell" customModule="TakeItEasy" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Eqe-mq-37R" id="acp-J3-luV">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SectionCell" id="XOg-hr-gXl">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XOg-hr-gXl" id="TYJ-fu-4YT">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                    </tableView>
+                        <constraints>
+                            <constraint firstItem="jR7-Bw-xKb" firstAttribute="trailing" secondItem="oVD-Up-Ujf" secondAttribute="trailing" id="2ii-Eu-xDR"/>
+                            <constraint firstItem="jR7-Bw-xKb" firstAttribute="bottom" secondItem="oVD-Up-Ujf" secondAttribute="bottom" id="FLz-kG-1DA"/>
+                            <constraint firstItem="oVD-Up-Ujf" firstAttribute="top" secondItem="jR7-Bw-xKb" secondAttribute="top" id="UV0-cy-seU"/>
+                            <constraint firstItem="oVD-Up-Ujf" firstAttribute="leading" secondItem="jR7-Bw-xKb" secondAttribute="leading" id="jTi-bg-xyN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jR7-Bw-xKb"/>
+                    </view>
                     <connections>
-                        <outlet property="sessionTableView" destination="tnl-nW-AsC" id="6BP-69-Kww"/>
+                        <outlet property="activityIndicator" destination="trp-nx-BMU" id="6hO-Cv-e7R"/>
+                        <outlet property="sessionTableView" destination="oVD-Up-Ujf" id="Xx0-4c-2du"/>
                     </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="raV-9T-iH5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="44z-0C-rqe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1228" y="75"/>
+            <point key="canvasLocation" x="1002" y="-21"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="gPA-Mn-DcH">
@@ -310,7 +328,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="923-Dl-QvA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1209" y="-625"/>
+            <point key="canvasLocation" x="1191" y="-729"/>
         </scene>
     </scenes>
     <resources>

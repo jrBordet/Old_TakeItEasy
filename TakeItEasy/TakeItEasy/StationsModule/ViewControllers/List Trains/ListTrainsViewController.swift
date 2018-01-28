@@ -22,7 +22,7 @@ class ListTrainsViewController: UIViewController {
     final var station: Station?
     
     private var trainsVariable = Variable<[Travel?]>([nil])
-    lazy var trainsObservable: Observable<[Travel?]> = self.trainsVariable.asObservable()
+    lazy var trainsObservable: Observable<[Travel?]> = trainsVariable.asObservable()
     
     var refreshControl: UIRefreshControl!
     

@@ -16,12 +16,13 @@ protocol ListSectionCoordinator {
     func showTrainSections(of departureCode: String, trainCode: String)
 }
 
-class ListSectionViewController: UITableViewController {
+class ListSectionViewController: UIViewController {
     
     @IBOutlet var sessionTableView: UITableView!
-    
-    private var sessionVariable = Variable<[TravelDetail?]>([nil])
-    lazy var sessionObservable: Observable<[TravelDetail?]> = self.sessionVariable.asObservable()
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+
+    private var sessionVariable = Variable<[Section?]>([nil])
+    lazy var sessionObservable: Observable<[Section?]> = sessionVariable.asObservable()
     
     final var coordinatorDelegate: ListSectionCoordinator?
     
@@ -29,6 +30,15 @@ class ListSectionViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        bindUI()
+        
+//        TravelTrainAPI
+//        .trainSections(of: "", "")
+//        .map ({ (section: [Section?]) -> Bool in
+//                return true
+//        })
+        
     }
     
     override func didReceiveMemoryWarning() {
