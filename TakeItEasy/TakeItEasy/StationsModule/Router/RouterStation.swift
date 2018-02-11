@@ -100,8 +100,10 @@ class RouterStation {
         return listTrainsViewController
     }
     
-    private func createListSectionViewController() -> UIViewController {
+    private func createListSectionViewController(of travel: Travel) -> UIViewController {
         let listSectionViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SectionViewController") as! ListSectionViewController
+        
+        listSectionViewController.travel = travel
         
         return listSectionViewController
     }
@@ -111,7 +113,7 @@ class RouterStation {
 
 extension RouterStation: ListTrainsCoordinator {
     func showTravelDetail(of travel: Travel) {
-        navigation.pushViewController(createListSectionViewController(), animated: true)
+        navigation.pushViewController(createListSectionViewController(of: travel), animated: true)
     }
 }
 

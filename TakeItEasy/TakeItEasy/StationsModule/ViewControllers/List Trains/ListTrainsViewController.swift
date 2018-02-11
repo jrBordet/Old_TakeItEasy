@@ -139,13 +139,17 @@ class ListTrainsViewController: UIViewController {
         }
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
 }
 
 // MARK: - UITableViewDelegate
 
 extension ListTrainsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 58
+        return 64
     }
     
 }

@@ -29,17 +29,20 @@ protocol TravelTrainAPIProtocol {
     static func trainArrivals(of code: String) -> Observable<[Travel?]>
     
     static func trainSections(of codeDeparture: String, _ codeTrain: String) -> Observable<[Section?]>
+    
+    static func trainTrend(of codeDeparture: String, _ codeTrain: String) -> Observable<Trend?>
 }
 
 struct TravelTrainAPI: TravelTrainAPIProtocol {
     
     // MARK: - API Addresses
-    
+
     fileprivate enum Address: String {
         case stations = "autocompletaStazione/"
         case departures = "partenze/"
         case arrivals = "arrivi/"
         case sections = "tratteCanvas/"
+        case trend = "andamentoTreno/"
         
         var baseURL: String {
             return "http://www.viaggiatreno.it/viaggiatrenonew/resteasy/viaggiatreno/"
@@ -105,6 +108,7 @@ struct TravelTrainAPI: TravelTrainAPIProtocol {
                 
                 return solutions.map({ value -> Travel? in
                     if let hourDeparture = value as? [String: AnyObject],
+                        let originCode = hourDeparture["codOrigine"] as? String,
                         let hour = hourDeparture["compOrarioPartenza"] as? String,
                         let number = hourDeparture["numeroTreno"] as? Int,
                         let category = hourDeparture["categoria"] as? String,
@@ -113,6 +117,7 @@ struct TravelTrainAPI: TravelTrainAPIProtocol {
                         let state = delay[0] as? String {
                         
                         return Travel(number,
+                                      originCode: originCode,
                                       category: category,
                                       time: hour,
                                       direction: direction,
@@ -142,10 +147,11 @@ struct TravelTrainAPI: TravelTrainAPIProtocol {
             .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .map({ result -> [Travel?] in
                 guard let solutions = result as? [Any] else { return [] }
-                
+               // codOrigine
                 return solutions.map({ value -> Travel? in
                     if let dictionary = value as? [String: AnyObject],
                         let number = dictionary["numeroTreno"] as? Int,
+                        let originCode = dictionary["codOrigine"] as? String,
                         let category = dictionary["categoria"] as? String,
                         let hour = dictionary["compOrarioArrivo"] as? String,
                         let direction = dictionary["origine"] as? String,
@@ -153,6 +159,7 @@ struct TravelTrainAPI: TravelTrainAPIProtocol {
                         let state = delay[0] as? String {
                         
                         return Travel(number,
+                                      originCode: originCode,
                                       category: category,
                                       time: hour,
                                       direction: direction,
@@ -193,15 +200,15 @@ struct TravelTrainAPI: TravelTrainAPIProtocol {
                         
                         let departure = fermata["partenza_teorica"] as? Int ?? 0
                         let arrival = fermata["arrivo_teorico"] as? Int ?? 0
-
+                        
                         let delay = fermata["delay"] as? Int ?? 0
                         
                         return Section(0,
-                                            current: current,
-                                            departure: departure,
-                                            arrival: arrival,
-                                            station: station,
-                                            delay: delay)
+                                       current: current,
+                                       departure: departure,
+                                       arrival: arrival,
+                                       station: station,
+                                       delay: delay)
                     }
                     
                     return nil
@@ -209,7 +216,34 @@ struct TravelTrainAPI: TravelTrainAPIProtocol {
             })
     }
     
-    // MARK: -Privates
+    //TODO: http://www.viaggiatreno.it/viaggiatrenonew/resteasy/viaggiatreno/andamentoTreno/[codPartenza]/[codTreno]
+    static func trainTrend(of codeDeparture: String, _ codeTrain: String) -> Observable<Trend?> {
+        let urlEncoded = "\(Address.sections.string)\(codeDeparture)/\(codeTrain)"
+        
+        return URLSession
+            .shared
+            .rx
+            .data(request: URLRequest(url: URL(string: urlEncoded)!))
+            .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
+            .map({ result -> Trend? in
+                do {
+                    let andamento = try JSONDecoder().decode(Trend.self, from: result)
+                    
+                    debugPrint(andamento)
+                    
+                    return andamento
+                }
+                catch {
+                    debugPrint(error)
+                    return nil
+                }
+                
+                return nil
+            })
+
+    }
+    
+    // MARK: - Privates
     
     /// Create an ecnoded date from now with format EEE MMM dd yyyy HH:mm:ss GMT+0100
     ///
