@@ -20,7 +20,6 @@ class ListSectionViewController: UIViewController {
     
     @IBOutlet var sessionTableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet var headerInformationLabel: UILabel!
     
     private var sessionVariable = Variable<[Section?]>([nil])
     lazy var sessionObservable: Observable<[Section?]> = sessionVariable.asObservable()
@@ -34,6 +33,8 @@ class ListSectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        guard let travel = travel else { return }
+        
         // Table view
         _ = sessionTableView
             .rx
@@ -41,7 +42,7 @@ class ListSectionViewController: UIViewController {
         
         bindUI()
         
-        guard let travel = travel else { return }
+        title = travel.direction
         
         TravelTrainAPI
             .trainSections(of: travel.originCode, String(travel.number))
@@ -54,40 +55,21 @@ class ListSectionViewController: UIViewController {
             .disposed(by: bag)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     // MARK: - Privates
     
     private func bindUI() {
-        sessionObservable
-            .bind(to:
-                sessionTableView
-                    .rx
-                    .items(cellIdentifier: "SectionCell", cellType: SectionCell.self)) { index, model, cell in
-                        if let model = model {
-                            cell.stationLabel.text = model.station.capitalized
-                            cell.hourlabel.text = model.departureHour
-                            
-                            if model.current {
-                                cell.hourlabel.textColor = UIColor.green
-                                
-//                                cell.stationLabel.transform = CGAffineTransform(scaleX: 2.6, y: 2.6)
-//                                cell.stationLabel.alpha = 0.3
-//
-//                                UIView.animate(withDuration: 0.7, animations: {
-//                                    cell.stationLabel.transform = CGAffineTransform.identity
-//                                    cell.stationLabel.alpha = 1.0
-//                                })
-                                
-                            } else {
-                                cell.hourlabel.textColor = UIColor.lightGray
-                            }
-                            
-                           // cell.isCurrentStation = model.current
-                        }
+        sessionObservable.bind(to: sessionTableView.rx.items(cellIdentifier: "SectionCell", cellType: SectionCell.self)) { index, model, cell in
+            guard let model = model else { return }
+            
+            cell.stationLabel.text = model.station.capitalized
+            cell.hourlabel.text = model.departureHour
+            
+            if model.current {
+                cell.hourlabel.textColor = UIColor.green
+            } else {
+                cell.hourlabel.textColor = UIColor.lightGray
+            }
+            
             }
             .disposed(by: bag)
     }

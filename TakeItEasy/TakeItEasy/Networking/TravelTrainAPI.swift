@@ -216,7 +216,14 @@ struct TravelTrainAPI: TravelTrainAPIProtocol {
             })
     }
     
-    //TODO: http://www.viaggiatreno.it/viaggiatrenonew/resteasy/viaggiatreno/andamentoTreno/[codPartenza]/[codTreno]
+    /// Perform the Http request to retrieve all the trends from the departure code and train code.
+    /// Example:
+    /// [Url ecample](http://www.viaggiatreno.it/viaggiatrenonew/resteasy/viaggiatreno/andamentoTreno/[codPartenza]/[codTreno])
+    ///
+    /// - Parameters:
+    ///   - codeDeparture: the code of the departure. Example S00219
+    ///   - codeTrain: the station code. Example 10211
+    /// - Returns: a collection of Trend
     static func trainTrend(of codeDeparture: String, _ codeTrain: String) -> Observable<Trend?> {
         let urlEncoded = "\(Address.sections.string)\(codeDeparture)/\(codeTrain)"
         
@@ -236,9 +243,7 @@ struct TravelTrainAPI: TravelTrainAPIProtocol {
                 catch {
                     debugPrint(error)
                     return nil
-                }
-                
-                return nil
+                }                
             })
 
     }
@@ -250,6 +255,8 @@ struct TravelTrainAPI: TravelTrainAPIProtocol {
     /// - Returns: a String representing the current date.
     static func createFormattedDate() -> String {
         let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = NSTimeZone(abbreviation: "GMT")! as TimeZone
+
         dateFormatter.dateFormat = "EEE MMM dd yyyy HH:mm:ss"
         
         return (dateFormatter.string(from: Date()) + " GMT+0100").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!

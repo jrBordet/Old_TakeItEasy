@@ -22,7 +22,17 @@ class RouterStation {
         
         navigation = UINavigationController(rootViewController: createListUserStationViewController())
         
-        navigation?.navigationBar.isHidden = true
+        navigation.navigationBar.barTintColor = .black
+        navigation.navigationBar.tintColor = .green
+        navigation.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.lightGray]
+        
+        if #available(iOS 11.0, *) {
+            navigation.navigationBar.prefersLargeTitles = true
+            
+            UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.lightGray]
+        } else {
+             navigation.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.lightGray]
+        }
         
         return navigation
     }

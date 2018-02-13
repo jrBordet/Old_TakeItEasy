@@ -33,7 +33,7 @@ class ListUserStationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setNeedsStatusBarAppearanceUpdate()
+        //setNeedsStatusBarAppearanceUpdate()
                 
         bindUserStationsUI()
     }
