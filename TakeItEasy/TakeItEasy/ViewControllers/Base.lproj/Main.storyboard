@@ -54,9 +54,6 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="osb-gu-laQ"/>
-                                    <barButtonItem image="tabbar_stations" id="pod-8X-4Da">
-                                        <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
