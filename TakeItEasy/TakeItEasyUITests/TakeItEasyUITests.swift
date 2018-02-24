@@ -9,7 +9,7 @@
 import XCTest
 
 class TakeItEasyUITests: XCTestCase {
-        
+    
     override func setUp() {
         super.setUp()
         
@@ -29,7 +29,14 @@ class TakeItEasyUITests: XCTestCase {
     }
     
     func testExample() {
-        // Use recording to get started writing UI tests.
+        
+        let app = XCUIApplication()
+        app.toolbars.buttons["Item"].tap()
+        app.searchFields["Trova la tua stazione"].typeText("Aost")
+        
+        let aostaStaticText = app.tables/*@START_MENU_TOKEN@*/.staticTexts["Aosta"]/*[[".cells.staticTexts[\"Aosta\"]",".staticTexts[\"Aosta\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        aostaStaticText.tap()
+                // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     

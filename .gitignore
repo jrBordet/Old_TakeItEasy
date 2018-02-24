@@ -404,3 +404,15 @@ TakeItEasy/Pods/Target Support Files/SwinjectStoryboard/SwinjectStoryboard-prefi
 TakeItEasy/Pods/Target Support Files/SwinjectStoryboard/SwinjectStoryboard-umbrella.h
 TakeItEasy/Pods/Target Support Files/SwinjectStoryboard/SwinjectStoryboard.modulemap
 TakeItEasy/Pods/Target Support Files/SwinjectStoryboard/SwinjectStoryboard.xcconfig
+TakeItEasy/Pods/RxCocoa/RxCocoa/Traits/SharedSequence/ObservableConvertibleType+SharedSequence.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Traits/Signal/ControlEvent+Signal.swift
+TakeItEasy/Pods/SwiftSpinner/LICENSE
+TakeItEasy/Pods/SwiftSpinner/README.md
+TakeItEasy/Pods/SwiftSpinner/SwiftSpinner/SwiftSpinner.h
+TakeItEasy/Pods/SwiftSpinner/SwiftSpinner/SwiftSpinner.swift
+TakeItEasy/Pods/Target Support Files/SwiftSpinner/Info.plist
+TakeItEasy/Pods/Target Support Files/SwiftSpinner/SwiftSpinner-dummy.m
+TakeItEasy/Pods/Target Support Files/SwiftSpinner/SwiftSpinner-prefix.pch
+TakeItEasy/Pods/Target Support Files/SwiftSpinner/SwiftSpinner-umbrella.h
+TakeItEasy/Pods/Target Support Files/SwiftSpinner/SwiftSpinner.modulemap
+TakeItEasy/Pods/Target Support Files/SwiftSpinner/SwiftSpinner.xcconfig

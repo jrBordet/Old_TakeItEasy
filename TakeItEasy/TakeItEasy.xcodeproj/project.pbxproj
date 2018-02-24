@@ -32,6 +32,7 @@
 		494849A92001161A00502C4E /* TravelTrainAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948499E2001161A00502C4E /* TravelTrainAPI.swift */; };
 		494849AB2001180A00502C4E /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494849AA2001180A00502C4E /* RootRouter.swift */; };
 		4966DB4E202E095200722F7D /* Trend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4966DB4D202E095200722F7D /* Trend.swift */; };
+		49CBB6D7203FFBBF0075FA69 /* SwiftSpinner+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBB6D6203FFBBF0075FA69 /* SwiftSpinner+Extensions.swift */; };
 		FB63235D5F86D09AD875C281 /* Pods_TakeItEasy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD58A297409666B0C401DFF1 /* Pods_TakeItEasy.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +85,7 @@
 		4948499E2001161A00502C4E /* TravelTrainAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelTrainAPI.swift; sourceTree = "<group>"; };
 		494849AA2001180A00502C4E /* RootRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
 		4966DB4D202E095200722F7D /* Trend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trend.swift; sourceTree = "<group>"; };
+		49CBB6D6203FFBBF0075FA69 /* SwiftSpinner+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftSpinner+Extensions.swift"; sourceTree = "<group>"; };
 		602C2F5611BB17E164885FD3 /* Pods-TakeItEasy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeItEasy.release.xcconfig"; path = "Pods/Target Support Files/Pods-TakeItEasy/Pods-TakeItEasy.release.xcconfig"; sourceTree = "<group>"; };
 		6F8D8C318A67036644A5B683 /* Pods-TakeItEasy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeItEasy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TakeItEasy/Pods-TakeItEasy.debug.xcconfig"; sourceTree = "<group>"; };
 		BA30ECD4CF65E413D713B9C0 /* Pods-TakeItEasyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeItEasyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TakeItEasyTests/Pods-TakeItEasyTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -155,7 +157,9 @@
 			isa = PBXGroup;
 			children = (
 				4948499D2001161A00502C4E /* Networking */,
-				4948498A2001161A00502C4E /* StationsModule */,
+				4948498B2001161A00502C4E /* Models */,
+				4948498F2001161A00502C4E /* Router */,
+				494849912001161A00502C4E /* ViewControllers */,
 				4948499B2001161A00502C4E /* Utilities */,
 				4948495920010D7C00502C4E /* AppDelegate.swift */,
 				494849AA2001180A00502C4E /* RootRouter.swift */,
@@ -183,16 +187,6 @@
 				4948497E20010D7C00502C4E /* Info.plist */,
 			);
 			path = TakeItEasyUITests;
-			sourceTree = "<group>";
-		};
-		4948498A2001161A00502C4E /* StationsModule */ = {
-			isa = PBXGroup;
-			children = (
-				4948498B2001161A00502C4E /* Models */,
-				4948498F2001161A00502C4E /* Router */,
-				494849912001161A00502C4E /* ViewControllers */,
-			);
-			path = StationsModule;
 			sourceTree = "<group>";
 		};
 		4948498B2001161A00502C4E /* Models */ = {
@@ -256,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				4948499C2001161A00502C4E /* String+Extensions.swift */,
+				49CBB6D6203FFBBF0075FA69 /* SwiftSpinner+Extensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -529,6 +524,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxCoreData/RxCoreData.framework",
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSpinner/SwiftSpinner.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -537,6 +533,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCoreData.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSpinner.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -551,6 +548,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				494849A92001161A00502C4E /* TravelTrainAPI.swift in Sources */,
+				49CBB6D7203FFBBF0075FA69 /* SwiftSpinner+Extensions.swift in Sources */,
 				494849A22001161A00502C4E /* RouterStation.swift in Sources */,
 				493AB0CC2011D00500F47A24 /* SectionCell.swift in Sources */,
 				4948499F2001161A00502C4E /* Station+Extensions.swift in Sources */,

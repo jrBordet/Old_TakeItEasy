@@ -112,7 +112,7 @@ class ListSpotlightViewController: UIViewController {
     // MARK: - Navigation
 
     @IBAction func myStationsTap(_ sender: UIBarButtonItem) {
-        if let coordinator = self.coordinatorDelegate {
+        if let coordinator = coordinatorDelegate {
             coordinator.showMyStations()
         }
     }

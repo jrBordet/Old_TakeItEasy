@@ -9,6 +9,12 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SwiftSpinner
+
+enum Update: Int {
+    case departure
+    case arrivals
+}
 
 protocol ListTrainsCoordinator {
     func showTravelDetail(of travel: Travel)
@@ -16,52 +22,53 @@ protocol ListTrainsCoordinator {
 
 class ListTrainsViewController: UIViewController {
     @IBOutlet weak var departuresTableView: UITableView!
-    @IBOutlet weak var directionControl: UISegmentedControl!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     final var station: Station?
     
     private var trainsVariable = Variable<[Travel?]>([nil])
     lazy var trainsObservable: Observable<[Travel?]> = trainsVariable.asObservable()
     
-    var refreshControl: UIRefreshControl!
-    
     private let bag = DisposeBag()
     
     final var coordinatorDelegate: ListTrainsCoordinator?
+    
+    private let loadingMessage = "Loading"
     
     // MARK: - Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Partenze"
+
         // Table view
         _ = departuresTableView
             .rx
             .setDelegate(self)
         
-        // Segmented control for directions
-        directionControl
-            .rx
-            .selectedSegmentIndex.subscribe { [weak self] (index) in
-                if let index = index.element
-                {
-                    self?.performUpdate(of: index, completion: nil)
-                }
-            }
-            .disposed(by: bag)
-        
-        // Refresh controll to pull
-        refreshControl = UIRefreshControl()
-        refreshControl.tintColor = .green
-        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
-        departuresTableView.addSubview(refreshControl)
-        
-        // UI
-        activityIndicator.startAnimating()
+        performUpdate(of: .departure)
         
         bindUI()
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func refreshAction(_ sender: Any) {
+        SwiftSpinner.show(loadingMessage)
+        
+        performUpdate(of: .departure)
+    }
+    
+    @IBAction func performDeparturesUpdate(_ sender: Any) {
+        title = "Partenze"
+        
+        performUpdate(of: .departure)
+    }
+    
+    @IBAction func performArrivalsUpdate(_ sender: Any) {
+        title = "Arrivi"
+        
+        performUpdate(of: .arrivals)
     }
     
     // MARK: - Privates
@@ -87,7 +94,7 @@ class ListTrainsViewController: UIViewController {
             .disposed(by: bag)
         
         // MARK: - Selected
-
+        
         departuresTableView
             .rx
             .modelSelected(Travel.self)
@@ -99,43 +106,29 @@ class ListTrainsViewController: UIViewController {
             .disposed(by: bag)
     }
     
-    @objc func refresh(sender:AnyObject) {
-        performUpdate(of: directionControl.selectedSegmentIndex) {
-            DispatchQueue.main.async(execute: {
-                self.refreshControl.endRefreshing()
-            })
-        }
-    }
-    
-    private func performUpdate(of index: Int, completion: (() -> ())?) {
-        if let station = station, index == 0 {
-            TravelTrainAPI
-                .trainDepartures(of: station.id)
-                .map({ [weak self] departures -> Bool in
-                    self?.trainsVariable.value = departures
-                    
-                    if let completion = completion {
-                        completion()
-                    }
-
-                    return false
-                })
-                .bind(to: activityIndicator.rx.isAnimating)
+    private func performUpdate(of index: Update) {
+        SwiftSpinner.show(loadingMessage)
+        
+        guard let station = station else { return }
+        
+        switch index {
+        case .departure:
+            TravelTrainAPI.trainDepartures(of: station.id).map({ [weak self] departures -> Bool in
+                self?.trainsVariable.value = departures
+                
+                return false
+            }).bind(to: SwiftSpinner.sharedInstance.rx_visible)
                 .disposed(by: bag)
-        } else if let station = station, index == 1 {
-            TravelTrainAPI
-                .trainArrivals(of: station.id)
-                .map({ [weak self] departures -> Bool in
-                    self?.trainsVariable.value = departures
-                    
-                    if let completion = completion {
-                        completion()
-                    }
-                    
-                    return false
-                })
-                .bind(to: activityIndicator.rx.isAnimating)
+            return
+            
+        case .arrivals:
+            TravelTrainAPI.trainArrivals(of: station.id).map({ [weak self] departures -> Bool in
+                self?.trainsVariable.value = departures
+                
+                return false
+            }).bind(to: SwiftSpinner.sharedInstance.rx_visible)
                 .disposed(by: bag)
+            return
         }
     }
     

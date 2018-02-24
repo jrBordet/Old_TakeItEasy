@@ -28,10 +28,9 @@ class RouterStation {
         
         if #available(iOS 11.0, *) {
             navigation.navigationBar.prefersLargeTitles = true
+            navigation.navigationItem.largeTitleDisplayMode = .automatic
             
             UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.lightGray]
-        } else {
-             navigation.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.lightGray]
         }
         
         return navigation
@@ -79,7 +78,6 @@ class RouterStation {
         managedObjectContext.persistentStoreCoordinator = coordinator
         return managedObjectContext
     }()
-    
     
     // MARK: - Factory methods
     

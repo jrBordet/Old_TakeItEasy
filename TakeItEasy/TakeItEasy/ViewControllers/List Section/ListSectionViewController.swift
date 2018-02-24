@@ -11,15 +11,14 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 import RxCoreData
+import SwiftSpinner
 
 protocol ListSectionCoordinator {
     func showTrainSections(of departureCode: String, trainCode: String)
 }
 
 class ListSectionViewController: UIViewController {
-    
     @IBOutlet var sessionTableView: UITableView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     private var sessionVariable = Variable<[Section?]>([nil])
     lazy var sessionObservable: Observable<[Section?]> = sessionVariable.asObservable()
@@ -29,6 +28,8 @@ class ListSectionViewController: UIViewController {
     final var travel: Travel?
     
     private let bag = DisposeBag()
+    
+    private let loadingMessage = "Loading"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,18 +45,36 @@ class ListSectionViewController: UIViewController {
         
         title = travel.direction
         
-        TravelTrainAPI
-            .trainSections(of: travel.originCode, String(travel.number))
-            .map ({ [weak self] section -> Bool in
-                self?.sessionVariable.value = section
-                
-                return true
-            })
-            .bind(to: activityIndicator.rx.isAnimating)
-            .disposed(by: bag)
+        SwiftSpinner.show(loadingMessage)
+        
+        performUpdate(of: travel.originCode,
+                      trainNumber: String(travel.number))
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func refreshAction(_ sender: Any) {
+        guard let travel = travel else { return }
+
+        SwiftSpinner.show(loadingMessage)
+        
+        performUpdate(of: travel.originCode, trainNumber: String(travel.number))
     }
     
     // MARK: - Privates
+    
+    private func performUpdate(of originCode: String, trainNumber: String) {
+        TravelTrainAPI
+            .trainSections(of: originCode, trainNumber)
+            .map ({ [weak self] section -> Bool in
+                
+                self?.sessionVariable.value = section
+                
+                return false
+            })
+            .bind(to: SwiftSpinner.sharedInstance.rx_visible)
+            .disposed(by: bag)
+    }
     
     private func bindUI() {
         sessionObservable.bind(to: sessionTableView.rx.items(cellIdentifier: "SectionCell", cellType: SectionCell.self)) { index, model, cell in

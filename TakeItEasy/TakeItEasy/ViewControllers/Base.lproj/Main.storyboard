@@ -47,11 +47,15 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="WIx-1z-COF">
                                 <rect key="frame" x="0.0" y="729" width="375" height="49"/>
                                 <items>
-                                    <barButtonItem title="Item" image="spotlight" landscapeImage="spotlight" id="pod-8X-4Da">
+                                    <barButtonItem title="Item" image="spotlight" landscapeImage="spotlight" id="tZD-30-8O9">
                                         <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <action selector="spotlightTap:" destination="9j7-Dh-kd4" id="7N3-P9-GrZ"/>
+                                            <action selector="spotlightTap:" destination="9j7-Dh-kd4" id="21W-ta-ULx"/>
                                         </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="osb-gu-laQ"/>
+                                    <barButtonItem image="tabbar_stations" id="pod-8X-4Da">
+                                        <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
@@ -84,12 +88,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" barStyle="black" placeholder="Trova la tua stazione" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSv-Fr-BGV">
-                                <rect key="frame" x="0.0" y="44" width="375" height="56"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="barTintColor" red="0.050980392156862744" green="0.050980392156862744" blue="0.050980392156862744" alpha="0.35183005136986301" colorSpace="calibratedRGB"/>
-                                <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="done"/>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="H0P-vS-Bsi">
                                 <rect key="frame" x="0.0" y="100" width="375" height="678"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -116,6 +114,12 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" barStyle="black" placeholder="Trova la tua stazione" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSv-Fr-BGV">
+                                <rect key="frame" x="0.0" y="44" width="375" height="56"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="barTintColor" red="0.050980392156862744" green="0.050980392156862744" blue="0.050980392156862744" alpha="0.35183005136986301" colorSpace="calibratedRGB"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet" returnKeyType="done"/>
+                            </searchBar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="jd9-6E-fK8">
                                 <rect key="frame" x="0.0" y="729" width="375" height="49"/>
                                 <items>
@@ -149,7 +153,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-607" y="-21"/>
+            <point key="canvasLocation" x="-1428" y="-682"/>
         </scene>
         <!--Treni-->
         <scene sceneID="eeU-gR-uoL">
@@ -163,7 +167,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="690"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DepartureCell" rowHeight="64" id="KXa-Lj-kDN" customClass="TrainCell" customModule="TakeItEasy" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="DepartureCell" rowHeight="64" id="KXa-Lj-kDN" customClass="TrainCell" customModule="TakeItEasy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KXa-Lj-kDN" id="edG-Is-Hwl">
@@ -215,36 +219,37 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="lpw-lR-kC2">
-                                <rect key="frame" x="177.66666666666666" y="396" width="20" height="20"/>
-                            </activityIndicatorView>
-                            <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KFu-ET-CZW">
-                                <rect key="frame" x="0.0" y="750" width="375" height="29"/>
-                                <segments>
-                                    <segment title="Partenze"/>
-                                    <segment title="Arrivi"/>
-                                </segments>
-                            </segmentedControl>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="aT5-gu-uq6">
                                 <rect key="frame" x="0.0" y="734" width="375" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="VXr-39-Ov3"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="Time" id="qgC-am-9Bi">
+                                    <barButtonItem systemItem="refresh" id="qgC-am-9Bi">
                                         <color key="tintColor" red="0.2655232461" green="1" blue="0.24260956010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="refreshAction:" destination="Opt-L1-QQI" id="4F9-34-Er7"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="KbA-pU-he0"/>
+                                    <barButtonItem image="ic_trending_up_white_36pt" id="k1a-mN-DBG">
+                                        <color key="tintColor" red="0.2655232461" green="1" blue="0.24260956010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="performDeparturesUpdate:" destination="Opt-L1-QQI" id="I6I-CD-poT"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Item" image="ic_trending_down_white_36pt" id="SYh-cz-T4F">
+                                        <color key="tintColor" red="0.2655232461" green="1" blue="0.24260956010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="performArrivalsUpdate:" destination="Opt-L1-QQI" id="Umy-w5-TOe"/>
+                                        </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="lpw-lR-kC2" firstAttribute="centerX" secondItem="xds-Ru-SO3" secondAttribute="centerX" id="HId-xa-iNz"/>
                             <constraint firstItem="J2w-Dc-3Pg" firstAttribute="leading" secondItem="oP9-p6-PyE" secondAttribute="leading" id="MgY-5w-FIF"/>
-                            <constraint firstItem="oP9-p6-PyE" firstAttribute="trailing" secondItem="KFu-ET-CZW" secondAttribute="trailing" id="X8y-fZ-oc3"/>
-                            <constraint firstItem="oP9-p6-PyE" firstAttribute="bottom" secondItem="KFu-ET-CZW" secondAttribute="bottom" id="ZGD-Iz-vuZ"/>
-                            <constraint firstItem="KFu-ET-CZW" firstAttribute="leading" secondItem="oP9-p6-PyE" secondAttribute="leading" id="ea4-hr-dVS"/>
                             <constraint firstItem="aT5-gu-uq6" firstAttribute="trailing" secondItem="oP9-p6-PyE" secondAttribute="trailing" id="edi-DO-HjZ"/>
-                            <constraint firstItem="lpw-lR-kC2" firstAttribute="centerY" secondItem="xds-Ru-SO3" secondAttribute="centerY" id="fC7-vj-cGK"/>
                             <constraint firstItem="aT5-gu-uq6" firstAttribute="bottom" secondItem="oP9-p6-PyE" secondAttribute="bottom" id="gqd-MJ-9Rx"/>
                             <constraint firstItem="aT5-gu-uq6" firstAttribute="leading" secondItem="oP9-p6-PyE" secondAttribute="leading" id="jMi-nI-7Z6"/>
                             <constraint firstItem="aT5-gu-uq6" firstAttribute="top" secondItem="J2w-Dc-3Pg" secondAttribute="bottom" id="jls-3E-faO"/>
@@ -254,14 +259,12 @@
                         <viewLayoutGuide key="safeArea" id="oP9-p6-PyE"/>
                     </view>
                     <connections>
-                        <outlet property="activityIndicator" destination="lpw-lR-kC2" id="phM-66-x6y"/>
                         <outlet property="departuresTableView" destination="J2w-Dc-3Pg" id="M4a-ak-B3o"/>
-                        <outlet property="directionControl" destination="KFu-ET-CZW" id="b8S-xS-vLk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wON-4P-iIF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="229.59999999999999" y="-21.428571428571431"/>
+            <point key="canvasLocation" x="-418" y="-21"/>
         </scene>
         <!--Partenze-->
         <scene sceneID="VI8-UL-ZAg">
@@ -271,12 +274,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="trp-nx-BMU">
-                                <rect key="frame" x="177" y="396" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oVD-Up-Ujf">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="690"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SectionCell" rowHeight="64" id="Eqe-mq-37R" customClass="SectionCell" customModule="TakeItEasy" customModuleProvider="target">
@@ -314,24 +313,40 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="qZr-Lb-F3i">
+                                <rect key="frame" x="0.0" y="734" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="2zA-zt-Hxm"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="refresh" id="sGj-me-H5h">
+                                        <color key="tintColor" red="0.2655232461" green="1" blue="0.24260956010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="refreshAction:" destination="fPJ-8D-g5m" id="YMQ-ac-8Dx"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="jR7-Bw-xKb" firstAttribute="trailing" secondItem="oVD-Up-Ujf" secondAttribute="trailing" id="2ii-Eu-xDR"/>
-                            <constraint firstItem="oVD-Up-Ujf" firstAttribute="bottom" secondItem="jR7-Bw-xKb" secondAttribute="bottom" id="aqJ-bc-HkU"/>
+                            <constraint firstItem="qZr-Lb-F3i" firstAttribute="trailing" secondItem="jR7-Bw-xKb" secondAttribute="trailing" id="EO7-7J-3ev"/>
+                            <constraint firstItem="jR7-Bw-xKb" firstAttribute="bottom" secondItem="qZr-Lb-F3i" secondAttribute="bottom" id="NcX-b7-hRE"/>
+                            <constraint firstItem="oVD-Up-Ujf" firstAttribute="trailing" secondItem="jR7-Bw-xKb" secondAttribute="trailing" id="Tz9-KJ-150"/>
+                            <constraint firstItem="qZr-Lb-F3i" firstAttribute="top" secondItem="oVD-Up-Ujf" secondAttribute="bottom" id="az4-gt-d9z"/>
                             <constraint firstItem="oVD-Up-Ujf" firstAttribute="leading" secondItem="jR7-Bw-xKb" secondAttribute="leading" id="jTi-bg-xyN"/>
                             <constraint firstItem="oVD-Up-Ujf" firstAttribute="top" secondItem="jR7-Bw-xKb" secondAttribute="top" id="pLF-dk-bLy"/>
+                            <constraint firstItem="qZr-Lb-F3i" firstAttribute="leading" secondItem="jR7-Bw-xKb" secondAttribute="leading" id="xjQ-xm-jJq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jR7-Bw-xKb"/>
                     </view>
                     <connections>
-                        <outlet property="activityIndicator" destination="trp-nx-BMU" id="6hO-Cv-e7R"/>
                         <outlet property="sessionTableView" destination="oVD-Up-Ujf" id="Xx0-4c-2du"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="44z-0C-rqe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1000.8" y="-21.428571428571431"/>
+            <point key="canvasLocation" x="353" y="-21"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="gPA-Mn-DcH">
@@ -366,10 +381,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="923-Dl-QvA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1001" y="-731"/>
+            <point key="canvasLocation" x="353" y="-732"/>
         </scene>
     </scenes>
     <resources>
+        <image name="ic_trending_down_white_36pt" width="36" height="36"/>
+        <image name="ic_trending_up_white_36pt" width="36" height="36"/>
         <image name="spotlight" width="24" height="24"/>
         <image name="tabbar_stations" width="24" height="24"/>
     </resources>
