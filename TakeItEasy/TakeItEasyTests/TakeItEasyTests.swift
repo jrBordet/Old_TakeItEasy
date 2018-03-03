@@ -37,7 +37,7 @@ class TakeItEasyTests: XCTestCase {
         let asyncExpect = expectation(description: "fullfill test")
         
         TravelTrainAPI
-            .trainDepartures(of: "S01700")
+            .trainDepartures(of: "S01700", date: Date())
             .subscribe(onNext: { departures in
                 XCTAssertNotNil(departures)
                 XCTAssertNotNil(departures[0])
@@ -55,7 +55,7 @@ class TakeItEasyTests: XCTestCase {
         let asyncExpect = expectation(description: "fullfill test")
         
         TravelTrainAPI
-            .trainArrivals(of: "S01700")
+            .trainArrivals(of: "S01700", date: Date())
             .subscribe(onNext: { arrivals in
                 XCTAssertNotNil(arrivals)
                 XCTAssertNotNil(arrivals[0])

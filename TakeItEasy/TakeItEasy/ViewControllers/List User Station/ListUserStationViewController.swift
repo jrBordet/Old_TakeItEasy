@@ -57,19 +57,14 @@ class ListUserStationViewController: UIViewController {
             return cell
         })
         
-        managedObjectContext
-            .rx
-            .entities(Station.self, sortDescriptors: nil)
-            .map { stations in
-                [AnimatableSectionModel(model: "Section 1", items: stations)]
+        managedObjectContext.rx.entities(Station.self, sortDescriptors: nil).map { stations in
+            [AnimatableSectionModel(model: "Section 1", items: stations)]
             }
             .bind(to: userStationsTableView.rx.items(dataSource: animatedDataSource))
             .disposed(by: bag)
         
-        userStationsTableView
-            .rx
-            .itemDeleted.map { [unowned self] ip -> Station in
-                return try self.userStationsTableView.rx.model(at: ip)
+        userStationsTableView.rx.itemDeleted.map { [unowned self] ip -> Station in
+            return try self.userStationsTableView.rx.model(at: ip)
             }
             .subscribe(onNext: { [unowned self] (event) in
                 do {
@@ -90,14 +85,11 @@ class ListUserStationViewController: UIViewController {
         
         // MARK: - modelSelected
         
-        userStationsTableView
-            .rx
-            .modelSelected(Station.self)
-            .subscribe(onNext: { [weak self] station in
-                if let coordinator = self?.coordinatorDelegate {
-                    coordinator.showDepartures(of: station)
-                }
-            }).disposed(by: bag)
+        userStationsTableView.rx.modelSelected(Station.self).subscribe(onNext: { [weak self] station in
+            if let coordinator = self?.coordinatorDelegate {
+                coordinator.showDepartures(of: station)
+            }
+        }).disposed(by: bag)
     }
     
 }

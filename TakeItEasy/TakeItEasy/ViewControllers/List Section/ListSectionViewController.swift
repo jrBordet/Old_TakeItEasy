@@ -37,9 +37,7 @@ class ListSectionViewController: UIViewController {
         guard let travel = travel else { return }
         
         // Table view
-        _ = sessionTableView
-            .rx
-            .setDelegate(self)
+        _ = sessionTableView.rx.setDelegate(self)
         
         bindUI()
         
@@ -47,8 +45,7 @@ class ListSectionViewController: UIViewController {
         
         SwiftSpinner.show(loadingMessage)
         
-        performUpdate(of: travel.originCode,
-                      trainNumber: String(travel.number))
+        performUpdate(of: travel.originCode, trainNumber: String(travel.number))
     }
     
     // MARK: - Actions
@@ -64,15 +61,12 @@ class ListSectionViewController: UIViewController {
     // MARK: - Privates
     
     private func performUpdate(of originCode: String, trainNumber: String) {
-        TravelTrainAPI
-            .trainSections(of: originCode, trainNumber)
-            .map ({ [weak self] section -> Bool in
+        TravelTrainAPI.trainSections(of: originCode, trainNumber).map ({ [weak self] section -> Bool in
                 
                 self?.sessionVariable.value = section
                 
                 return false
-            })
-            .bind(to: SwiftSpinner.sharedInstance.rx_visible)
+            }).bind(to: SwiftSpinner.sharedInstance.rx_visible)
             .disposed(by: bag)
     }
     
@@ -89,8 +83,7 @@ class ListSectionViewController: UIViewController {
                 cell.hourlabel.textColor = UIColor.lightGray
             }
             
-            }
-            .disposed(by: bag)
+        }.disposed(by: bag)
     }
 }
 

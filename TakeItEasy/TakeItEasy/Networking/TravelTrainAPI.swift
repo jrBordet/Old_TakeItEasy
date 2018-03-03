@@ -24,9 +24,9 @@ enum CommonError : Error {
 protocol TravelTrainAPIProtocol {
     static func trainStations(of name: String) -> Observable<[Station]>
     
-    static func trainDepartures(of code: String) -> Observable<[Travel?]>
+    static func trainDepartures(of code: String, date: Date) -> Observable<[Travel?]>
     
-    static func trainArrivals(of code: String) -> Observable<[Travel?]>
+    static func trainArrivals(of code: String, date: Date) -> Observable<[Travel?]>
     
     static func trainSections(of codeDeparture: String, _ codeTrain: String) -> Observable<[Section?]>
     
@@ -94,9 +94,10 @@ struct TravelTrainAPI: TravelTrainAPIProtocol {
     ///
     /// - Parameters:
     ///   - code: the station code. Example S01700
+    ///   - date: the Date
     /// - Returns: a collection of Departure
-    static func trainDepartures(of code: String) -> Observable<[Travel?]> {
-        let urlEncoded =  "\(Address.departures.string)\(code)/\(String(describing: createFormattedDate()))"
+    static func trainDepartures(of code: String, date: Date) -> Observable<[Travel?]> {
+        let urlEncoded =  "\(Address.departures.string)\(code)/\(String(describing: createFormattedDate(date)))"
         
         return URLSession
             .shared
@@ -137,8 +138,8 @@ struct TravelTrainAPI: TravelTrainAPIProtocol {
     /// - Parameters:
     ///   - code: the station code. Example S01700
     /// - Returns: a collection of Arrivals
-    static func trainArrivals(of code: String) -> Observable<[Travel?]> {
-        let urlEncoded =  "\(Address.arrivals.string)\(code)/\(String(describing: createFormattedDate()))"
+    static func trainArrivals(of code: String, date: Date) -> Observable<[Travel?]> {
+        let urlEncoded =  "\(Address.arrivals.string)\(code)/\(String(describing: createFormattedDate(date)))"
         
         return URLSession
             .shared
@@ -147,7 +148,7 @@ struct TravelTrainAPI: TravelTrainAPIProtocol {
             .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .map({ result -> [Travel?] in
                 guard let solutions = result as? [Any] else { return [] }
-               // codOrigine
+                // codOrigine
                 return solutions.map({ value -> Travel? in
                     if let dictionary = value as? [String: AnyObject],
                         let number = dictionary["numeroTreno"] as? Int,
@@ -188,11 +189,11 @@ struct TravelTrainAPI: TravelTrainAPIProtocol {
             .json(request: URLRequest(url: URL(string: urlEncoded)!))
             .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
             .map({ result -> [Section?] in
-                guard let solutions = result as? [Any] else {
+                guard let result = result as? [Any] else {
                     return [nil]
                 }
                 
-                return solutions.map({ value -> Section? in
+                var acc = result.map({ value -> Section? in
                     if let dictionary = value as? [String: AnyObject],
                         let current = dictionary["stazioneCorrente"] as? Bool,
                         let station = dictionary["stazione"] as? String,
@@ -213,6 +214,10 @@ struct TravelTrainAPI: TravelTrainAPIProtocol {
                     
                     return nil
                 })
+                
+                acc.removeLast()
+                
+                return acc.reversed()
             })
     }
     
@@ -253,13 +258,13 @@ struct TravelTrainAPI: TravelTrainAPIProtocol {
     /// Create an ecnoded date from now with format EEE MMM dd yyyy HH:mm:ss GMT+0100
     ///
     /// - Returns: a String representing the current date.
-    static func createFormattedDate() -> String {
+    static func createFormattedDate(_ date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.timeZone = NSTimeZone(abbreviation: "GMT")! as TimeZone
-
+        
         dateFormatter.dateFormat = "EEE MMM dd yyyy HH:mm:ss"
         
-        return (dateFormatter.string(from: Date()) + " GMT+0100").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        return (dateFormatter.string(from: date) + " GMT+0100").addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
     }
     
 }

@@ -229,16 +229,16 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="KbA-pU-he0"/>
-                                    <barButtonItem image="ic_trending_up_white_36pt" id="k1a-mN-DBG">
+                                    <barButtonItem image="ic_schedule_white" id="k1a-mN-DBG">
                                         <color key="tintColor" red="0.2655232461" green="1" blue="0.24260956010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="performDeparturesUpdate:" destination="Opt-L1-QQI" id="I6I-CD-poT"/>
+                                            <action selector="scheduletap:" destination="Opt-L1-QQI" id="Tly-ck-GpS"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Item" image="ic_trending_down_white_36pt" id="SYh-cz-T4F">
+                                    <barButtonItem image="ic_swap_horiz_white" id="gK1-gc-Ux1">
                                         <color key="tintColor" red="0.2655232461" green="1" blue="0.24260956010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <action selector="performArrivalsUpdate:" destination="Opt-L1-QQI" id="Umy-w5-TOe"/>
+                                            <action selector="switchAction:" destination="Opt-L1-QQI" id="pUI-Rd-Bjr"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -382,8 +382,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_trending_down_white_36pt" width="36" height="36"/>
-        <image name="ic_trending_up_white_36pt" width="36" height="36"/>
+        <image name="ic_schedule_white" width="24" height="24"/>
+        <image name="ic_swap_horiz_white" width="24" height="24"/>
         <image name="spotlight" width="24" height="24"/>
         <image name="tabbar_stations" width="24" height="24"/>
     </resources>

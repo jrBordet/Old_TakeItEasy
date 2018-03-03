@@ -416,3 +416,12 @@ TakeItEasy/Pods/Target Support Files/SwiftSpinner/SwiftSpinner-prefix.pch
 TakeItEasy/Pods/Target Support Files/SwiftSpinner/SwiftSpinner-umbrella.h
 TakeItEasy/Pods/Target Support Files/SwiftSpinner/SwiftSpinner.modulemap
 TakeItEasy/Pods/Target Support Files/SwiftSpinner/SwiftSpinner.xcconfig
+TakeItEasy/Pods/DatePickerDialog/LICENSE
+TakeItEasy/Pods/DatePickerDialog/README.mdown
+TakeItEasy/Pods/DatePickerDialog/Sources/DatePickerDialog.swift
+TakeItEasy/Pods/Target Support Files/DatePickerDialog/DatePickerDialog-dummy.m
+TakeItEasy/Pods/Target Support Files/DatePickerDialog/DatePickerDialog-prefix.pch
+TakeItEasy/Pods/Target Support Files/DatePickerDialog/DatePickerDialog-umbrella.h
+TakeItEasy/Pods/Target Support Files/DatePickerDialog/DatePickerDialog.modulemap
+TakeItEasy/Pods/Target Support Files/DatePickerDialog/DatePickerDialog.xcconfig
+TakeItEasy/Pods/Target Support Files/DatePickerDialog/Info.plist
