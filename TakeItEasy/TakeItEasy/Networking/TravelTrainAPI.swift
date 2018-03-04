@@ -10,16 +10,16 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-enum Result<T, E: Error> {
-    case success(T)
-    case failure(E)
-}
-
-enum CommonError : Error {
-    
-    case parsingError
-    case networkError
-}
+//enum Result<T, E: Error> {
+//    case success(T)
+//    case failure(E)
+//}
+//
+//enum CommonError : Error {
+//    
+//    case parsingError
+//    case networkError
+//}
 
 protocol TravelTrainAPIProtocol {
     static func trainStations(of name: String) -> Observable<[Station]>
@@ -28,9 +28,7 @@ protocol TravelTrainAPIProtocol {
     
     static func trainArrivals(of code: String, date: Date) -> Observable<[Travel?]>
     
-    static func trainSections(of codeDeparture: String, _ codeTrain: String) -> Observable<[Section?]>
-    
-    static func trainTrend(of codeDeparture: String, _ codeTrain: String) -> Observable<Trend?>
+    static func trainSections(of codeDeparture: String, _ codeTrain: String) -> Observable<[Section?]>    
 }
 
 struct TravelTrainAPI: TravelTrainAPIProtocol {
@@ -219,38 +217,6 @@ struct TravelTrainAPI: TravelTrainAPIProtocol {
                 
                 return acc.reversed()
             })
-    }
-    
-    /// Perform the Http request to retrieve all the trends from the departure code and train code.
-    /// Example:
-    /// [Url ecample](http://www.viaggiatreno.it/viaggiatrenonew/resteasy/viaggiatreno/andamentoTreno/[codPartenza]/[codTreno])
-    ///
-    /// - Parameters:
-    ///   - codeDeparture: the code of the departure. Example S00219
-    ///   - codeTrain: the station code. Example 10211
-    /// - Returns: a collection of Trend
-    static func trainTrend(of codeDeparture: String, _ codeTrain: String) -> Observable<Trend?> {
-        let urlEncoded = "\(Address.sections.string)\(codeDeparture)/\(codeTrain)"
-        
-        return URLSession
-            .shared
-            .rx
-            .data(request: URLRequest(url: URL(string: urlEncoded)!))
-            .observeOn(ConcurrentDispatchQueueScheduler(qos: .background))
-            .map({ result -> Trend? in
-                do {
-                    let andamento = try JSONDecoder().decode(Trend.self, from: result)
-                    
-                    debugPrint(andamento)
-                    
-                    return andamento
-                }
-                catch {
-                    debugPrint(error)
-                    return nil
-                }                
-            })
-
     }
     
     // MARK: - Privates
