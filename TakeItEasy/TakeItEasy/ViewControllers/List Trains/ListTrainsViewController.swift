@@ -31,7 +31,7 @@ protocol ListTrainsCoordinator {
 }
 
 class ListTrainsViewController: UIViewController {
-    @IBOutlet weak var departuresTableView: UITableView!
+    @IBOutlet weak var trainTableView: UITableView!
     
     final var station: Station?
     
@@ -53,7 +53,7 @@ class ListTrainsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        _ = departuresTableView.rx.setDelegate(self)
+        _ = trainTableView.rx.setDelegate(self)
         
         currentDate = Date()
         
@@ -81,7 +81,7 @@ class ListTrainsViewController: UIViewController {
                               locale: Locale(identifier: "it_IT"),
                               showCancelButton: true)
         
-        dialog.show("", doneButtonTitle: "Conferma", cancelButtonTitle: "Annulla", minimumDate: Date(), datePickerMode: .dateAndTime) { date -> Void in
+        dialog.show("", doneButtonTitle: "Conferma", cancelButtonTitle: "Annulla", minimumDate: Date()) { date -> Void in
             if let date = date {
                 self.currentDate = date
                 
@@ -90,17 +90,10 @@ class ListTrainsViewController: UIViewController {
         }
     }
     
-    @objc func dateChanged(_ sender: UIDatePicker) {
-        let componenets = Calendar.current.dateComponents([.year, .month, .day], from: sender.date)
-        if let day = componenets.day, let month = componenets.month, let year = componenets.year {
-            print("\(day) \(month) \(year)")
-        }
-    }
-    
     // MARK: - Privates
     
     private func bindUI() {
-        trainsObservable.bind(to: departuresTableView.rx.items(cellIdentifier: "DepartureCell", cellType: TrainCell.self)) { index, model, cell in
+        trainsObservable.bind(to: trainTableView.rx.items(cellIdentifier: "DepartureCell", cellType: TrainCell.self)) { index, model, cell in
             cell.backgroundColor = UIColor.black
             cell.destinationLabel?.textColor = UIColor.white
             cell.stateLabel?.textColor = UIColor.white
@@ -113,14 +106,12 @@ class ListTrainsViewController: UIViewController {
                 cell.hourLabel?.text = train.time
             }
         }.disposed(by: bag)
-        
-        // MARK: - Selected
-        
-        departuresTableView.rx.modelSelected(Travel.self).subscribe(onNext: { [weak self] travel in
+                
+        trainTableView.rx.modelSelected(Travel.self).subscribe(onNext: { [weak self] travel in
                 if let coordinator = self?.coordinatorDelegate {
                     coordinator.showTravelDetail(of: travel)
                 }
-            }).disposed(by: bag)
+        }).disposed(by: bag)
     }
 
     private func performUpdate() {
@@ -130,19 +121,26 @@ class ListTrainsViewController: UIViewController {
         
         switch status {
         case .departure:
-            title = "Partenze"
-            
-            TravelTrainAPI.trainDepartures(of: station.id, date: currentDate).map({ [weak self] departures -> Bool in
-                self?.trainsVariable.value = departures
+            TravelTrainAPI.trainDepartures(of: station.id, date: currentDate).map({ [weak self] results -> Bool in
+                self?.trainsVariable.value = results
+                
+                DispatchQueue.main.async(execute: {
+                    self?.trainTableView.isHidden = results.count == 0 ? true : false
+                    self?.title =  results.count == 0 ? "" : "Partenze"
+                })
                 
                 return false
             }).bind(to: SwiftSpinner.sharedInstance.rx_visible).disposed(by: bag)
             
         case .arrivals:
-            title = "Arrivi"
-            
-            TravelTrainAPI.trainArrivals(of: station.id, date: currentDate).map({ [weak self] departures -> Bool in
-                self?.trainsVariable.value = departures
+            title = String(format: "Arrivi")
+
+            TravelTrainAPI.trainArrivals(of: station.id, date: currentDate).map({ [weak self] results -> Bool in
+                self?.trainsVariable.value = results
+                
+                DispatchQueue.main.async(execute: {
+                    self?.trainTableView.isHidden = results.count == 0 ? true : false
+                })
                 
                 return false
             }).bind(to: SwiftSpinner.sharedInstance.rx_visible).disposed(by: bag)
@@ -158,6 +156,7 @@ extension ListTrainsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 64
     }
+    
     
 }
 
