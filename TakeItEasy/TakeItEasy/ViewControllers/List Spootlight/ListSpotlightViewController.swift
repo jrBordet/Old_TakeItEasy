@@ -51,6 +51,7 @@ class ListSpotlightViewController: UIViewController {
                 if query.isEmpty {
                     return .just([])
                 }
+                
                 self.query = query
                 
                 return TravelTrainAPI.trainStations(of: query)

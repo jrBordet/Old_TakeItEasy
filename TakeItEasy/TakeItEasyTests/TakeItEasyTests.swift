@@ -95,21 +95,4 @@ class TakeItEasyTests: XCTestCase {
         waitForExpectations(timeout: 30, handler: nil)
     }
     
-    func test_when_fetch_train_trend() {
-        let asyncExpect = expectation(description: "fullfill test")
-        
-        TravelTrainAPI
-            .trainTrend(of: "S00219", "10211")
-            .subscribe(onNext: { section in
-                XCTAssertNotNil(section)
-            }, onError: { error in
-                XCTAssertNil(error)
-            }, onCompleted: {
-                asyncExpect.fulfill()
-            })
-            .disposed(by: bag)
-        
-        waitForExpectations(timeout: 30, handler: nil)
-    }
-    
 }

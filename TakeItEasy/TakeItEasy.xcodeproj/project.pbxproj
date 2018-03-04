@@ -11,8 +11,6 @@
 		491FA08E201DECEC00C609D2 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491FA08D201DECEC00C609D2 /* Section.swift */; };
 		493AB0CC2011D00500F47A24 /* SectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493AB0CB2011D00500F47A24 /* SectionCell.swift */; };
 		493AB0D02011D16300F47A24 /* ListSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493AB0CF2011D16300F47A24 /* ListSectionViewController.swift */; };
-		4941A4F7202DC7E200A9F878 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4941A4F6202DC7E200A9F878 /* SectionHeaderView.swift */; };
-		4941A4F9202DC87100A9F878 /* SectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4941A4F8202DC87100A9F878 /* SectionHeaderView.xib */; };
 		4948495A20010D7C00502C4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948495920010D7C00502C4E /* AppDelegate.swift */; };
 		4948496220010D7C00502C4E /* TakeItEasy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4948496020010D7C00502C4E /* TakeItEasy.xcdatamodeld */; };
 		4948496420010D7C00502C4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4948496320010D7C00502C4E /* Assets.xcassets */; };
@@ -57,8 +55,6 @@
 		491FA08D201DECEC00C609D2 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		493AB0CB2011D00500F47A24 /* SectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionCell.swift; sourceTree = "<group>"; };
 		493AB0CF2011D16300F47A24 /* ListSectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListSectionViewController.swift; sourceTree = "<group>"; };
-		4941A4F6202DC7E200A9F878 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
-		4941A4F8202DC87100A9F878 /* SectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeaderView.xib; sourceTree = "<group>"; };
 		4948495620010D7C00502C4E /* TakeItEasy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakeItEasy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4948495920010D7C00502C4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4948496120010D7C00502C4E /* TakeItEasy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TakeItEasy.xcdatamodel; sourceTree = "<group>"; };
@@ -265,8 +261,6 @@
 			children = (
 				493AB0CF2011D16300F47A24 /* ListSectionViewController.swift */,
 				493AB0CB2011D00500F47A24 /* SectionCell.swift */,
-				4941A4F6202DC7E200A9F878 /* SectionHeaderView.swift */,
-				4941A4F8202DC87100A9F878 /* SectionHeaderView.xib */,
 			);
 			path = "List Section";
 			sourceTree = "<group>";
@@ -396,7 +390,6 @@
 				4948496720010D7C00502C4E /* LaunchScreen.storyboard in Resources */,
 				4948496420010D7C00502C4E /* Assets.xcassets in Resources */,
 				494849A32001161A00502C4E /* Main.storyboard in Resources */,
-				4941A4F9202DC87100A9F878 /* SectionHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,7 +550,6 @@
 				494849A82001161A00502C4E /* String+Extensions.swift in Sources */,
 				493AB0D02011D16300F47A24 /* ListSectionViewController.swift in Sources */,
 				494849A12001161A00502C4E /* Travel.swift in Sources */,
-				4941A4F7202DC7E200A9F878 /* SectionHeaderView.swift in Sources */,
 				494849A72001161A00502C4E /* ListUserStationViewController.swift in Sources */,
 				4948495A20010D7C00502C4E /* AppDelegate.swift in Sources */,
 				494849A42001161A00502C4E /* ListSpotlightViewController.swift in Sources */,

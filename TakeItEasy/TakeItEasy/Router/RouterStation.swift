@@ -19,7 +19,6 @@ class RouterStation {
     let bag = DisposeBag()
     
     final func assembleModule() -> UIViewController {
-        
         navigation = UINavigationController(rootViewController: createListUserStationViewController())
         
         navigation.navigationBar.barTintColor = .black

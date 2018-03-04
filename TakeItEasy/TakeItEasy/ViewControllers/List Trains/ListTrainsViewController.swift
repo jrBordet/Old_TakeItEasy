@@ -140,6 +140,7 @@ class ListTrainsViewController: UIViewController {
                 
                 DispatchQueue.main.async(execute: {
                     self?.trainTableView.isHidden = results.count == 0 ? true : false
+                    self?.title =  results.count == 0 ? "" : "Arrivi"
                 })
                 
                 return false
