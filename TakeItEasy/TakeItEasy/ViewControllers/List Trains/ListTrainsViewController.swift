@@ -11,6 +11,8 @@ import RxSwift
 import RxCocoa
 import SwiftSpinner
 import DatePickerDialog
+import CoreData
+import RxCoreData
 
 enum Update: Int {
     case departure
@@ -33,6 +35,8 @@ protocol ListTrainsCoordinator {
 class ListTrainsViewController: UIViewController {
     @IBOutlet weak var trainTableView: UITableView!
     
+    var managedObjectContext: NSManagedObjectContext!
+    
     final var station: Station?
     
     private var trainsVariable = Variable<[Travel?]>([nil])
@@ -53,8 +57,8 @@ class ListTrainsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        _ = trainTableView.rx.setDelegate(self)
-        
+//        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+
         currentDate = Date()
         
         performUpdate()
@@ -93,8 +97,9 @@ class ListTrainsViewController: UIViewController {
     // MARK: - Privates
     
     private func bindUI() {
+        trainTableView.rowHeight = 64
+        
         trainsObservable.bind(to: trainTableView.rx.items(cellIdentifier: "DepartureCell", cellType: TrainCell.self)) { index, model, cell in
-            cell.backgroundColor = UIColor.black
             cell.destinationLabel?.textColor = UIColor.white
             cell.stateLabel?.textColor = UIColor.white
             
@@ -105,12 +110,18 @@ class ListTrainsViewController: UIViewController {
                 cell.numberLabel?.text = String(describing: train.number)
                 cell.hourLabel?.text = train.time
             }
+            
+            cell.backgroundColor = .primayBlack
         }.disposed(by: bag)
-                
+        
+        // MARK: - modelSelected
+
         trainTableView.rx.modelSelected(Travel.self).subscribe(onNext: { [weak self] travel in
-                if let coordinator = self?.coordinatorDelegate {
-                    coordinator.showTravelDetail(of: travel)
-                }
+            guard let coordinator = self?.coordinatorDelegate else { return }
+            
+            self?.save(travel: travel)
+            
+            coordinator.showTravelDetail(of: travel)
         }).disposed(by: bag)
     }
 
@@ -121,43 +132,57 @@ class ListTrainsViewController: UIViewController {
         
         switch status {
         case .departure:
-            TravelTrainAPI.trainDepartures(of: station.id, date: currentDate).map({ [weak self] results -> Bool in
-                self?.trainsVariable.value = results
-                
-                DispatchQueue.main.async(execute: {
-                    self?.trainTableView.isHidden = results.count == 0 ? true : false
-                    self?.title =  results.count == 0 ? "" : "Partenze"
+            TravelTrainAPI
+                .trainDepartures(of: station.id, date: currentDate)
+                .map({ [weak self] results -> Bool in
+                    self?.trainsVariable.value = results
+                    
+                    DispatchQueue.main.async(execute: {
+                        self?.trainTableView.isHidden = results.count == 0 ? true : false
+                        self?.title =  results.count == 0 ? "" : "Partenze"
+                    })
+                    
+                    return false
                 })
-                
-                return false
-            }).bind(to: SwiftSpinner.sharedInstance.rx_visible).disposed(by: bag)
+                .bind(to: SwiftSpinner.sharedInstance.rx_visible)
+                .disposed(by: bag)
             
         case .arrivals:
             title = String(format: "Arrivi")
 
-            TravelTrainAPI.trainArrivals(of: station.id, date: currentDate).map({ [weak self] results -> Bool in
-                self?.trainsVariable.value = results
-                
-                DispatchQueue.main.async(execute: {
-                    self?.trainTableView.isHidden = results.count == 0 ? true : false
-                    self?.title =  results.count == 0 ? "" : "Arrivi"
+            TravelTrainAPI
+                .trainArrivals(of: station.id, date: currentDate)
+                .map({ [weak self] results -> Bool in
+                    self?.trainsVariable.value = results
+                    
+                    DispatchQueue.main.async(execute: {
+                        self?.trainTableView.isHidden = results.count == 0 ? true : false
+                        self?.title =  results.count == 0 ? "" : "Arrivi"
+                    })
+                    
+                    return false
                 })
-                
-                return false
-            }).bind(to: SwiftSpinner.sharedInstance.rx_visible).disposed(by: bag)
+                .bind(to: SwiftSpinner.sharedInstance.rx_visible)
+                .disposed(by: bag)
         }
     }
     
-    
-}
-
-// MARK: - UITableViewDelegate
-
-extension ListTrainsViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 64
+    private final func save(travel t: Travel) {
+        guard let mc = managedObjectContext, let station = station else { return }
+        
+        let result = Travel.init(t.number,
+                                 originCode: t.originCode,
+                                 category: t.category,
+                                 time: t.time,
+                                 direction: t.direction,
+                                 state: t.state,
+                                 originStation: station.name)
+        do {
+            try mc.rx.update(result)
+        } catch {
+            fatalError("\(String(describing: self)) fail on update \(t)")
+        }
     }
-    
     
 }
 

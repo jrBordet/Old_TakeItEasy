@@ -9,12 +9,17 @@
 import UIKit
 
 struct Section {
-    let number: Int
     let current: Bool
     let departure: Int
     let arrival: Int
     let station: String
     let delay: Int
+    let last: Bool
+    
+    private let dateFormatter = DateFormatter()
+
+    
+    // MARK: - Departure
     
     var departureDate: Date {
         get {
@@ -24,8 +29,6 @@ struct Section {
     
     var departureHour: String {
         get {
-            let dateFormatter = DateFormatter()
-            
             dateFormatter.dateStyle = .none
             dateFormatter.timeStyle = .short
             
@@ -35,13 +38,34 @@ struct Section {
         }
     }
     
-    init(_ number: Int, current: Bool, departure: Int, arrival: Int, station: String, delay: Int) {
-        self.number = number
+    // MARK: - Arrival
+    
+    var arrivalDate: Date {
+        get {
+            return Date(timeIntervalSince1970: TimeInterval(arrival / 1000))
+        }
+    }
+    
+    var arrivalHour: String {
+        get {
+            dateFormatter.dateStyle = .none
+            dateFormatter.timeStyle = .short
+            
+            dateFormatter.locale = Locale(identifier: "it_IT")
+            
+            return dateFormatter.string(from: arrivalDate)
+        }
+    }
+    
+    // MARK: - Init
+    
+    init(_ current: Bool, departure: Int, arrival: Int, station: String, delay: Int, last: Bool) {
         self.current = current
         self.departure = departure
         self.arrival = arrival
         self.station = station
         self.delay = delay
+        self.last = last
     }
 }
 

@@ -22,8 +22,23 @@ class ListSpotlightViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet var closeView: UIView! {
+        didSet {
+            closeView.layer.cornerRadius = 3
+            closeView.layer.masksToBounds = true
+        }
+    }
+    
+    @IBOutlet var closeContainerView: UIView! {
+        didSet {
+            closeContainerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+            closeContainerView.layer.cornerRadius = 12
+        }
+    }
     
     private let bag = DisposeBag()
+    
+    var swipeInteractionController: SwipeInteractionController?
     
     final var managedObjectContext: NSManagedObjectContext?
     
@@ -35,6 +50,9 @@ class ListSpotlightViewController: UIViewController {
         super.viewDidLoad()
         
         searchBar.becomeFirstResponder()
+        
+        // Configure custom dismiss transition
+        swipeInteractionController = SwipeInteractionController(viewController: self, view: closeContainerView)
         
         bindUI()
     }
@@ -61,12 +79,13 @@ class ListSpotlightViewController: UIViewController {
             .bind(to: tableView.rx.items) { tableView, index, station in
                 let cell = UITableViewCell(style: .default, reuseIdentifier: "StationCell")
                 
-                cell.backgroundColor = UIColor.black
-                cell.textLabel?.textColor = UIColor.lightGray
+                cell.backgroundColor = .clear
+                cell.textLabel?.textColor = UIColor.darkGray
                 
                 let stationNameAttributed = NSMutableAttributedString(string: station.name.capitalizingFirstLetter())
                 stationNameAttributed.addAttributes([NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 17),
-                                                     NSAttributedStringKey.foregroundColor: UIColor.white ], range:(stationNameAttributed.string as NSString).range(of: self.query))
+                                                     NSAttributedStringKey.foregroundColor: UIColor.white ],
+                                                    range:(stationNameAttributed.string as NSString).range(of: self.query))
                 
                 cell.textLabel?.attributedText = stationNameAttributed
                 
@@ -87,19 +106,17 @@ class ListSpotlightViewController: UIViewController {
             .rx
             .modelSelected(Station.self)
             .subscribe(onNext: { [weak self] station in
-                if let mc = self?.managedObjectContext {
-                    do {
-                        try mc.rx.update(station)
-                    } catch {
-                        fatalError("\(String(describing: self)) fail on update \(station)")
-                    }
-                }
+                self?.save(station: station)
                 
-                if let coordinator = self?.coordinatorDelegate {                    
-                    coordinator.showMyStations()
-                }
+                self?.searchBar.resignFirstResponder()
+                
+                guard let coordinator = self?.coordinatorDelegate else { return }
+                
+                coordinator.showMyStations()
             })
             .disposed(by: bag)
+        
+        // MARK: - Did Scroll
         
         tableView
             .rx
@@ -110,12 +127,24 @@ class ListSpotlightViewController: UIViewController {
             .disposed(by: bag)
     }
     
-    // MARK: - Navigation
-
-    @IBAction func myStationsTap(_ sender: UIBarButtonItem) {
-        if let coordinator = coordinatorDelegate {
-            coordinator.showMyStations()
+    // MARK: - Privates
+    
+    private final func save(station s: Station) {
+        guard let mc = managedObjectContext else { return }
+        
+        do {
+            try mc.rx.update(s)
+        } catch {
+            fatalError("\(String(describing: self)) fail on update \(s)")
         }
+    }
+    
+    // MARK: - Navigation
+    
+    @IBAction func myStationsTap(_ sender: UIBarButtonItem) {
+        guard let coordinator = self.coordinatorDelegate else { return }
+        
+        coordinator.showMyStations()
     }
     
 }

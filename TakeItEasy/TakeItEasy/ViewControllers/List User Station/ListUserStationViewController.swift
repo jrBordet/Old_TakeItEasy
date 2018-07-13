@@ -16,11 +16,15 @@ import RxCoreData
 protocol ListUserStationCoordinator {
     func showTrainSpootlight()
     
+    func showTrains()
+    
     func showDepartures(of station: Station)
 }
 
 class ListUserStationViewController: UIViewController {
     @IBOutlet weak var userStationsTableView: UITableView!
+    
+    typealias DataSourceModel = Station
     
     var managedObjectContext: NSManagedObjectContext!
     
@@ -39,32 +43,44 @@ class ListUserStationViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func spotlightTap(_ sender: Any) {
-        if let coordinator = coordinatorDelegate {
-            coordinator.showTrainSpootlight()
-        }
+        guard let coordinator = coordinatorDelegate else { return }
+        
+        coordinator.showTrainSpootlight()
+    }
+    
+    @IBAction func trainsTap(_ sender: Any) {
+        guard let coordinator = coordinatorDelegate else { return }
+        
+        coordinator.showTrains()
     }
     
     // MARK: - Privates
     
     private func bindUserStationsUI() {
-        let animatedDataSource = RxTableViewSectionedReloadDataSource<AnimatableSectionModel<String, Station>>(configureCell: { dateSource, tableView, indexPath, station in
+        let animatedDataSource = RxTableViewSectionedReloadDataSource<AnimatableSectionModel<String, DataSourceModel>>(configureCell: { dateSource, tableView, indexPath, station in
             let cell = tableView.dequeueReusableCell(withIdentifier: "UserStationCell", for: indexPath)
             
             cell.textLabel?.text = "\(station.name)".capitalizingFirstLetter()
-            cell.backgroundColor = UIColor.black
-            cell.textLabel?.textColor = UIColor.white
             
             return cell
         })
-        
-        managedObjectContext.rx.entities(Station.self, sortDescriptors: nil).map { stations in
-            [AnimatableSectionModel(model: "Section 1", items: stations)]
+                
+        managedObjectContext
+            .rx
+            .entities(DataSourceModel.self, sortDescriptors: nil)
+            .map { stations in
+                return [AnimatableSectionModel(model: "", items: stations)]
             }
             .bind(to: userStationsTableView.rx.items(dataSource: animatedDataSource))
             .disposed(by: bag)
         
-        userStationsTableView.rx.itemDeleted.map { [unowned self] ip -> Station in
-            return try self.userStationsTableView.rx.model(at: ip)
+        // MARK: - item deleted
+        
+        userStationsTableView
+            .rx
+            .itemDeleted
+            .map { [unowned self] ip -> DataSourceModel in
+                return try self.userStationsTableView.rx.model(at: ip)
             }
             .subscribe(onNext: { [unowned self] (event) in
                 do {
@@ -85,11 +101,14 @@ class ListUserStationViewController: UIViewController {
         
         // MARK: - modelSelected
         
-        userStationsTableView.rx.modelSelected(Station.self).subscribe(onNext: { [weak self] station in
-            if let coordinator = self?.coordinatorDelegate {
+        userStationsTableView
+            .rx
+            .modelSelected(DataSourceModel.self)
+            .subscribe(onNext: { [weak self] station in
+                guard let coordinator = self?.coordinatorDelegate else { return }
+                
                 coordinator.showDepartures(of: station)
-            }
-        }).disposed(by: bag)
+            }).disposed(by: bag)
     }
     
 }

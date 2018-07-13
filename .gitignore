@@ -425,3 +425,5 @@ TakeItEasy/Pods/Target Support Files/DatePickerDialog/DatePickerDialog-umbrella.
 TakeItEasy/Pods/Target Support Files/DatePickerDialog/DatePickerDialog.modulemap
 TakeItEasy/Pods/Target Support Files/DatePickerDialog/DatePickerDialog.xcconfig
 TakeItEasy/Pods/Target Support Files/DatePickerDialog/Info.plist
+UserInterfaceState.xcuserstate
+IDEWorkspaceChecks.plist

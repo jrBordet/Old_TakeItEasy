@@ -12,8 +12,8 @@ struct RootRouter {
     
     static func presentRootViewController(in window: UIWindow) {
         window.makeKeyAndVisible()
-                
-        window.rootViewController = RouterStation().assembleModule()
+        
+        RouterStation().assembleModule()        
     }
     
 }

@@ -14,25 +14,15 @@ import RxCoreData
 import RxDataSources
 
 class RouterStation {
+    let appdelegate = UIApplication.shared.delegate as! AppDelegate
     var navigation: UINavigationController!
     
+    let spotlightTransition = SpotlightTransition()
+
     let bag = DisposeBag()
     
-    final func assembleModule() -> UIViewController {
-        navigation = UINavigationController(rootViewController: createListUserStationViewController())
-        
-        navigation.navigationBar.barTintColor = .black
-        navigation.navigationBar.tintColor = .green
-        navigation.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.lightGray]
-        
-        if #available(iOS 11.0, *) {
-            navigation.navigationBar.prefersLargeTitles = true
-            navigation.navigationItem.largeTitleDisplayMode = .automatic
-            
-            UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.lightGray]
-        }
-        
-        return navigation
+    final func assembleModule() {
+        createRootViewController(with: createListUserStationViewController)
     }
     
     // MARK: - Core Data stack
@@ -89,8 +79,20 @@ class RouterStation {
         return listUserStationViewController
     }
     
+    private func createListUserTrainViewController() -> UIViewController {
+        let listUserStationViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UserTrainsViewController") as! ListUserTrainsViewController
+        
+        listUserStationViewController.coordinatorDelegate = self as ListUserTrainsCoordinator
+        listUserStationViewController.managedObjectContext = managedObjectContext
+        
+        return listUserStationViewController
+    }
+    
     private func createListSpotlightViewController() -> UIViewController {
         let listSpotlightViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ListSpotlightViewController") as! ListSpotlightViewController
+        
+        //listSpotlightViewController.modalPresentationStyle = .custom
+        listSpotlightViewController.transitioningDelegate = spotlightTransition
         
         listSpotlightViewController.coordinatorDelegate = self as ListSpotlightCoordinator
         listSpotlightViewController.managedObjectContext = managedObjectContext
@@ -102,6 +104,7 @@ class RouterStation {
         let listTrainsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TrainsViewController") as! ListTrainsViewController
         
         listTrainsViewController.station = station
+        listTrainsViewController.managedObjectContext = managedObjectContext
         listTrainsViewController.coordinatorDelegate = self
         
         return listTrainsViewController
@@ -111,8 +114,31 @@ class RouterStation {
         let listSectionViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SectionViewController") as! ListSectionViewController
         
         listSectionViewController.travel = travel
+        listSectionViewController.managedObjectContext = managedObjectContext
         
         return listSectionViewController
+    }
+    
+    // MARK: - Privates
+    
+    func createRootViewController(with changeFunction: () -> UIViewController) {
+        navigation = UINavigationController(rootViewController: changeFunction())
+        
+        navigation.navigationBar.barTintColor = .black
+        navigation.navigationBar.tintColor = .green
+        navigation.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.lightGray]
+        navigation.navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
+        
+//        if #available(iOS 11.0, *) {
+//            navigation.navigationBar.prefersLargeTitles = true
+//            navigation.navigationItem.largeTitleDisplayMode = .automatic
+//            
+//            UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.lightGray]
+//        }
+        
+        UIView.transition(with: appdelegate.window!, duration: 0.28, options: .transitionCrossDissolve, animations: {
+            self.appdelegate.window!.rootViewController = self.navigation
+        })
     }
 }
 
@@ -121,6 +147,14 @@ class RouterStation {
 extension RouterStation: ListTrainsCoordinator {
     func showTravelDetail(of travel: Travel) {
         navigation.pushViewController(createListSectionViewController(of: travel), animated: true)
+    }
+}
+
+// MARK: - ListUserTrainsCoordinator
+
+extension RouterStation: ListUserTrainsCoordinator {
+    func showStations() {
+        createRootViewController(with: createListUserStationViewController)
     }
 }
 
@@ -139,6 +173,10 @@ extension RouterStation: ListSpotlightCoordinator {
 // MARK: - ListUserStationCoordinator
 
 extension RouterStation: ListUserStationCoordinator {
+    func showTrains() {
+        createRootViewController(with: createListUserTrainViewController)
+    }
+    
     func showDepartures(of station: Station) {
         navigation.pushViewController(createListTrainViewController(of: station), animated: true)
     }

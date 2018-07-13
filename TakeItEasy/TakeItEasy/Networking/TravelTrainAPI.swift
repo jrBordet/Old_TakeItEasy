@@ -41,6 +41,7 @@ struct TravelTrainAPI: TravelTrainAPIProtocol {
         case arrivals = "arrivi/"
         case sections = "tratteCanvas/"
         case trend = "andamentoTreno/"
+        case stationDeparture = "cercaNumeroTrenoTrenoAutocomplete/"
         
         var baseURL: String {
             return "http://www.viaggiatreno.it/viaggiatrenonew/resteasy/viaggiatreno/"
@@ -120,7 +121,8 @@ struct TravelTrainAPI: TravelTrainAPIProtocol {
                                       category: category,
                                       time: hour,
                                       direction: direction,
-                                      state: state)
+                                      state: state,
+                                      originStation: nil)
                     }
                     
                     return nil
@@ -162,7 +164,8 @@ struct TravelTrainAPI: TravelTrainAPIProtocol {
                                       category: category,
                                       time: hour,
                                       direction: direction,
-                                      state: state)
+                                      state: state,
+                                      originStation: nil)
                     }
                     
                     return nil
@@ -191,7 +194,7 @@ struct TravelTrainAPI: TravelTrainAPIProtocol {
                     return [nil]
                 }
                 
-                var acc = result.map({ value -> Section? in
+                let acc = result.map({ value -> Section? in
                     if let dictionary = value as? [String: AnyObject],
                         let current = dictionary["stazioneCorrente"] as? Bool,
                         let station = dictionary["stazione"] as? String,
@@ -202,20 +205,22 @@ struct TravelTrainAPI: TravelTrainAPIProtocol {
                         
                         let delay = fermata["delay"] as? Int ?? 0
                         
-                        return Section(0,
-                                       current: current,
+                        let last = dictionary["last"] as? Bool ?? false
+                        
+                        return Section(current,
                                        departure: departure,
                                        arrival: arrival,
                                        station: station,
-                                       delay: delay)
+                                       delay: delay,
+                                       last: last)
                     }
                     
                     return nil
                 })
                 
-                acc.removeLast()
-                
-                return acc.reversed()
+                //acc.removeLast()
+                // acc.reversed()
+                return acc
             })
     }
     

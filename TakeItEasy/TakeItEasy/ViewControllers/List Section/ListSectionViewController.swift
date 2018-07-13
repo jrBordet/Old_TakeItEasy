@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import CoreData
+import RxCoreData
 import RxSwift
 import RxCocoa
 import RxDataSources
-import RxCoreData
 import SwiftSpinner
 
 protocol ListSectionCoordinator {
@@ -29,6 +30,8 @@ class ListSectionViewController: UIViewController {
     
     private let bag = DisposeBag()
     
+    var managedObjectContext: NSManagedObjectContext!
+    
     private let loadingMessage = "Loading"
     
     override func viewDidLoad() {
@@ -45,45 +48,48 @@ class ListSectionViewController: UIViewController {
         
         SwiftSpinner.show(loadingMessage)
         
-        performUpdate(of: travel.originCode, trainNumber: String(travel.number))
+        performUpdate(of: travel.originCode, travelNumber: String(travel.number))
     }
     
     // MARK: - Actions
     
     @IBAction func refreshAction(_ sender: Any) {
         guard let travel = travel else { return }
-
+        
         SwiftSpinner.show(loadingMessage)
         
-        performUpdate(of: travel.originCode, trainNumber: String(travel.number))
+        performUpdate(of: travel.originCode, travelNumber: String(travel.number))
     }
     
     // MARK: - Privates
     
-    private func performUpdate(of originCode: String, trainNumber: String) {
-        TravelTrainAPI.trainSections(of: originCode, trainNumber).map ({ [weak self] section -> Bool in
-                
+    private func performUpdate(of originCode: String, travelNumber: String) {
+        TravelTrainAPI
+            .trainSections(of: originCode, travelNumber)
+            .map ({ [weak self] section -> Bool in
                 self?.sessionVariable.value = section
                 
                 return false
-            }).bind(to: SwiftSpinner.sharedInstance.rx_visible)
+            })
+            .bind(to: SwiftSpinner.sharedInstance.rx_visible)
             .disposed(by: bag)
     }
     
     private func bindUI() {
-        sessionObservable.bind(to: sessionTableView.rx.items(cellIdentifier: "SectionCell", cellType: SectionCell.self)) { index, model, cell in
-            guard let model = model else { return }
-            
-            cell.stationLabel.text = model.station.capitalized
-            cell.hourlabel.text = model.departureHour
-            
-            if model.current {
-                cell.hourlabel.textColor = UIColor.green
-            } else {
-                cell.hourlabel.textColor = UIColor.lightGray
+        sessionObservable
+            .bind(to: sessionTableView
+                .rx
+                .items(cellIdentifier: "SectionCell", cellType: SectionCell.self)) { index, model, cell in
+                    guard let model = model else { return }
+                    
+                    cell.stationLabel.text = model.station.capitalized
+                    cell.hourlabel.text = model.departure != 0 ? model.departureHour : model.arrivalHour
+                    
+                    cell.backgroundColor = .primayBlack
+                    
+                    cell.hourlabel.textColor = model.current ? .green : .lightGray
             }
-            
-        }.disposed(by: bag)
+            .disposed(by: bag)
     }
 }
 

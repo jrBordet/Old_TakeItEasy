@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		43E61F0F9B67CAAC8A89F610 /* Pods_TakeItEasyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 081BF315E0EFA2266BF754DD /* Pods_TakeItEasyTests.framework */; };
+		490B755B20D9494F0038EE63 /* CustomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490B755A20D9494F0038EE63 /* CustomTransition.swift */; };
 		491FA08E201DECEC00C609D2 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491FA08D201DECEC00C609D2 /* Section.swift */; };
 		493AB0CC2011D00500F47A24 /* SectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493AB0CB2011D00500F47A24 /* SectionCell.swift */; };
 		493AB0D02011D16300F47A24 /* ListSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493AB0CF2011D16300F47A24 /* ListSectionViewController.swift */; };
@@ -29,7 +30,15 @@
 		494849A82001161A00502C4E /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948499C2001161A00502C4E /* String+Extensions.swift */; };
 		494849A92001161A00502C4E /* TravelTrainAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948499E2001161A00502C4E /* TravelTrainAPI.swift */; };
 		494849AB2001180A00502C4E /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494849AA2001180A00502C4E /* RootRouter.swift */; };
+		494DF3EB20C90CF500BC7C5B /* Travel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DF3EA20C90CF500BC7C5B /* Travel+Extension.swift */; };
+		49598C81204C30AA002DC57D /* ListUserTrainsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49598C80204C30AA002DC57D /* ListUserTrainsViewController.swift */; };
+		4997FCE020D0EAF50062B3C4 /* UserTrainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4997FCDF20D0EAF50062B3C4 /* UserTrainCell.swift */; };
+		49AD425B20D8C6660098E003 /* SlideRightTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AD425A20D8C6660098E003 /* SlideRightTransitionAnimator.swift */; };
+		49B5793620DA1CAF00D69781 /* SpotlightTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B5793520DA1CAF00D69781 /* SpotlightTransition.swift */; };
+		49BE3AEF20F4A2E90070461A /* SwipeInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BE3AEE20F4A2E90070461A /* SwipeInteractionController.swift */; };
 		49CBB6D7203FFBBF0075FA69 /* SwiftSpinner+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBB6D6203FFBBF0075FA69 /* SwiftSpinner+Extensions.swift */; };
+		49FA255C20D78A740059C0C0 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FA255B20D78A740059C0C0 /* UIColor+Extensions.swift */; };
+		49FB0E9E20F4F883004A1C3A /* FlipDismissAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FB0E9D20F4F883004A1C3A /* FlipDismissAnimationController.swift */; };
 		FB63235D5F86D09AD875C281 /* Pods_TakeItEasy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD58A297409666B0C401DFF1 /* Pods_TakeItEasy.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +61,7 @@
 
 /* Begin PBXFileReference section */
 		081BF315E0EFA2266BF754DD /* Pods_TakeItEasyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakeItEasyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		490B755A20D9494F0038EE63 /* CustomTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransition.swift; sourceTree = "<group>"; };
 		491FA08D201DECEC00C609D2 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		493AB0CB2011D00500F47A24 /* SectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionCell.swift; sourceTree = "<group>"; };
 		493AB0CF2011D16300F47A24 /* ListSectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListSectionViewController.swift; sourceTree = "<group>"; };
@@ -79,7 +89,15 @@
 		4948499C2001161A00502C4E /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		4948499E2001161A00502C4E /* TravelTrainAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelTrainAPI.swift; sourceTree = "<group>"; };
 		494849AA2001180A00502C4E /* RootRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
+		494DF3EA20C90CF500BC7C5B /* Travel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Travel+Extension.swift"; sourceTree = "<group>"; };
+		49598C80204C30AA002DC57D /* ListUserTrainsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserTrainsViewController.swift; sourceTree = "<group>"; };
+		4997FCDF20D0EAF50062B3C4 /* UserTrainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTrainCell.swift; sourceTree = "<group>"; };
+		49AD425A20D8C6660098E003 /* SlideRightTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideRightTransitionAnimator.swift; sourceTree = "<group>"; };
+		49B5793520DA1CAF00D69781 /* SpotlightTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotlightTransition.swift; sourceTree = "<group>"; };
+		49BE3AEE20F4A2E90070461A /* SwipeInteractionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeInteractionController.swift; sourceTree = "<group>"; };
 		49CBB6D6203FFBBF0075FA69 /* SwiftSpinner+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftSpinner+Extensions.swift"; sourceTree = "<group>"; };
+		49FA255B20D78A740059C0C0 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		49FB0E9D20F4F883004A1C3A /* FlipDismissAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlipDismissAnimationController.swift; sourceTree = "<group>"; };
 		602C2F5611BB17E164885FD3 /* Pods-TakeItEasy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeItEasy.release.xcconfig"; path = "Pods/Target Support Files/Pods-TakeItEasy/Pods-TakeItEasy.release.xcconfig"; sourceTree = "<group>"; };
 		6F8D8C318A67036644A5B683 /* Pods-TakeItEasy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeItEasy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TakeItEasy/Pods-TakeItEasy.debug.xcconfig"; sourceTree = "<group>"; };
 		BA30ECD4CF65E413D713B9C0 /* Pods-TakeItEasyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeItEasyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TakeItEasyTests/Pods-TakeItEasyTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -150,11 +168,12 @@
 		4948495820010D7C00502C4E /* TakeItEasy */ = {
 			isa = PBXGroup;
 			children = (
-				4948499D2001161A00502C4E /* Networking */,
-				4948498B2001161A00502C4E /* Models */,
 				4948498F2001161A00502C4E /* Router */,
 				494849912001161A00502C4E /* ViewControllers */,
+				4948499D2001161A00502C4E /* Networking */,
+				4948498B2001161A00502C4E /* Models */,
 				4948499B2001161A00502C4E /* Utilities */,
+				49AD425920D8C6660098E003 /* CustomTransition */,
 				4948495920010D7C00502C4E /* AppDelegate.swift */,
 				494849AA2001180A00502C4E /* RootRouter.swift */,
 				4948496320010D7C00502C4E /* Assets.xcassets */,
@@ -186,9 +205,8 @@
 		4948498B2001161A00502C4E /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4948498C2001161A00502C4E /* Station+Extensions.swift */,
-				4948498D2001161A00502C4E /* Station.swift */,
-				4948498E2001161A00502C4E /* Travel.swift */,
+				494DF3E920C90B5600BC7C5B /* Station */,
+				494DF3EC20C90CFD00BC7C5B /* Travel */,
 				491FA08D201DECEC00C609D2 /* Section.swift */,
 			);
 			path = Models;
@@ -208,6 +226,7 @@
 				494849922001161A00502C4E /* Main.storyboard */,
 				494849942001161A00502C4E /* List Spootlight */,
 				494849992001161A00502C4E /* List User Station */,
+				49598C7F204C3087002DC57D /* ListUserTrainsViewController */,
 				494849962001161A00502C4E /* List Trains */,
 				49BBA3A6200F2E3000320097 /* List Section */,
 			);
@@ -244,6 +263,7 @@
 			children = (
 				4948499C2001161A00502C4E /* String+Extensions.swift */,
 				49CBB6D6203FFBBF0075FA69 /* SwiftSpinner+Extensions.swift */,
+				49FA255B20D78A740059C0C0 /* UIColor+Extensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -254,6 +274,45 @@
 				4948499E2001161A00502C4E /* TravelTrainAPI.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		494DF3E920C90B5600BC7C5B /* Station */ = {
+			isa = PBXGroup;
+			children = (
+				4948498D2001161A00502C4E /* Station.swift */,
+				4948498C2001161A00502C4E /* Station+Extensions.swift */,
+			);
+			path = Station;
+			sourceTree = "<group>";
+		};
+		494DF3EC20C90CFD00BC7C5B /* Travel */ = {
+			isa = PBXGroup;
+			children = (
+				4948498E2001161A00502C4E /* Travel.swift */,
+				494DF3EA20C90CF500BC7C5B /* Travel+Extension.swift */,
+			);
+			path = Travel;
+			sourceTree = "<group>";
+		};
+		49598C7F204C3087002DC57D /* ListUserTrainsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				49598C80204C30AA002DC57D /* ListUserTrainsViewController.swift */,
+				4997FCDF20D0EAF50062B3C4 /* UserTrainCell.swift */,
+			);
+			path = ListUserTrainsViewController;
+			sourceTree = "<group>";
+		};
+		49AD425920D8C6660098E003 /* CustomTransition */ = {
+			isa = PBXGroup;
+			children = (
+				490B755A20D9494F0038EE63 /* CustomTransition.swift */,
+				49FB0E9D20F4F883004A1C3A /* FlipDismissAnimationController.swift */,
+				49AD425A20D8C6660098E003 /* SlideRightTransitionAnimator.swift */,
+				49B5793520DA1CAF00D69781 /* SpotlightTransition.swift */,
+				49BE3AEE20F4A2E90070461A /* SwipeInteractionController.swift */,
+			);
+			path = CustomTransition;
 			sourceTree = "<group>";
 		};
 		49BBA3A6200F2E3000320097 /* List Section */ = {
@@ -542,6 +601,8 @@
 				494849A92001161A00502C4E /* TravelTrainAPI.swift in Sources */,
 				49CBB6D7203FFBBF0075FA69 /* SwiftSpinner+Extensions.swift in Sources */,
 				494849A22001161A00502C4E /* RouterStation.swift in Sources */,
+				4997FCE020D0EAF50062B3C4 /* UserTrainCell.swift in Sources */,
+				49FA255C20D78A740059C0C0 /* UIColor+Extensions.swift in Sources */,
 				493AB0CC2011D00500F47A24 /* SectionCell.swift in Sources */,
 				4948499F2001161A00502C4E /* Station+Extensions.swift in Sources */,
 				494849A02001161A00502C4E /* Station.swift in Sources */,
@@ -550,11 +611,18 @@
 				494849A82001161A00502C4E /* String+Extensions.swift in Sources */,
 				493AB0D02011D16300F47A24 /* ListSectionViewController.swift in Sources */,
 				494849A12001161A00502C4E /* Travel.swift in Sources */,
+				49B5793620DA1CAF00D69781 /* SpotlightTransition.swift in Sources */,
 				494849A72001161A00502C4E /* ListUserStationViewController.swift in Sources */,
 				4948495A20010D7C00502C4E /* AppDelegate.swift in Sources */,
+				49BE3AEF20F4A2E90070461A /* SwipeInteractionController.swift in Sources */,
 				494849A42001161A00502C4E /* ListSpotlightViewController.swift in Sources */,
+				49AD425B20D8C6660098E003 /* SlideRightTransitionAnimator.swift in Sources */,
+				49598C81204C30AA002DC57D /* ListUserTrainsViewController.swift in Sources */,
+				494DF3EB20C90CF500BC7C5B /* Travel+Extension.swift in Sources */,
+				490B755B20D9494F0038EE63 /* CustomTransition.swift in Sources */,
 				491FA08E201DECEC00C609D2 /* Section.swift in Sources */,
 				494849A62001161A00502C4E /* TrainCell.swift in Sources */,
+				49FB0E9E20F4F883004A1C3A /* FlipDismissAnimationController.swift in Sources */,
 				494849A52001161A00502C4E /* ListTrainsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -725,7 +793,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XP6P798NUV;
 				INFOPLIST_FILE = TakeItEasy/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ovolab.TakeItEasy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -742,7 +810,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XP6P798NUV;
 				INFOPLIST_FILE = TakeItEasy/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ovolab.TakeItEasy;
 				PRODUCT_NAME = "$(TARGET_NAME)";

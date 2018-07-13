@@ -15,14 +15,16 @@ struct Travel {
     let direction: String
     let time: String
     let state: String
+    var originStation: String?
     
-    init(_ number: Int, originCode: String, category: String, time: String, direction: String, state: String) {
+    init(_ number: Int, originCode: String, category: String, time: String, direction: String, state: String, originStation: String?) {
         self.number = number
         self.originCode = originCode
         self.category = category
         self.time = time
         self.direction = direction
         self.state = state
+        self.originStation = originStation
     }
     
 }
