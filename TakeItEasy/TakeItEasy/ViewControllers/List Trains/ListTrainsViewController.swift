@@ -26,8 +26,6 @@ class ListTrainsViewController: UIViewController {
     
     var viewModel: UserTrainViewModel!
     
-    var managedObjectContext: NSManagedObjectContext!
-
     private let bag = DisposeBag()
     
     // MARK: - Coordinator

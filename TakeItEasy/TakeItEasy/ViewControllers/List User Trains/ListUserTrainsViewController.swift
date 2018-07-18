@@ -17,7 +17,7 @@ import CoreData
 
 import SwiftSpinner
 
-protocol ListUserTrainsCoordinator {
+protocol ListUserTrainsCoordinator: class {
     func showStations()
     
     func showTravelDetail(of travel: Travel)
@@ -37,7 +37,7 @@ class ListUserTrainsViewController: UIViewController {
 
     // MARK: - Delegate
     
-    final var coordinatorDelegate: ListUserTrainsCoordinator?
+    weak  var coordinatorDelegate: ListUserTrainsCoordinator?
     
     // MARK: - Dependencies
     

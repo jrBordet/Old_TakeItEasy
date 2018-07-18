@@ -235,7 +235,7 @@
 				494849922001161A00502C4E /* Main.storyboard */,
 				494849942001161A00502C4E /* List Spootlight */,
 				494849992001161A00502C4E /* List User Station */,
-				49598C7F204C3087002DC57D /* ListUserTrainsViewController */,
+				49598C7F204C3087002DC57D /* List User Trains */,
 				494849962001161A00502C4E /* List Trains */,
 				49BBA3A6200F2E3000320097 /* List Section */,
 			);
@@ -304,14 +304,14 @@
 			path = Travel;
 			sourceTree = "<group>";
 		};
-		49598C7F204C3087002DC57D /* ListUserTrainsViewController */ = {
+		49598C7F204C3087002DC57D /* List User Trains */ = {
 			isa = PBXGroup;
 			children = (
 				49598C80204C30AA002DC57D /* ListUserTrainsViewController.swift */,
 				4997FCDF20D0EAF50062B3C4 /* UserTrainCell.swift */,
 				49B1F1AF20F8A26200075A6E /* UserTrainViewModel.swift */,
 			);
-			path = ListUserTrainsViewController;
+			path = "List User Trains";
 			sourceTree = "<group>";
 		};
 		49AD425920D8C6660098E003 /* CustomTransition */ = {
