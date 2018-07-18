@@ -37,7 +37,7 @@ class ListUserTrainsViewController: UIViewController {
 
     // MARK: - Delegate
     
-    weak  var coordinatorDelegate: ListUserTrainsCoordinator?
+    var coordinatorDelegate: ListUserTrainsCoordinator?
     
     // MARK: - Dependencies
     

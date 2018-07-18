@@ -21,6 +21,7 @@ protocol ListSectionCoordinator {
 class ListSectionViewController: UIViewController {
     @IBOutlet var sessionTableView: UITableView!
     @IBOutlet var trainStatusLabel: UILabel!
+    @IBOutlet var trainNumber: UILabel!
     
     // MARK: - Coordinator
     
@@ -66,6 +67,11 @@ class ListSectionViewController: UIViewController {
         viewModel
             .trainStatus
             .drive(trainStatusLabel.rx.text)
+            .disposed(by: bag)
+        
+        viewModel
+            .trainNumber
+            .drive(trainNumber.rx.text)
             .disposed(by: bag)
         
         viewModel

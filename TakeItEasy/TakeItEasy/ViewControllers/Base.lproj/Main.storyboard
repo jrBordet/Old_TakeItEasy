@@ -12,10 +12,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--stazioni-->
+        <!--Stazioni-->
         <scene sceneID="DEu-Zw-pNy">
             <objects>
-                <viewController storyboardIdentifier="UserStationViewController" title="stazioni" id="9j7-Dh-kd4" customClass="ListUserStationViewController" customModule="TakeItEasy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserStationViewController" title="Stazioni" id="9j7-Dh-kd4" customClass="ListUserStationViewController" customModule="TakeItEasy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f1U-8d-DH8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -518,20 +518,37 @@
                                                 <blurEffect style="extraLight"/>
                                             </vibrancyEffect>
                                         </visualEffectView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="in orario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rf3-qq-3FR">
-                                            <rect key="frame" x="294.66666666666669" y="22.333333333333336" width="65.333333333333314" height="20.333333333333336"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reg. 10432" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMs-p3-TR3">
+                                            <rect key="frame" x="139" y="12.666666666666664" width="97.333333333333314" height="23"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="in orario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rf3-qq-3FR">
+                                            <rect key="frame" x="291" y="21" width="69" height="23"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="numero treno" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2E-4n-ZOc">
+                                            <rect key="frame" x="147" y="40" width="81.333333333333314" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" name="primaryGrey"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" name="secondaryBlack"/>
                                     <constraints>
+                                        <constraint firstItem="WMs-p3-TR3" firstAttribute="centerY" secondItem="Fx4-6c-QDO" secondAttribute="centerY" constant="-8" id="1Ia-6O-Kpz"/>
                                         <constraint firstAttribute="trailing" secondItem="Rf3-qq-3FR" secondAttribute="trailing" constant="15" id="B5m-bk-2Ru"/>
                                         <constraint firstAttribute="height" constant="64" id="CRK-3g-fJe"/>
+                                        <constraint firstItem="WMs-p3-TR3" firstAttribute="centerX" secondItem="Fx4-6c-QDO" secondAttribute="centerX" id="DyI-on-iuY"/>
+                                        <constraint firstItem="V2E-4n-ZOc" firstAttribute="centerX" secondItem="Fx4-6c-QDO" secondAttribute="centerX" id="HFF-gm-QwE"/>
                                         <constraint firstItem="Rf3-qq-3FR" firstAttribute="centerY" secondItem="Fx4-6c-QDO" secondAttribute="centerY" id="W6m-eq-7jj"/>
                                         <constraint firstItem="5cg-nr-rg1" firstAttribute="top" secondItem="Fx4-6c-QDO" secondAttribute="top" id="X2i-0G-5wD"/>
                                         <constraint firstAttribute="bottom" secondItem="5cg-nr-rg1" secondAttribute="bottom" id="hb7-d6-o0K"/>
+                                        <constraint firstAttribute="bottom" secondItem="V2E-4n-ZOc" secondAttribute="bottom" constant="8" id="i9k-DQ-UgF"/>
                                         <constraint firstAttribute="trailing" secondItem="5cg-nr-rg1" secondAttribute="trailing" id="jxR-g5-5VJ"/>
                                         <constraint firstItem="5cg-nr-rg1" firstAttribute="leading" secondItem="Fx4-6c-QDO" secondAttribute="leading" id="tz6-J5-bH1"/>
                                     </constraints>
@@ -624,6 +641,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="sessionTableView" destination="oVD-Up-Ujf" id="Xx0-4c-2du"/>
+                        <outlet property="trainNumber" destination="WMs-p3-TR3" id="ndN-kq-jtw"/>
                         <outlet property="trainStatusLabel" destination="Rf3-qq-3FR" id="egg-gq-nua"/>
                     </connections>
                 </viewController>
