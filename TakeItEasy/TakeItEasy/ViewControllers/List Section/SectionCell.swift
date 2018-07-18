@@ -11,4 +11,5 @@ import UIKit
 class SectionCell: UITableViewCell {
     @IBOutlet var stationLabel: UILabel!
     @IBOutlet var hourlabel: UILabel!
+    @IBOutlet var railLabel: UILabel!
 }

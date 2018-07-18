@@ -15,7 +15,7 @@ func == (lhs: Station, rhs: Station) -> Bool {
     return lhs.id == rhs.id
 }
 
-extension Station : Equatable { }
+extension Station: Equatable { }
 
 extension Station : IdentifiableType {
     typealias Identity = String
@@ -23,7 +23,7 @@ extension Station : IdentifiableType {
     var identity: Identity { return id }
 }
 
-extension Station : Persistable {
+extension Station: Persistable {
     typealias T = NSManagedObject
     
     static var entityName: String {

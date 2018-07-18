@@ -20,63 +20,57 @@ protocol ListSectionCoordinator {
 
 class ListSectionViewController: UIViewController {
     @IBOutlet var sessionTableView: UITableView!
+    @IBOutlet var trainStatusLabel: UILabel!
     
-    private var sessionVariable = Variable<[Section?]>([nil])
-    lazy var sessionObservable: Observable<[Section?]> = sessionVariable.asObservable()
+    // MARK: - Coordinator
     
     final var coordinatorDelegate: ListSectionCoordinator?
     
-    final var travel: Travel?
+    // MARK: - Privates
     
     private let bag = DisposeBag()
     
-    var managedObjectContext: NSManagedObjectContext!
+    // MARK: - Dependencies
     
-    private let loadingMessage = "Loading"
+    var viewModel: SectionViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let travel = travel else { return }
-        
-        // Table view
-        _ = sessionTableView.rx.setDelegate(self)
+        // MARK: - Table view delegate
+        _ = sessionTableView
+            .rx
+            .setDelegate(self)
         
         bindUI()
-        
-        title = travel.direction
-        
-        SwiftSpinner.show(loadingMessage)
-        
-        performUpdate(of: travel.originCode, travelNumber: String(travel.number))
     }
     
     // MARK: - Actions
     
     @IBAction func refreshAction(_ sender: Any) {
-        guard let travel = travel else { return }
+        SwiftSpinner.show(NSLocalizedString("Loading", comment: "Loading"))
         
-        SwiftSpinner.show(loadingMessage)
-        
-        performUpdate(of: travel.originCode, travelNumber: String(travel.number))
+        viewModel
+            .fetchSection
+            .execute(true)
     }
     
     // MARK: - Privates
     
-    private func performUpdate(of originCode: String, travelNumber: String) {
-        TravelTrainAPI
-            .trainSections(of: originCode, travelNumber)
-            .map ({ [weak self] section -> Bool in
-                self?.sessionVariable.value = section
-                
-                return false
-            })
-            .bind(to: SwiftSpinner.sharedInstance.rx_visible)
-            .disposed(by: bag)
-    }
-    
     private func bindUI() {
-        sessionObservable
+        
+        SwiftSpinner.show(NSLocalizedString("Loading", comment: "Loading"))
+        
+        // MARK: - ViewModel binding
+        
+        viewModel
+            .trainStatus
+            .drive(trainStatusLabel.rx.text)
+            .disposed(by: bag)
+        
+        viewModel
+            .fetchSection
+            .elements
             .bind(to: sessionTableView
                 .rx
                 .items(cellIdentifier: "SectionCell", cellType: SectionCell.self)) { index, model, cell in
@@ -88,8 +82,25 @@ class ListSectionViewController: UIViewController {
                     cell.backgroundColor = .primayBlack
                     
                     cell.hourlabel.textColor = model.current ? .green : .lightGray
+                    cell.railLabel.textColor = model.current ? .green : .lightGray
+                    
+                    cell.railLabel.text = model.binarioEffettivoPartenzaDescrizione != "" ? model.binarioEffettivoPartenzaDescrizione : model.binarioEffettivoPartenzaDescrizione
+                    
+                    debugPrint("\(model.binarioEffettivoPartenzaDescrizione ) \(model.binarioEffettivoPartenzaDescrizione)")
             }
             .disposed(by: bag)
+        
+        // Spinner
+        viewModel
+            .fetchSection
+            .executing
+            .bind(to: SwiftSpinner.sharedInstance.rx_visible)
+            .disposed(by: bag)
+        
+        // Execution
+        viewModel
+            .fetchSection
+            .execute(true)
     }
 }
 

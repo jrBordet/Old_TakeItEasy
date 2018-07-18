@@ -26,11 +26,15 @@ class ListUserStationViewController: UIViewController {
     
     typealias DataSourceModel = Station
     
-    var managedObjectContext: NSManagedObjectContext!
-    
+    // MARK: - Delegate
+
     final var coordinatorDelegate: ListUserStationCoordinator?
     
     private let bag = DisposeBag()
+    
+    // MARK: - Dependencies
+    
+    var viewModel: UserStationViewModel!
     
     // MARK: - Life cycle
     
@@ -57,6 +61,9 @@ class ListUserStationViewController: UIViewController {
     // MARK: - Privates
     
     private func bindUserStationsUI() {
+        
+        // MARK: - RxDataSource
+        
         let animatedDataSource = RxTableViewSectionedReloadDataSource<AnimatableSectionModel<String, DataSourceModel>>(configureCell: { dateSource, tableView, indexPath, station in
             let cell = tableView.dequeueReusableCell(withIdentifier: "UserStationCell", for: indexPath)
             
@@ -64,14 +71,17 @@ class ListUserStationViewController: UIViewController {
             
             return cell
         })
-                
-        managedObjectContext
-            .rx
-            .entities(DataSourceModel.self, sortDescriptors: nil)
+        
+        // MARK: - ViewModel binding
+        
+        viewModel
+            .dataSourceItems
             .map { stations in
                 return [AnimatableSectionModel(model: "", items: stations)]
             }
-            .bind(to: userStationsTableView.rx.items(dataSource: animatedDataSource))
+            .bind(to: userStationsTableView
+                .rx
+                .items(dataSource: animatedDataSource))
             .disposed(by: bag)
         
         // MARK: - item deleted
@@ -82,12 +92,8 @@ class ListUserStationViewController: UIViewController {
             .map { [unowned self] ip -> DataSourceModel in
                 return try self.userStationsTableView.rx.model(at: ip)
             }
-            .subscribe(onNext: { [unowned self] (event) in
-                do {
-                    try self.managedObjectContext.rx.delete(event)
-                } catch {
-                    print(error)
-                }
+            .subscribe(onNext: { [unowned self] (model) in
+                self.viewModel.delete(model: model)
             })
             .disposed(by: bag)
         

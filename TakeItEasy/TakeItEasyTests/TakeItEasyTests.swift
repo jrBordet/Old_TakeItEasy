@@ -78,9 +78,7 @@ class TakeItEasyTests: XCTestCase {
                 XCTAssertNotNil(sections[0])
                                 
                 sections.forEach({ travelDetail in
-                    if let detail = travelDetail {
-                        debugPrint(detail)
-                        
+                    if let detail = travelDetail {                        
                         debugPrint(detail.departureHour)
                     }
                 })

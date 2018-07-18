@@ -427,3 +427,24 @@ TakeItEasy/Pods/Target Support Files/DatePickerDialog/DatePickerDialog.xcconfig
 TakeItEasy/Pods/Target Support Files/DatePickerDialog/Info.plist
 UserInterfaceState.xcuserstate
 IDEWorkspaceChecks.plist
+TakeItEasy/Pods/Action/License.md
+TakeItEasy/Pods/Action/Readme.md
+TakeItEasy/Pods/Action/Sources/Action/Action+Internal.swift
+TakeItEasy/Pods/Action/Sources/Action/Action.swift
+TakeItEasy/Pods/Action/Sources/Action/InputSubject.swift
+TakeItEasy/Pods/Action/Sources/Action/CommonUI/Button+Action.swift
+TakeItEasy/Pods/Action/Sources/Action/CommonUI/Control+Action.swift
+TakeItEasy/Pods/Action/Sources/Action/UIKitExtensions/UIAlertAction+Action.swift
+TakeItEasy/Pods/Action/Sources/Action/UIKitExtensions/UIBarButtonItem+Action.swift
+TakeItEasy/Pods/Action/Sources/Action/UIKitExtensions/UIRefreshControl+Action.swift
+TakeItEasy/Pods/RxCocoa/Platform/DeprecationWarner.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/Common/KeyPathBinder.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/Proxies/RxCollectionViewDataSourcePrefetchingProxy.swift
+TakeItEasy/Pods/RxCocoa/RxCocoa/iOS/Proxies/RxTableViewDataSourcePrefetchingProxy.swift
+TakeItEasy/Pods/RxSwift/Platform/DeprecationWarner.swift
+TakeItEasy/Pods/Target Support Files/Action/Action-dummy.m
+TakeItEasy/Pods/Target Support Files/Action/Action-prefix.pch
+TakeItEasy/Pods/Target Support Files/Action/Action-umbrella.h
+TakeItEasy/Pods/Target Support Files/Action/Action.modulemap
+TakeItEasy/Pods/Target Support Files/Action/Action.xcconfig
+TakeItEasy/Pods/Target Support Files/Action/Info.plist

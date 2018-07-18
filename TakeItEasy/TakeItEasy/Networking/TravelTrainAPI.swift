@@ -86,7 +86,7 @@ struct TravelTrainAPI: TravelTrainAPIProtocol {
         }
     }
     
-    /// Perform an Http request to retrieve all the departures from the give station id.
+    /// Perform an Http request to retrieve all departures from the give station id.
     /// Example:
     /// [Url ecample](http://www.viaggiatreno.it/viaggiatrenonew/resteasy/viaggiatreno/partenze/S01700/Mon%20Nov%2020%202017%2008:30:00%20GMT+0100%20)
     /// Mon Nov 20 2017 17:30:00 GMT+0100 (ora solare Europa occidentale)
@@ -203,8 +203,10 @@ struct TravelTrainAPI: TravelTrainAPIProtocol {
                         let departure = fermata["partenza_teorica"] as? Int ?? 0
                         let arrival = fermata["arrivo_teorico"] as? Int ?? 0
                         
-                        let delay = fermata["delay"] as? Int ?? 0
-                        
+                        let delay = fermata["progressivo"] as? Int ?? 0
+                        let binarioProgrammatoArrivoDescrizione = fermata["binarioProgrammatoArrivoDescrizione"] as? String ?? ""
+                        let binarioEffettivoPartenzaDescrizione = fermata["binarioEffettivoPartenzaDescrizione"] as? String ?? ""
+
                         let last = dictionary["last"] as? Bool ?? false
                         
                         return Section(current,
@@ -212,7 +214,10 @@ struct TravelTrainAPI: TravelTrainAPIProtocol {
                                        arrival: arrival,
                                        station: station,
                                        delay: delay,
-                                       last: last)
+                                       last: last,
+                                       binarioProgrammatoArrivoDescrizione: binarioProgrammatoArrivoDescrizione,
+                                       binarioEffettivoPartenzaDescrizione: binarioEffettivoPartenzaDescrizione
+                            )
                     }
                     
                     return nil

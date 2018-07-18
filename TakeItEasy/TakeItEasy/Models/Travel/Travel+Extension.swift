@@ -15,9 +15,9 @@ func == (lhs: Travel, rhs: Travel) -> Bool {
     return lhs.number == rhs.number
 }
 
-extension Travel : Equatable { }
+extension Travel: Equatable { }
 
-extension Travel : IdentifiableType {
+extension Travel: IdentifiableType {
     typealias Identity = String
     
     var identity: Identity { return String(number) }

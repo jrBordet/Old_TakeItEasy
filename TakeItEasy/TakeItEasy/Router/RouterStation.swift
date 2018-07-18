@@ -63,8 +63,10 @@ class RouterStation {
     
     lazy var managedObjectContext: NSManagedObjectContext = {
         let coordinator = self.persistentStoreCoordinator
+        
         var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         managedObjectContext.persistentStoreCoordinator = coordinator
+        
         return managedObjectContext
     }()
     
@@ -73,8 +75,8 @@ class RouterStation {
     private func createListUserStationViewController() -> UIViewController {
         let listUserStationViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UserStationViewController") as! ListUserStationViewController
         
+        listUserStationViewController.viewModel = UserStationViewModel(dependencies: managedObjectContext)
         listUserStationViewController.coordinatorDelegate = self as ListUserStationCoordinator
-        listUserStationViewController.managedObjectContext = managedObjectContext
         
         return listUserStationViewController
     }
@@ -82,8 +84,8 @@ class RouterStation {
     private func createListUserTrainViewController() -> UIViewController {
         let listUserStationViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UserTrainsViewController") as! ListUserTrainsViewController
         
+        listUserStationViewController.viewModel = UserTrainViewModel(dependencies: managedObjectContext)
         listUserStationViewController.coordinatorDelegate = self as ListUserTrainsCoordinator
-        listUserStationViewController.managedObjectContext = managedObjectContext
         
         return listUserStationViewController
     }
@@ -103,8 +105,10 @@ class RouterStation {
     private func createListTrainViewController(of station: Station) -> UIViewController {
         let listTrainsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TrainsViewController") as! ListTrainsViewController
         
-        listTrainsViewController.station = station
         listTrainsViewController.managedObjectContext = managedObjectContext
+        
+        listTrainsViewController.viewModel = UserTrainViewModel(dependencies: managedObjectContext,
+                                                                input: (stationCode: station.id, date: Date()))
         listTrainsViewController.coordinatorDelegate = self
         
         return listTrainsViewController
@@ -113,8 +117,8 @@ class RouterStation {
     private func createListSectionViewController(of travel: Travel) -> UIViewController {
         let listSectionViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SectionViewController") as! ListSectionViewController
         
-        listSectionViewController.travel = travel
-        listSectionViewController.managedObjectContext = managedObjectContext
+        //listSectionViewController.travel = travel
+        listSectionViewController.viewModel = SectionViewModel(travel: travel)
         
         return listSectionViewController
     }

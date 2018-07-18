@@ -15,6 +15,8 @@ struct Section {
     let station: String
     let delay: Int
     let last: Bool
+    let binarioProgrammatoArrivoDescrizione: String
+    let binarioEffettivoPartenzaDescrizione: String
     
     private let dateFormatter = DateFormatter()
 
@@ -59,13 +61,15 @@ struct Section {
     
     // MARK: - Init
     
-    init(_ current: Bool, departure: Int, arrival: Int, station: String, delay: Int, last: Bool) {
+    init(_ current: Bool, departure: Int, arrival: Int, station: String, delay: Int, last: Bool, binarioProgrammatoArrivoDescrizione: String, binarioEffettivoPartenzaDescrizione: String) {
         self.current = current
         self.departure = departure
         self.arrival = arrival
         self.station = station
         self.delay = delay
         self.last = last
+        self.binarioProgrammatoArrivoDescrizione = binarioProgrammatoArrivoDescrizione
+        self.binarioEffettivoPartenzaDescrizione = binarioEffettivoPartenzaDescrizione
     }
 }
 

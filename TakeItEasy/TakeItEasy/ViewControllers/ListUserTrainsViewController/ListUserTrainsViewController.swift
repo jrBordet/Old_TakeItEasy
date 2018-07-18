@@ -7,11 +7,15 @@
 //
 
 import UIKit
-import CoreData
+
 import RxSwift
 import RxCocoa
 import RxDataSources
+
 import RxCoreData
+import CoreData
+
+import SwiftSpinner
 
 protocol ListUserTrainsCoordinator {
     func showStations()
@@ -24,17 +28,20 @@ class ListUserTrainsViewController: UIViewController {
     @IBOutlet var disclaimerView: UIView!
     @IBOutlet var disclaimerLabel: UILabel! {
         didSet {
-            disclaimerLabel.text = NSLocalizedString("ci dispiace...", comment: "")
+            disclaimerLabel.text = NSLocalizedString("ci dispiace …", comment: "")
         }
     }
     
     typealias DataSourceModel = Travel
+    private let bag = DisposeBag()
+
+    // MARK: - Delegate
     
     final var coordinatorDelegate: ListUserTrainsCoordinator?
     
-    var managedObjectContext: NSManagedObjectContext!
+    // MARK: - Dependencies
     
-    private let bag = DisposeBag()
+    var viewModel: UserTrainViewModel!
     
     // MARK: - Lif cycle
     
@@ -55,6 +62,8 @@ class ListUserTrainsViewController: UIViewController {
     private func bindUI() {
         trainTableView.rowHeight = 75
         
+        // MARK: - RxDataSource
+        
         let animatedDataSource = RxTableViewSectionedReloadDataSource<AnimatableSectionModel<String, DataSourceModel>>(configureCell: { dateSource, tableView, indexPath, travel in
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "TravelCell", for: indexPath) as? UserTrainCell else { return UITableViewCell(style: .default, reuseIdentifier: nil) }
             
@@ -68,11 +77,12 @@ class ListUserTrainsViewController: UIViewController {
             return cell
         })
         
-        managedObjectContext
-            .rx
-            .entities(DataSourceModel.self, sortDescriptors: nil)
-            .map { travels in
-                if travels.count != 0 {
+        // MARK: - ViewModel binding
+        
+        viewModel
+            .travelItems
+            .map { travel in
+                if travel.count != 0 {
                     self.trainTableView.isHidden = false
                     self.disclaimerView.isHidden = true
                 } else {
@@ -80,7 +90,7 @@ class ListUserTrainsViewController: UIViewController {
                     self.disclaimerView.isHidden = false
                 }
                 
-                return [AnimatableSectionModel(model: "", items: travels)]
+                return [AnimatableSectionModel(model: "", items: travel)]
             }
             .bind(to: trainTableView.rx.items(dataSource: animatedDataSource))
             .disposed(by: bag)
@@ -92,16 +102,10 @@ class ListUserTrainsViewController: UIViewController {
             .itemDeleted
             .map { [unowned self] ip -> DataSourceModel in
                 return try self.trainTableView.rx.model(at: ip)
-            }.subscribe(onNext: { [unowned self] (event) in
-                do {
-                    try
-                        self.managedObjectContext
-                        .rx
-                        .delete(event)
-                } catch {
-                    print(error)
-                }
-            }).disposed(by: bag)
+            }.subscribe(onNext: { [unowned self] (model) in
+                self.viewModel.delete(model: model)
+            })
+            .disposed(by: bag)
         
         animatedDataSource.canEditRowAtIndexPath = { _,_  in
             return true
@@ -120,6 +124,7 @@ class ListUserTrainsViewController: UIViewController {
             guard let coordinator = self?.coordinatorDelegate else { return }
             
             coordinator.showTravelDetail(of: travel)
-        }).disposed(by: bag)
+        })
+        .disposed(by: bag)
     }
 }

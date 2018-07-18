@@ -7,6 +7,9 @@
 //
 
 import Foundation
+import CoreData
+import RxDataSources
+import RxCoreData
 
 struct Travel {
     let number: Int

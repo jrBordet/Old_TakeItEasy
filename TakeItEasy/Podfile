@@ -12,6 +12,8 @@
     pod 'RxCoreData', '~> 0.4.0'
     pod 'SwiftSpinner'
     pod 'DatePickerDialog'
+    pod 'Action'
+    
   end
 
   target 'TakeItEasyTests' do
@@ -21,5 +23,6 @@
     pod 'RxCocoa',    '~> 4.0'
     pod 'RxDataSources', '~> 3.0'
     pod 'RxCoreData', '~> 0.4.0'
+    pod 'Action'
 
   end
