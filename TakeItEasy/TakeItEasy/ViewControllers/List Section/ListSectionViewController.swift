@@ -89,6 +89,7 @@ class ListSectionViewController: UIViewController {
                     
                     cell.hourlabel.textColor = model.current ? .green : .lightGray
                     cell.railLabel.textColor = model.current ? .green : .lightGray
+                    cell.isSelected = model.current
                     
                     cell.railLabel.text = model.binarioEffettivoPartenzaDescrizione != "" ? model.binarioEffettivoPartenzaDescrizione : model.binarioEffettivoPartenzaDescrizione
                     
