@@ -8,9 +8,6 @@
 
 import Foundation
 
-import CoreData
-import RxCoreData
-
 import RxSwift
 import RxCocoa
 
@@ -23,7 +20,7 @@ class UserStationViewModel: ViewModelProtocol {
     
     // MARK: - Dependencies
     
-    internal var managedObjectContext: NSManagedObjectContext
+    internal var dataManager: DataManagerProtocol
     
     // MARK: - Output
     
@@ -32,23 +29,15 @@ class UserStationViewModel: ViewModelProtocol {
     // MARK: - Interface
     
     func delete(model: DataSourceModel) {
-        do {
-            try
-                managedObjectContext.rx.delete(model)
-        } catch {
-            print(error)
-        }
+        dataManager.delete(model: model)
     }
     
     // MARK: - Initializer
     
-    init(dependencies managedObjectContext: NSManagedObjectContext) {
-        self.managedObjectContext = managedObjectContext
+    init(dependencies dataManager: DataManagerProtocol) {
+        self.dataManager = dataManager
         
-        dataSourceItems = managedObjectContext
-            .rx
-            .entities(DataSourceModel.self, sortDescriptors: nil)
-            .asObservable()
+        dataSourceItems = self.dataManager.retrieveStations()
         
     }
     

@@ -7,11 +7,9 @@
 //
 
 import UIKit
-import CoreData
 import RxSwift
 import RxCocoa
 import RxDataSources
-import RxCoreData
 
 protocol ListUserStationCoordinator {
     func showTrainSpootlight()
@@ -41,7 +39,16 @@ class ListUserStationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        #if DEBUG
+        let logString = "⚠️ Number of start resources = \(Resources.total) ⚠️"
+        debugPrint(logString)
+        #endif
+        
         bindUserStationsUI()
+    }
+    
+    deinit {
+        debugPrint("\(self) deinit")
     }
     
     // MARK: - Actions
@@ -110,11 +117,12 @@ class ListUserStationViewController: UIViewController {
         userStationsTableView
             .rx
             .modelSelected(DataSourceModel.self)
-            .subscribe(onNext: { [weak self] station in
-                guard let coordinator = self?.coordinatorDelegate else { return }
+            .subscribe(onNext: { [unowned self] station in
+                guard let coordinator = self.coordinatorDelegate else { return }
                 
                 coordinator.showDepartures(of: station)
-            }).disposed(by: bag)
+            })
+            .disposed(by: bag)
     }
     
 }

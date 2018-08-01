@@ -133,6 +133,25 @@ class UserTrainViewModelTests: XCTestCase {
         wait(for: [expectation], timeout: 30.0)
     }
     
+    func test_when_fetch_train_sections() {
+        let expectation = XCTestExpectation(description: "Fetch sections from Torino Porta Nuova")
+        
+        let viewModel = SectionViewModel(travel: Travel(2014, originCode: "S01700", category: "REG", time: "11:18", direction: "TORINO P.NUOVA", state: "in orario", originStation: nil))
+
+        viewModel
+            .fetchSectionResult
+            .execute(true)
+            .asObservable()
+            .subscribe(onNext: { sections in
+                XCTAssertNotNil(sections.first ?? nil)
+
+                expectation.fulfill()
+            })
+            .disposed(by: bag)
+
+        wait(for: [expectation], timeout: 30.0)
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {

@@ -7,10 +7,9 @@
 //
 
 import UIKit
-import CoreData
+
 import RxSwift
 import RxCocoa
-import RxCoreData
 import RxDataSources
 
 class RouterStation {
@@ -25,57 +24,12 @@ class RouterStation {
         createRootViewController(with: createListUserStationViewController)
     }
     
-    // MARK: - Core Data stack
-    
-    lazy var applicationDocumentsDirectory: URL = {
-        let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        
-        print("RxCoreData Location: - \(urls[urls.count-1] as URL)")
-        
-        return urls.last!
-    }()
-    
-    lazy var managedObjectModel: NSManagedObjectModel = {
-        let modelURL = Bundle.main.url(forResource: "TakeItEasy", withExtension: "momd")!
-        return NSManagedObjectModel(contentsOf: modelURL)!
-    }()
-    
-    lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
-        let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-        let url = self.applicationDocumentsDirectory.appendingPathComponent("RxCoreData.sqlite")
-        var failureReason = "There was an error creating or loading the application's saved data."
-        
-        do {
-            try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: nil)
-        } catch {
-            var dict = [String: Any]()
-            dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
-            dict[NSLocalizedFailureReasonErrorKey] = failureReason
-            
-            dict[NSUnderlyingErrorKey] = error as NSError
-            let wrappedError = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
-            NSLog("Unresolved error \(wrappedError), \(wrappedError.userInfo)")
-            abort()
-        }
-        
-        return coordinator
-    }()
-    
-    lazy var managedObjectContext: NSManagedObjectContext = {
-        let coordinator = self.persistentStoreCoordinator
-        
-        var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
-        managedObjectContext.persistentStoreCoordinator = coordinator
-        
-        return managedObjectContext
-    }()
-    
     // MARK: - Factory methods
     
     private func createListUserStationViewController() -> UIViewController {
         let listUserStationViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UserStationViewController") as! ListUserStationViewController
         
-        listUserStationViewController.viewModel = UserStationViewModel(dependencies: managedObjectContext)
+        listUserStationViewController.viewModel = UserStationViewModel(dependencies: DataManager.shared)
         listUserStationViewController.coordinatorDelegate = self as ListUserStationCoordinator
         
         return listUserStationViewController
@@ -84,7 +38,7 @@ class RouterStation {
     private func createListUserTrainViewController() -> UIViewController {
         let listUserStationViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "UserTrainsViewController") as! ListUserTrainsViewController
         
-        listUserStationViewController.viewModel = UserTrainViewModel(dependencies: managedObjectContext)
+        listUserStationViewController.viewModel = UserTrainViewModel(dependencies: DataManager.shared)
         listUserStationViewController.coordinatorDelegate = self as ListUserTrainsCoordinator
         
         return listUserStationViewController
@@ -93,11 +47,10 @@ class RouterStation {
     private func createListSpotlightViewController() -> UIViewController {
         let listSpotlightViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ListSpotlightViewController") as! ListSpotlightViewController
         
-        //listSpotlightViewController.modalPresentationStyle = .custom
         listSpotlightViewController.transitioningDelegate = spotlightTransition
         
         listSpotlightViewController.coordinatorDelegate = self as ListSpotlightCoordinator
-        listSpotlightViewController.managedObjectContext = managedObjectContext
+        listSpotlightViewController.dataManager = DataManager.shared
         
         return listSpotlightViewController
     }
@@ -105,8 +58,8 @@ class RouterStation {
     private func createListTrainViewController(of station: Station) -> UIViewController {
         let listTrainsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TrainsViewController") as! ListTrainsViewController
         
-        listTrainsViewController.viewModel = UserTrainViewModel(dependencies: managedObjectContext,
-                                                                input: (stationCode: station.id, date: Date()))
+        listTrainsViewController.viewModel = UserTrainViewModel(dependencies: DataManager.shared,
+                                                                input: (station: station, date: Date()))
         listTrainsViewController.coordinatorDelegate = self
         
         return listTrainsViewController
@@ -126,7 +79,7 @@ class RouterStation {
         navigation = UINavigationController(rootViewController: changeFunction())
         
         navigation.navigationBar.barTintColor = .black
-        navigation.navigationBar.tintColor = .green
+        navigation.navigationBar.tintColor = UIColor(named: "primayGreen") ?? .green
         navigation.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.lightGray]
         navigation.navigationItem.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
         

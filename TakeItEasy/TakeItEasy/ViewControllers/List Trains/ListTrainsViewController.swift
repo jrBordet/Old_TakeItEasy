@@ -11,8 +11,6 @@ import RxSwift
 import RxCocoa
 import SwiftSpinner
 import DatePickerDialog
-import CoreData
-import RxCoreData
 
 protocol ListTrainsCoordinator {
     func showTravelDetail(of travel: Travel)
@@ -43,11 +41,20 @@ class ListTrainsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        #if DEBUG
+        let logString = "⚠️ Number of start resources = \(Resources.total) ⚠️"
+        debugPrint(logString)
+        #endif
+        
         currentDate = Date()
         
         title = NSLocalizedString("Partenze", comment: "Partenze")
         
         bindUI()
+    }
+    
+    deinit {
+        debugPrint("\(self) deinit")
     }
     
     // MARK: - Actions
@@ -96,7 +103,12 @@ class ListTrainsViewController: UIViewController {
                 cell.stateLabel?.textColor = UIColor.white
                 
                 if let train = model {
-                    cell.destinationLabel?.text = train.direction.capitalizingFirstLetter()
+                    if let direction = train.direction {
+                        cell.destinationLabel?.text = direction.capitalizingFirstLetter()
+                    } else if let origin = train.originStation {
+                        cell.destinationLabel?.text = origin.capitalizingFirstLetter()
+                    }
+                    
                     cell.stateLabel?.text = train.state
                     
                     cell.numberLabel?.text = String(describing: train.number)
@@ -123,7 +135,17 @@ class ListTrainsViewController: UIViewController {
         
         trainTableView
             .rx
-            .modelSelected(Travel.self).subscribe(onNext: { [weak self] travel in
+            .modelSelected(Travel.self)
+            .map { [weak self] travel -> Travel in
+                return Travel(travel.number,
+                              originCode: travel.originCode,
+                              category: travel.category,
+                              time: travel.time,
+                              direction: travel.direction != nil ? travel.direction : self?.viewModel.stationName ?? nil,
+                              state: travel.state,
+                              originStation: travel.originStation != nil ? travel.originStation : self?.viewModel.stationName ?? nil)
+            }
+            .subscribe(onNext: { [weak self] travel in
                 guard let coordinator = self?.coordinatorDelegate else { return }
                 
                 self?.viewModel.save(travel: travel)

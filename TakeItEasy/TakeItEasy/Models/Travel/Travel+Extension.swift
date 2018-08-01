@@ -23,7 +23,7 @@ extension Travel: IdentifiableType {
     var identity: Identity { return String(number) }
 }
 
-extension Travel : Persistable {
+extension Travel: Persistable {
     typealias T = NSManagedObject
     
     static var entityName: String {
@@ -38,7 +38,7 @@ extension Travel : Persistable {
         number = entity.value(forKey: "number") as! Int
         originCode = entity.value(forKey: "originCode") as! String
         category = entity.value(forKey: "category") as! String
-        direction = entity.value(forKey: "direction") as! String
+        direction = entity.value(forKey: "direction") as? String
         time = entity.value(forKey: "time") as! String
         state = entity.value(forKey: "state") as! String
         originStation = entity.value(forKey: "originStation") as? String

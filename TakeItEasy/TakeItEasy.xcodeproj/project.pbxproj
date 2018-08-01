@@ -12,6 +12,7 @@
 		491FA08E201DECEC00C609D2 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491FA08D201DECEC00C609D2 /* Section.swift */; };
 		493AB0CC2011D00500F47A24 /* SectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493AB0CB2011D00500F47A24 /* SectionCell.swift */; };
 		493AB0D02011D16300F47A24 /* ListSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493AB0CF2011D16300F47A24 /* ListSectionViewController.swift */; };
+		493FE2F6210F42B200222672 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493FE2F5210F42B100222672 /* DataManager.swift */; };
 		4948495A20010D7C00502C4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948495920010D7C00502C4E /* AppDelegate.swift */; };
 		4948496220010D7C00502C4E /* TakeItEasy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4948496020010D7C00502C4E /* TakeItEasy.xcdatamodeld */; };
 		4948496420010D7C00502C4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4948496320010D7C00502C4E /* Assets.xcassets */; };
@@ -32,6 +33,9 @@
 		494849AB2001180A00502C4E /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494849AA2001180A00502C4E /* RootRouter.swift */; };
 		494DF3EB20C90CF500BC7C5B /* Travel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494DF3EA20C90CF500BC7C5B /* Travel+Extension.swift */; };
 		49598C81204C30AA002DC57D /* ListUserTrainsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49598C80204C30AA002DC57D /* ListUserTrainsViewController.swift */; };
+		496685DB2110337C00428201 /* DataManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496685DA2110337C00428201 /* DataManagerProtocol.swift */; };
+		496685DD211038DF00428201 /* SectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 496685DC211038DF00428201 /* SectionHeaderView.xib */; };
+		496685DF2110398D00428201 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496685DE2110398D00428201 /* SectionHeaderView.swift */; };
 		498D636820FF5E4A00012B8F /* SectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498D636720FF5E4A00012B8F /* SectionViewModel.swift */; };
 		4997FCE020D0EAF50062B3C4 /* UserTrainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4997FCDF20D0EAF50062B3C4 /* UserTrainCell.swift */; };
 		49AD425B20D8C6660098E003 /* SlideRightTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AD425A20D8C6660098E003 /* SlideRightTransitionAnimator.swift */; };
@@ -69,6 +73,7 @@
 		491FA08D201DECEC00C609D2 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		493AB0CB2011D00500F47A24 /* SectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionCell.swift; sourceTree = "<group>"; };
 		493AB0CF2011D16300F47A24 /* ListSectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListSectionViewController.swift; sourceTree = "<group>"; };
+		493FE2F5210F42B100222672 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		4948495620010D7C00502C4E /* TakeItEasy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakeItEasy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4948495920010D7C00502C4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4948496120010D7C00502C4E /* TakeItEasy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TakeItEasy.xcdatamodel; sourceTree = "<group>"; };
@@ -95,6 +100,9 @@
 		494849AA2001180A00502C4E /* RootRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
 		494DF3EA20C90CF500BC7C5B /* Travel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Travel+Extension.swift"; sourceTree = "<group>"; };
 		49598C80204C30AA002DC57D /* ListUserTrainsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserTrainsViewController.swift; sourceTree = "<group>"; };
+		496685DA2110337C00428201 /* DataManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerProtocol.swift; sourceTree = "<group>"; };
+		496685DC211038DF00428201 /* SectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionHeaderView.xib; sourceTree = "<group>"; };
+		496685DE2110398D00428201 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		498D636720FF5E4A00012B8F /* SectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionViewModel.swift; sourceTree = "<group>"; };
 		4997FCDF20D0EAF50062B3C4 /* UserTrainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTrainCell.swift; sourceTree = "<group>"; };
 		49AD425A20D8C6660098E003 /* SlideRightTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideRightTransitionAnimator.swift; sourceTree = "<group>"; };
@@ -151,6 +159,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		493FE2F4210F428900222672 /* Data Manager */ = {
+			isa = PBXGroup;
+			children = (
+				496685DA2110337C00428201 /* DataManagerProtocol.swift */,
+				493FE2F5210F42B100222672 /* DataManager.swift */,
+			);
+			path = "Data Manager";
+			sourceTree = "<group>";
+		};
 		4948494D20010D7C00502C4E = {
 			isa = PBXGroup;
 			children = (
@@ -176,14 +193,15 @@
 		4948495820010D7C00502C4E /* TakeItEasy */ = {
 			isa = PBXGroup;
 			children = (
+				4948495920010D7C00502C4E /* AppDelegate.swift */,
+				494849AA2001180A00502C4E /* RootRouter.swift */,
 				4948498F2001161A00502C4E /* Router */,
 				494849912001161A00502C4E /* ViewControllers */,
 				4948499D2001161A00502C4E /* Networking */,
+				493FE2F4210F428900222672 /* Data Manager */,
 				4948498B2001161A00502C4E /* Models */,
 				4948499B2001161A00502C4E /* Utilities */,
 				49AD425920D8C6660098E003 /* CustomTransition */,
-				4948495920010D7C00502C4E /* AppDelegate.swift */,
-				494849AA2001180A00502C4E /* RootRouter.swift */,
 				4948496320010D7C00502C4E /* Assets.xcassets */,
 				4948496520010D7C00502C4E /* LaunchScreen.storyboard */,
 				4948496820010D7C00502C4E /* Info.plist */,
@@ -332,6 +350,8 @@
 				493AB0CF2011D16300F47A24 /* ListSectionViewController.swift */,
 				493AB0CB2011D00500F47A24 /* SectionCell.swift */,
 				498D636720FF5E4A00012B8F /* SectionViewModel.swift */,
+				496685DE2110398D00428201 /* SectionHeaderView.swift */,
+				496685DC211038DF00428201 /* SectionHeaderView.xib */,
 			);
 			path = "List Section";
 			sourceTree = "<group>";
@@ -459,6 +479,7 @@
 				4948496720010D7C00502C4E /* LaunchScreen.storyboard in Resources */,
 				4948496420010D7C00502C4E /* Assets.xcassets in Resources */,
 				494849A32001161A00502C4E /* Main.storyboard in Resources */,
+				496685DD211038DF00428201 /* SectionHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +604,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				494849A92001161A00502C4E /* TravelTrainAPI.swift in Sources */,
+				493FE2F6210F42B200222672 /* DataManager.swift in Sources */,
 				49B1F1B020F8A26200075A6E /* UserTrainViewModel.swift in Sources */,
 				49CBB6D7203FFBBF0075FA69 /* SwiftSpinner+Extensions.swift in Sources */,
 				494849A22001161A00502C4E /* RouterStation.swift in Sources */,
@@ -592,6 +614,7 @@
 				493AB0CC2011D00500F47A24 /* SectionCell.swift in Sources */,
 				4948499F2001161A00502C4E /* Station+Extensions.swift in Sources */,
 				494849A02001161A00502C4E /* Station.swift in Sources */,
+				496685DF2110398D00428201 /* SectionHeaderView.swift in Sources */,
 				494849AB2001180A00502C4E /* RootRouter.swift in Sources */,
 				4948496220010D7C00502C4E /* TakeItEasy.xcdatamodeld in Sources */,
 				494849A82001161A00502C4E /* String+Extensions.swift in Sources */,
@@ -603,6 +626,7 @@
 				49BE3AEF20F4A2E90070461A /* SwipeInteractionController.swift in Sources */,
 				494849A42001161A00502C4E /* ListSpotlightViewController.swift in Sources */,
 				49AD425B20D8C6660098E003 /* SlideRightTransitionAnimator.swift in Sources */,
+				496685DB2110337C00428201 /* DataManagerProtocol.swift in Sources */,
 				49598C81204C30AA002DC57D /* ListUserTrainsViewController.swift in Sources */,
 				494DF3EB20C90CF500BC7C5B /* Travel+Extension.swift in Sources */,
 				49B1F1B420F8C95D00075A6E /* UserStationViewModel.swift in Sources */,

@@ -12,9 +12,6 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
-import RxCoreData
-import CoreData
-
 import SwiftSpinner
 
 protocol ListUserTrainsCoordinator: class {
@@ -46,7 +43,18 @@ class ListUserTrainsViewController: UIViewController {
     // MARK: - Lif cycle
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+
+        #if DEBUG
+        let logString = "⚠️ Number of start resources = \(Resources.total) ⚠️"
+        debugPrint(logString)
+        #endif
+
         bindUI()
+    }
+    
+    deinit {
+        debugPrint("\(self) deinit")
     }
     
     // MARK: - Actions
@@ -68,7 +76,8 @@ class ListUserTrainsViewController: UIViewController {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "TravelCell", for: indexPath) as? UserTrainCell else { return UITableViewCell(style: .default, reuseIdentifier: nil) }
             
             cell.departureLabel.text = "\(travel.originStation?.capitalizingFirstLetter() ?? "")"
-            cell.arrivalLabel.text = "\(travel.direction.capitalizingFirstLetter())"
+            cell.arrivalLabel.text = "\(travel.direction?.capitalizingFirstLetter() ?? "")"
+            
             cell.timeLabel.text = "\(travel.time)"
             cell.kindLabel.text = "\(travel.category.capitalizingFirstLetter()) \(travel.number)"
             

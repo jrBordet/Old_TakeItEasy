@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import CoreData
-import RxCoreData
 import RxSwift
 import RxCocoa
 import RxDataSources
@@ -20,8 +18,6 @@ protocol ListSectionCoordinator {
 
 class ListSectionViewController: UIViewController {
     @IBOutlet var sessionTableView: UITableView!
-    @IBOutlet var trainStatusLabel: UILabel!
-    @IBOutlet var trainNumber: UILabel!
     
     // MARK: - Coordinator
     
@@ -38,12 +34,28 @@ class ListSectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // MARK: - Table view delegate
-        _ = sessionTableView
+        #if DEBUG
+        let logString = "⚠️ Number of start resources = \(Resources.total) ⚠️"
+        debugPrint(logString)
+        #endif
+        
+        sessionTableView.estimatedRowHeight = 64
+        sessionTableView.rowHeight = 64
+        
+        sessionTableView
             .rx
             .setDelegate(self)
+            .disposed(by: bag)
         
         bindUI()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+    }
+    
+    deinit {
+        debugPrint("\(self) deinit")
     }
     
     // MARK: - Actions
@@ -52,7 +64,7 @@ class ListSectionViewController: UIViewController {
         SwiftSpinner.show(NSLocalizedString("Loading", comment: "Loading"))
         
         viewModel
-            .fetchSection
+            .fetchSectionResult
             .execute(true)
     }
     
@@ -65,48 +77,26 @@ class ListSectionViewController: UIViewController {
         // MARK: - ViewModel binding
         
         viewModel
-            .trainStatus
-            .drive(trainStatusLabel.rx.text)
-            .disposed(by: bag)
-        
-        viewModel
-            .trainNumber
-            .drive(trainNumber.rx.text)
-            .disposed(by: bag)
-        
-        viewModel
-            .fetchSection
+            .fetchSectionResult
             .elements
-            .bind(to: sessionTableView
-                .rx
-                .items(cellIdentifier: "SectionCell", cellType: SectionCell.self)) { index, model, cell in
-                    guard let model = model else { return }
-                    
-                    cell.stationLabel.text = model.station.capitalized
-                    cell.hourlabel.text = model.departure != 0 ? model.departureHour : model.arrivalHour
-                    
-                    cell.backgroundColor = .primayBlack
-                    
-                    cell.hourlabel.textColor = model.current ? .green : .lightGray
-                    cell.railLabel.textColor = model.current ? .green : .lightGray
-                    cell.isSelected = model.current
-                    
-                    cell.railLabel.text = model.binarioEffettivoPartenzaDescrizione != "" ? model.binarioEffettivoPartenzaDescrizione : model.binarioEffettivoPartenzaDescrizione
-                    
-                    debugPrint("\(model.binarioEffettivoPartenzaDescrizione ) \(model.binarioEffettivoPartenzaDescrizione)")
+            .bind(to: sessionTableView.rx.items(cellIdentifier: "SectionCell", cellType: SectionCell.self)) { [weak self] index, model, cell in
+                Observable<SectionResult>
+                    .just(model)
+                    .bind(to: cell.rx.sectionResult)
+                    .disposed(by: (self?.bag)!)
             }
             .disposed(by: bag)
         
         // Spinner
         viewModel
-            .fetchSection
+            .fetchSectionResult
             .executing
             .bind(to: SwiftSpinner.sharedInstance.rx_visible)
             .disposed(by: bag)
         
         // Execution
         viewModel
-            .fetchSection
+            .fetchSectionResult
             .execute(true)
     }
 }
@@ -114,7 +104,23 @@ class ListSectionViewController: UIViewController {
 // MARK: - UITableViewDelegate
 
 extension ListSectionViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 64
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let hw = Bundle.main.loadNibNamed("SectionHeaderView", owner: self, options: nil)?.first as? SectionHeaderView else { return nil }
+        
+        viewModel
+            .trainStatus
+            .drive(hw.trainStatusLabel.rx.text)
+            .disposed(by: bag)
+        
+        viewModel
+            .trainNumber
+            .drive(hw.trainNumber.rx.text)
+            .disposed(by: bag)
+        
+        return hw
     }
 }

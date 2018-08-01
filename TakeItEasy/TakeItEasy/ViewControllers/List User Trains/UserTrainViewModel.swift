@@ -8,9 +8,6 @@
 
 import Foundation
 
-import CoreData
-import RxCoreData
-
 import RxSwift
 import RxCocoa
 import Action
@@ -32,10 +29,10 @@ enum Update: Int {
 protocol ViewModelProtocol {
     associatedtype DataSourceModel
     
-    var managedObjectContext: NSManagedObjectContext { get }
+    var dataManager: DataManagerProtocol { get }
 }
 
-typealias inputType = (stationCode: String, date: Date)
+typealias inputType = (station: Station, date: Date)
 
 class UserTrainViewModel: ViewModelProtocol {
     typealias DataSourceModel = Travel
@@ -44,56 +41,48 @@ class UserTrainViewModel: ViewModelProtocol {
     
     // MARK: - Dependencies
     
-    internal var managedObjectContext: NSManagedObjectContext
+    internal var dataManager: DataManagerProtocol
     
     // MARK: - Output
     
     final var travelItems: Observable<[DataSourceModel]>
     
-    // MARK: - Interface
-    
     var fetchTravels: Action<(direction: Update, date: Date), [Travel?]>!
+    
+    var stationName: String?
+
+    // MARK: - Interface
 
     final func delete(model: DataSourceModel) {
-        do { try
-            managedObjectContext.rx.delete(model)
-        } catch {
-            print(error)
-        }
+        dataManager.delete(model: model)
     }
     
     final func save(travel t: Travel) {
-        do { try managedObjectContext.rx.update(t)
-        } catch {
-            fatalError("\(String(describing: self)) fail on update \(t)")
-        }
+        dataManager.save(model: t)
     }
     
     // MARK: - Initializer
     
-    init(dependencies managedObjectContext: NSManagedObjectContext) {
-        self.managedObjectContext = managedObjectContext
+    init(dependencies dataManager: DataManagerProtocol) {
+        self.dataManager = dataManager
         
-        self.travelItems = managedObjectContext
-            .rx
-            .entities(Travel.self, sortDescriptors: nil)
-            .asObservable()
+        self.travelItems = dataManager.retrieveTravels()
     }
     
-    convenience init(dependencies managedObjectContext: NSManagedObjectContext, input: inputType) {
-        self.init(dependencies: managedObjectContext)
+    convenience init(dependencies dataManager: DataManagerProtocol, input: inputType) {
+        self.init(dependencies: dataManager)
+        
+        self.stationName = input.station.name
         
         self.fetchTravels = Action { action -> Observable<[Travel?]> in
             if action.direction == .departure {
                 return TravelTrainAPI
-                    .trainDepartures(of: input.stationCode,
+                    .trainDepartures(of: input.station.id,
                                      date: action.date)
-                    .asObservable()
             } else {
                 return TravelTrainAPI
-                    .trainArrivals(of: input.stationCode,
+                    .trainArrivals(of: input.station.id,
                                    date: action.date)
-                    .asObservable()
             }
         }
     }

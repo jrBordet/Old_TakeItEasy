@@ -7,19 +7,9 @@
 //
 
 import Foundation
+
 import RxCocoa
 import RxSwift
-
-//enum Result<T, E: Error> {
-//    case success(T)
-//    case failure(E)
-//}
-//
-//enum CommonError : Error {
-//    
-//    case parsingError
-//    case networkError
-//}
 
 protocol TravelTrainAPIProtocol {
     static func trainStations(of name: String) -> Observable<[Station]>
@@ -155,7 +145,7 @@ struct TravelTrainAPI: TravelTrainAPIProtocol {
                         let originCode = dictionary["codOrigine"] as? String,
                         let category = dictionary["categoria"] as? String,
                         let hour = dictionary["compOrarioArrivo"] as? String,
-                        let direction = dictionary["origine"] as? String,
+                        let origin = dictionary["origine"] as? String,
                         let delay = dictionary["compRitardo"] as? [AnyObject],
                         let state = delay[0] as? String {
                         
@@ -163,9 +153,9 @@ struct TravelTrainAPI: TravelTrainAPIProtocol {
                                       originCode: originCode,
                                       category: category,
                                       time: hour,
-                                      direction: direction,
+                                      direction: nil,
                                       state: state,
-                                      originStation: nil)
+                                      originStation: origin)
                     }
                     
                     return nil
@@ -222,9 +212,7 @@ struct TravelTrainAPI: TravelTrainAPIProtocol {
                     
                     return nil
                 })
-                
-                //acc.removeLast()
-                // acc.reversed()
+
                 return acc
             })
     }

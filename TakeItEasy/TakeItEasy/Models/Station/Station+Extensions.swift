@@ -17,7 +17,7 @@ func == (lhs: Station, rhs: Station) -> Bool {
 
 extension Station: Equatable { }
 
-extension Station : IdentifiableType {
+extension Station: IdentifiableType {
     typealias Identity = String
     
     var identity: Identity { return id }

@@ -9,7 +9,6 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import CoreData
 import Foundation
 
 protocol ListSpotlightCoordinator {
@@ -36,18 +35,31 @@ class ListSpotlightViewController: UIViewController {
         }
     }
     
+    // MARK: - Privates
+    
     private let bag = DisposeBag()
     
     var swipeInteractionController: SwipeInteractionController?
-    
-    final var managedObjectContext: NSManagedObjectContext?
-    
-    final var coordinatorDelegate: ListSpotlightCoordinator?
-    
+
     private var query: String = ""
+
+    // MAR: - Coordinator
+    
+    final var coordinatorDelegate: ListSpotlightCoordinator?    
+    
+     // MARK: - Dependencies
+    
+    final var dataManager: DataManagerProtocol?
+    
+    // MARK: - Life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        #if DEBUG
+        let logString = "⚠️ Number of start resources = \(Resources.total) ⚠️"
+        debugPrint(logString)
+        #endif
         
         searchBar.becomeFirstResponder()
         
@@ -56,6 +68,12 @@ class ListSpotlightViewController: UIViewController {
         
         bindUI()
     }
+    
+    deinit {
+        debugPrint("\(self) deinit")
+    }
+    
+    // MARK: - Binding
     
     func bindUI() {
         searchBar
@@ -95,8 +113,8 @@ class ListSpotlightViewController: UIViewController {
         
         searchBar
             .rx
-            .searchButtonClicked.subscribe(onNext: { [unowned self] _ in
-                self.searchBar.resignFirstResponder()
+            .searchButtonClicked.subscribe(onNext: { [weak self] _ in
+                self?.searchBar.resignFirstResponder()
             })
             .disposed(by: bag)
         
@@ -105,8 +123,8 @@ class ListSpotlightViewController: UIViewController {
         tableView
             .rx
             .modelSelected(Station.self)
-            .subscribe(onNext: { [weak self] station in
-                self?.save(station: station)
+            .subscribe(onNext: { [weak self] s in
+                self?.dataManager?.save(model: s)
                 
                 self?.searchBar.resignFirstResponder()
                 
@@ -125,18 +143,6 @@ class ListSpotlightViewController: UIViewController {
                 self?.searchBar.resignFirstResponder()
             })
             .disposed(by: bag)
-    }
-    
-    // MARK: - Privates
-    
-    private final func save(station s: Station) {
-        guard let mc = managedObjectContext else { return }
-        
-        do {
-            try mc.rx.update(s)
-        } catch {
-            fatalError("\(String(describing: self)) fail on update \(s)")
-        }
     }
     
     // MARK: - Navigation

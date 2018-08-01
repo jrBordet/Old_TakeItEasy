@@ -8,8 +8,21 @@
 
 import UIKit
 
+import RxSwift
+import RxCocoa
+
 class SectionCell: UITableViewCell {
     @IBOutlet var stationLabel: UILabel!
     @IBOutlet var hourlabel: UILabel!
     @IBOutlet var railLabel: UILabel!
+}
+
+extension Reactive where Base: SectionCell {
+    var sectionResult: Binder<SectionResult> {
+        return Binder(base) { cell, result in
+            cell.hourlabel.textColor = result.textColor
+            cell.hourlabel.text = result.hour
+            cell.stationLabel.text = result.station.capitalized
+        }
+    }
 }

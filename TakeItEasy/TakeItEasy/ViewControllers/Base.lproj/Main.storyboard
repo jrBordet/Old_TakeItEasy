@@ -55,14 +55,14 @@
                                 </constraints>
                                 <items>
                                     <barButtonItem title="Item" image="spotlight" landscapeImage="spotlight" id="tZD-30-8O9">
-                                        <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" name="primayGreen"/>
                                         <connections>
                                             <action selector="spotlightTap:" destination="9j7-Dh-kd4" id="21W-ta-ULx"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="osb-gu-laQ"/>
                                     <barButtonItem image="tabbar_trains" id="hL5-N6-g94">
-                                        <color key="tintColor" red="0.2655232461" green="1" blue="0.24260956010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" name="primayGreen"/>
                                         <connections>
                                             <action selector="trainsTap:" destination="9j7-Dh-kd4" id="Y0l-3D-l1Z"/>
                                         </connections>
@@ -111,7 +111,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="prosegui nella sezione &quot;i miei treni&quot; e scegli un viaggio" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1o-rd-ACR">
                                         <rect key="frame" x="8" y="170.33333333333331" width="359" height="40.666666666666657"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                        <color key="textColor" red="0.55634254220000001" green="0.97934550050000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" name="primayGreen"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -193,7 +193,7 @@
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="bOX-N2-Uo0"/>
                                     <barButtonItem image="tabbar_stations" id="POg-Ii-baI">
-                                        <color key="tintColor" red="0.2655232461" green="1" blue="0.24260956010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" name="primayGreen"/>
                                         <connections>
                                             <action selector="stationsTap:" destination="7v1-BU-j4b" id="3pZ-mQ-sLP"/>
                                         </connections>
@@ -294,7 +294,7 @@
                                 <rect key="frame" x="0.0" y="729" width="375" height="49"/>
                                 <items>
                                     <barButtonItem image="tabbar_stations" id="zbD-RR-1EE">
-                                        <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" name="primayGreen"/>
                                         <connections>
                                             <action selector="myStationsTap:" destination="BYZ-38-t0r" id="5u0-Ln-ICq"/>
                                         </connections>
@@ -434,20 +434,20 @@
                                 </constraints>
                                 <items>
                                     <barButtonItem systemItem="refresh" id="qgC-am-9Bi">
-                                        <color key="tintColor" red="0.2655232461" green="1" blue="0.24260956010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" name="primayGreen"/>
                                         <connections>
                                             <action selector="refreshAction:" destination="Opt-L1-QQI" id="4F9-34-Er7"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="KbA-pU-he0"/>
                                     <barButtonItem image="ic_schedule_white" id="k1a-mN-DBG">
-                                        <color key="tintColor" red="0.2655232461" green="1" blue="0.24260956010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" name="primayGreen"/>
                                         <connections>
                                             <action selector="scheduletap:" destination="Opt-L1-QQI" id="Tly-ck-GpS"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem image="ic_swap_horiz_white" id="gK1-gc-Ux1">
-                                        <color key="tintColor" red="0.2655232461" green="1" blue="0.24260956010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" name="primayGreen"/>
                                         <connections>
                                             <action selector="switchAction:" destination="Opt-L1-QQI" id="pUI-Rd-Bjr"/>
                                         </connections>
@@ -491,71 +491,9 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="646"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="Fx4-6c-QDO">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="5cg-nr-rg1">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
-                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="JgE-ro-1Hw">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                <subviews>
-                                                    <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dPx-JW-oH0">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="su0-j5-nn2">
-                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
-                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                        </view>
-                                                        <vibrancyEffect>
-                                                            <blurEffect style="light"/>
-                                                        </vibrancyEffect>
-                                                    </visualEffectView>
-                                                </subviews>
-                                            </view>
-                                            <vibrancyEffect>
-                                                <blurEffect style="extraLight"/>
-                                            </vibrancyEffect>
-                                        </visualEffectView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reg. 10432" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMs-p3-TR3">
-                                            <rect key="frame" x="139" y="12.666666666666664" width="97.333333333333314" height="23"/>
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="in orario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rf3-qq-3FR">
-                                            <rect key="frame" x="291" y="21" width="69" height="23"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="numero treno" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2E-4n-ZOc">
-                                            <rect key="frame" x="147" y="40" width="81.333333333333314" height="16"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <color key="textColor" name="primaryGrey"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" name="secondaryBlack"/>
-                                    <constraints>
-                                        <constraint firstItem="WMs-p3-TR3" firstAttribute="centerY" secondItem="Fx4-6c-QDO" secondAttribute="centerY" constant="-8" id="1Ia-6O-Kpz"/>
-                                        <constraint firstAttribute="trailing" secondItem="Rf3-qq-3FR" secondAttribute="trailing" constant="15" id="B5m-bk-2Ru"/>
-                                        <constraint firstAttribute="height" constant="64" id="CRK-3g-fJe"/>
-                                        <constraint firstItem="WMs-p3-TR3" firstAttribute="centerX" secondItem="Fx4-6c-QDO" secondAttribute="centerX" id="DyI-on-iuY"/>
-                                        <constraint firstItem="V2E-4n-ZOc" firstAttribute="centerX" secondItem="Fx4-6c-QDO" secondAttribute="centerX" id="HFF-gm-QwE"/>
-                                        <constraint firstItem="Rf3-qq-3FR" firstAttribute="centerY" secondItem="Fx4-6c-QDO" secondAttribute="centerY" id="W6m-eq-7jj"/>
-                                        <constraint firstItem="5cg-nr-rg1" firstAttribute="top" secondItem="Fx4-6c-QDO" secondAttribute="top" id="X2i-0G-5wD"/>
-                                        <constraint firstAttribute="bottom" secondItem="5cg-nr-rg1" secondAttribute="bottom" id="hb7-d6-o0K"/>
-                                        <constraint firstAttribute="bottom" secondItem="V2E-4n-ZOc" secondAttribute="bottom" constant="8" id="i9k-DQ-UgF"/>
-                                        <constraint firstAttribute="trailing" secondItem="5cg-nr-rg1" secondAttribute="trailing" id="jxR-g5-5VJ"/>
-                                        <constraint firstItem="5cg-nr-rg1" firstAttribute="leading" secondItem="Fx4-6c-QDO" secondAttribute="leading" id="tz6-J5-bH1"/>
-                                    </constraints>
-                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SectionCell" rowHeight="64" id="Eqe-mq-37R" customClass="SectionCell" customModule="TakeItEasy" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="64"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Eqe-mq-37R" id="acp-J3-luV">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="63.666666666666664"/>
@@ -568,8 +506,8 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Milano centrale" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvg-3c-Be1">
-                                                    <rect key="frame" x="71" y="21" width="121.66666666666669" height="21.666666666666671"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                                    <rect key="frame" x="71" y="21.666666666666671" width="115.33333333333331" height="20.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -594,7 +532,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="GXc-nO-bcn" secondAttribute="bottom" id="6Ej-dS-F1g"/>
                                                 <constraint firstItem="ddn-2y-1BY" firstAttribute="centerY" secondItem="acp-J3-luV" secondAttribute="centerY" id="aPN-Xb-dMI"/>
-                                                <constraint firstItem="ddn-2y-1BY" firstAttribute="leading" secondItem="acp-J3-luV" secondAttribute="leadingMargin" id="muA-K1-DZR"/>
+                                                <constraint firstItem="ddn-2y-1BY" firstAttribute="leading" secondItem="acp-J3-luV" secondAttribute="leading" constant="15" id="muA-K1-DZR"/>
                                                 <constraint firstItem="dvg-3c-Be1" firstAttribute="leading" secondItem="ddn-2y-1BY" secondAttribute="trailing" constant="15" id="tOH-34-hZU"/>
                                                 <constraint firstItem="GXc-nO-bcn" firstAttribute="trailing" secondItem="acp-J3-luV" secondAttribute="trailingMargin" id="tjq-x8-DB9"/>
                                                 <constraint firstItem="dvg-3c-Be1" firstAttribute="centerY" secondItem="acp-J3-luV" secondAttribute="centerY" id="tlX-l1-NQR"/>
@@ -641,8 +579,6 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="sessionTableView" destination="oVD-Up-Ujf" id="Xx0-4c-2du"/>
-                        <outlet property="trainNumber" destination="WMs-p3-TR3" id="ndN-kq-jtw"/>
-                        <outlet property="trainStatusLabel" destination="Rf3-qq-3FR" id="egg-gq-nua"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="44z-0C-rqe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -659,14 +595,8 @@
         <namedColor name="primaryGrey">
             <color red="0.72200000286102295" green="0.72200000286102295" blue="0.72200000286102295" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="primaryGrey">
-            <color red="0.72200000286102295" green="0.72200000286102295" blue="0.72200000286102295" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="primayGreen">
-            <color red="0.5559999942779541" green="0.97899997234344482" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="secondaryBlack">
-            <color red="0.097999997437000275" green="0.097999997437000275" blue="0.097999997437000275" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.125" green="0.98799997568130493" blue="0.56099998950958252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
     <color key="tintColor" name="secondaryBlack"/>
