@@ -120,9 +120,12 @@ class ListUserTrainsViewController: UIViewController {
             return true
         }
         
-        animatedDataSource.canMoveRowAtIndexPath = { _,_  in
-            return true
-        }
+        
+//        animatedDataSource.canMoveRowAtIndexPath = { _,_  in
+//            return true
+//        }
+//
+//        trainTableView.isEditing = true
         
         // MARK: - modelSelected
         

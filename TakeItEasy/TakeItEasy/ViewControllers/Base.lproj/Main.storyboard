@@ -108,8 +108,8 @@
                                         <color key="textColor" name="primayGreen"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="prosegui nella sezione &quot;i miei treni&quot; e scegli un viaggio" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1o-rd-ACR">
-                                        <rect key="frame" x="8" y="170.33333333333331" width="359" height="40.666666666666657"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="non hai ancora scelto nessun viaggio…" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1o-rd-ACR">
+                                        <rect key="frame" x="8" y="170.33333333333331" width="359" height="20.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                         <color key="textColor" name="primayGreen"/>
                                         <nil key="highlightedColor"/>
