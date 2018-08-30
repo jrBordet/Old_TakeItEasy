@@ -556,7 +556,7 @@
                                 </constraints>
                                 <items>
                                     <barButtonItem systemItem="refresh" id="sGj-me-H5h">
-                                        <color key="tintColor" red="0.2655232461" green="1" blue="0.24260956010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" name="primayGreen"/>
                                         <connections>
                                             <action selector="refreshAction:" destination="fPJ-8D-g5m" id="YMQ-ac-8Dx"/>
                                         </connections>
@@ -594,6 +594,9 @@
         <image name="tabbar_trains" width="24" height="24"/>
         <namedColor name="primaryGrey">
             <color red="0.72200000286102295" green="0.72200000286102295" blue="0.72200000286102295" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primayGreen">
+            <color red="0.125" green="0.98799997568130493" blue="0.56099998950958252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="primayGreen">
             <color red="0.125" green="0.98799997568130493" blue="0.56099998950958252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
