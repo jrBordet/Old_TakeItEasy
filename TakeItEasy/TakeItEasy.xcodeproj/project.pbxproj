@@ -57,13 +57,6 @@
 			remoteGlobalIDString = 4948495520010D7C00502C4E;
 			remoteInfo = TakeItEasy;
 		};
-		4948497920010D7C00502C4E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4948494E20010D7C00502C4E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4948495520010D7C00502C4E;
-			remoteInfo = TakeItEasy;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -82,7 +75,6 @@
 		4948496D20010D7C00502C4E /* TakeItEasyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TakeItEasyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4948497120010D7C00502C4E /* TakeItEasyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeItEasyTests.swift; sourceTree = "<group>"; };
 		4948497320010D7C00502C4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4948497820010D7C00502C4E /* TakeItEasyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TakeItEasyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4948497E20010D7C00502C4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4948498C2001161A00502C4E /* Station+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Station+Extensions.swift"; sourceTree = "<group>"; };
 		4948498D2001161A00502C4E /* Station.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
@@ -136,13 +128,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4948497520010D7C00502C4E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -183,7 +168,6 @@
 			children = (
 				4948495620010D7C00502C4E /* TakeItEasy.app */,
 				4948496D20010D7C00502C4E /* TakeItEasyTests.xctest */,
-				4948497820010D7C00502C4E /* TakeItEasyUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -404,24 +388,6 @@
 			productReference = 4948496D20010D7C00502C4E /* TakeItEasyTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		4948497720010D7C00502C4E /* TakeItEasyUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4948498720010D7C00502C4E /* Build configuration list for PBXNativeTarget "TakeItEasyUITests" */;
-			buildPhases = (
-				4948497420010D7C00502C4E /* Sources */,
-				4948497520010D7C00502C4E /* Frameworks */,
-				4948497620010D7C00502C4E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4948497A20010D7C00502C4E /* PBXTargetDependency */,
-			);
-			name = TakeItEasyUITests;
-			productName = TakeItEasyUITests;
-			productReference = 4948497820010D7C00502C4E /* TakeItEasyUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -437,11 +403,6 @@
 						ProvisioningStyle = Automatic;
 					};
 					4948496C20010D7C00502C4E = {
-						CreatedOnToolsVersion = 9.1;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 4948495520010D7C00502C4E;
-					};
-					4948497720010D7C00502C4E = {
 						CreatedOnToolsVersion = 9.1;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 4948495520010D7C00502C4E;
@@ -463,7 +424,6 @@
 			targets = (
 				4948495520010D7C00502C4E /* TakeItEasy */,
 				4948496C20010D7C00502C4E /* TakeItEasyTests */,
-				4948497720010D7C00502C4E /* TakeItEasyUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -481,13 +441,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4948496B20010D7C00502C4E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4948497620010D7C00502C4E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -644,13 +597,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4948497420010D7C00502C4E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -658,11 +604,6 @@
 			isa = PBXTargetDependency;
 			target = 4948495520010D7C00502C4E /* TakeItEasy */;
 			targetProxy = 4948496E20010D7C00502C4E /* PBXContainerItemProxy */;
-		};
-		4948497A20010D7C00502C4E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4948495520010D7C00502C4E /* TakeItEasy */;
-			targetProxy = 4948497920010D7C00502C4E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -863,38 +804,6 @@
 			};
 			name = Release;
 		};
-		4948498820010D7C00502C4E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XP6P798NUV;
-				INFOPLIST_FILE = TakeItEasyUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ovolab.TakeItEasyUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TakeItEasy;
-			};
-			name = Debug;
-		};
-		4948498920010D7C00502C4E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XP6P798NUV;
-				INFOPLIST_FILE = TakeItEasyUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ovolab.TakeItEasyUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = TakeItEasy;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -921,15 +830,6 @@
 			buildConfigurations = (
 				4948498520010D7C00502C4E /* Debug */,
 				4948498620010D7C00502C4E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4948498720010D7C00502C4E /* Build configuration list for PBXNativeTarget "TakeItEasyUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4948498820010D7C00502C4E /* Debug */,
-				4948498920010D7C00502C4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
