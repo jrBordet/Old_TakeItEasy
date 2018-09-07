@@ -82,7 +82,7 @@ class UserTrainViewModelTests: XCTestCase {
     }
     
     func test_when_viewmodel_fetch_trains() {
-        let viewModel = UserTrainViewModel(dependencies: managedObjectContext)
+        let viewModel = UserTrainViewModel(dependencies: DataManager.shared)
         
         viewModel
             .travelItems
@@ -96,8 +96,8 @@ class UserTrainViewModelTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Fetch departures from Torino Porta Nuova")
         
         // Torino porta nuova S00219
-        let viewModel = UserTrainViewModel(dependencies: managedObjectContext,
-                                           input: (stationCode: "S00219", date: Date()))
+        let viewModel = UserTrainViewModel(dependencies: DataManager.shared,
+                                           input: (station: Station("S00219", name: "Torino Porta Nuova"), date: Date()))
         
         viewModel
             .fetchTravels
@@ -116,8 +116,8 @@ class UserTrainViewModelTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Fetch arrivals from Torino Porta Nuova")
         
         // Torino porta nuova S00219
-        let viewModel = UserTrainViewModel(dependencies: managedObjectContext,
-                                           input: (stationCode: "S00219", date: Date()))
+        let viewModel = UserTrainViewModel(dependencies: DataManager.shared,
+                                           input: (station: Station("S00219", name: "Torino Porta Nuova"), date: Date()))
         
         viewModel
             .fetchTravels

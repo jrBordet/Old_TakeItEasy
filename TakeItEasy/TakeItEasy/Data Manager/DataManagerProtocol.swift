@@ -9,8 +9,6 @@
 import Foundation
 
 import RxSwift
-
-import CoreData
 import RxCoreData
 
 protocol DataManagerProtocol {

@@ -18,7 +18,6 @@
 		4948496420010D7C00502C4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4948496320010D7C00502C4E /* Assets.xcassets */; };
 		4948496720010D7C00502C4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4948496520010D7C00502C4E /* LaunchScreen.storyboard */; };
 		4948497220010D7C00502C4E /* TakeItEasyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948497120010D7C00502C4E /* TakeItEasyTests.swift */; };
-		4948497D20010D7C00502C4E /* TakeItEasyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948497C20010D7C00502C4E /* TakeItEasyUITests.swift */; };
 		4948499F2001161A00502C4E /* Station+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948498C2001161A00502C4E /* Station+Extensions.swift */; };
 		494849A02001161A00502C4E /* Station.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948498D2001161A00502C4E /* Station.swift */; };
 		494849A12001161A00502C4E /* Travel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948498E2001161A00502C4E /* Travel.swift */; };
@@ -84,7 +83,6 @@
 		4948497120010D7C00502C4E /* TakeItEasyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeItEasyTests.swift; sourceTree = "<group>"; };
 		4948497320010D7C00502C4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4948497820010D7C00502C4E /* TakeItEasyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TakeItEasyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4948497C20010D7C00502C4E /* TakeItEasyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeItEasyUITests.swift; sourceTree = "<group>"; };
 		4948497E20010D7C00502C4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4948498C2001161A00502C4E /* Station+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Station+Extensions.swift"; sourceTree = "<group>"; };
 		4948498D2001161A00502C4E /* Station.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Station.swift; sourceTree = "<group>"; };
@@ -223,7 +221,6 @@
 		4948497B20010D7C00502C4E /* TakeItEasyUITests */ = {
 			isa = PBXGroup;
 			children = (
-				4948497C20010D7C00502C4E /* TakeItEasyUITests.swift */,
 				4948497E20010D7C00502C4E /* Info.plist */,
 			);
 			path = TakeItEasyUITests;
@@ -651,7 +648,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4948497D20010D7C00502C4E /* TakeItEasyUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
