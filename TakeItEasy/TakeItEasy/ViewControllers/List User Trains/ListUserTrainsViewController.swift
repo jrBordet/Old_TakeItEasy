@@ -25,7 +25,7 @@ class ListUserTrainsViewController: UIViewController {
     @IBOutlet var disclaimerView: UIView!
     @IBOutlet var disclaimerLabel: UILabel! {
         didSet {
-            disclaimerLabel.text = NSLocalizedString("ci dispiace …", comment: "")
+            disclaimerLabel.text = NSLocalizedString("ci dispiace", comment: "")
         }
     }
     
