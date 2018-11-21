@@ -744,7 +744,7 @@
 				INFOPLIST_FILE = TakeItEasy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ovolab.TakeItEasy;
+				PRODUCT_BUNDLE_IDENTIFIER = jr.bordet.TakeItEasy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -761,7 +761,7 @@
 				INFOPLIST_FILE = TakeItEasy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ovolab.TakeItEasy;
+				PRODUCT_BUNDLE_IDENTIFIER = jr.bordet.TakeItEasy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
