@@ -570,3 +570,5 @@ TakeItEasy/Pods/Target Support Files/Action/Action-umbrella.h
 TakeItEasy/Pods/Target Support Files/Action/Action.modulemap
 TakeItEasy/Pods/Target Support Files/Action/Action.xcconfig
 TakeItEasy/Pods/Target Support Files/Action/Info.plist
+TakeItEasy/Podfile.lock
+TakeItEasy/TakeItEasy.xcodeproj/project.xcworkspace/contents.xcworkspacedata
